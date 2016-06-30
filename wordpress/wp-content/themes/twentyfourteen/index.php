@@ -59,3 +59,5 @@ get_header(); ?>
 <?php
 get_sidebar();
 get_footer();
+<div class="main-site-footer">
+</div>

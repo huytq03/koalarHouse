@@ -13,7 +13,9 @@
 		</div><!-- .site-content -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
+			<img src="http://localhost/wordpress/wp-content/uploads/2016/06/footer-2.png">
+
+<!-- 			<?php if ( has_nav_menu( 'primary' ) ) : ?>	
 				<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Primary Menu', 'twentysixteen' ); ?>">
 					<?php
 						wp_nav_menu( array(
@@ -21,7 +23,7 @@
 							'menu_class'     => 'primary-menu',
 						 ) );
 					?>
-				</nav><!-- .main-navigation -->
+				</nav>
 			<?php endif; ?>
 
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
@@ -35,7 +37,7 @@
 							'link_after'     => '</span>',
 						) );
 					?>
-				</nav><!-- .social-navigation -->
+				</nav>
 			<?php endif; ?>
 
 			<div class="site-info">
@@ -49,7 +51,7 @@
 				?>
 				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentysixteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentysixteen' ), 'WordPress' ); ?></a>
-			</div><!-- .site-info -->
+			</div> -->
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
 </div><!-- .site -->

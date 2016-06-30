@@ -41,6 +41,8 @@
 					if ( $description || is_customize_preview() ) : ?>
 						<p class="site-description"><?php echo $description; ?></p>
 					<?php endif; ?>
+					<div class="social_wrapper"> <?php echo do_shortcode('[the-social-links]'); ?>
+					</div>
 				</div><!-- .site-branding -->
 
 				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
@@ -57,45 +59,13 @@
 								?>
 							</nav><!-- .main-navigation -->
 						<?php endif; ?>
-
-						<?php if ( has_nav_menu( 'social' ) ) : ?>
-							<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentysixteen' ); ?>">
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'social',
-										'menu_class'     => 'social-links-menu',
-										'depth'          => 1,
-										'link_before'    => '<span class="screen-reader-text">',
-										'link_after'     => '</span>',
-									) );
-								?>
-							</nav><!-- .social-navigation -->
-						<?php endif; ?>
 					</div><!-- .site-header-menu -->
 				<?php endif; ?>
+
+				<div class="headerslider"> <?php echo do_shortcode('[sp_responsiveslider design="design-3"  first_slide="1"  effect="fade" pagination="true" navigation="true"speed="3000" autoplay="true" autoplay_interval="3000"]'); ?>
+				</div>
 			</div><!-- .site-header-main -->
 
-			<?php if ( get_header_image() ) : ?>
-				<?php
-					/**
-					 * Filter the default twentysixteen custom header sizes attribute.
-					 *
-					 * @since Twenty Sixteen 1.0
-					 *
-					 * @param string $custom_header_sizes sizes attribute
-					 * for Custom Header. Default '(max-width: 709px) 85vw,
-					 * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
-					 */
-					$custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
-				?>
-				<div class="header-image">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					</a>
-				</div><!-- .header-image -->
-			<?php endif; // End header image check. ?>
-		</header><!-- .site-header -->
-		<div class="headerslider"> <?php echo do_shortcode('[sp_responsiveslider design="design-1" width="1024"first_slide="1" height="300" effect="fade" pagination="true" navigation="true"speed="3000" autoplay="true" autoplay_interval="3000"]'); ?>
-		</div>
+		</header><!-- .site-header width="1024" height="300" -->		
 		
-		<div id="content" class="site-content">
+	<div id="content" class="site-content">

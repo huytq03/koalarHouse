@@ -43,7 +43,19 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-main">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
+			<?php if ( has_nav_menu( 'social' ) ) : ?>
+				<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentysixteen' ); ?>">
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'social',
+							'menu_class'     => 'social-links-menu',
+							'depth'          => 1,
+							'link_before'    => '<span class="screen-reader-text">',
+							'link_after'     => '</span>',
+						) );
+					?>
+				</nav><!-- .social-navigation -->
+			<?php endif; ?>
 			<div class="search-toggle">
 				<a href="#search-container" class="screen-reader-text" aria-expanded="false" aria-controls="search-container"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
 			</div>

@@ -446,9 +446,9 @@ html {
 *:before,
 *:after {
 	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	-webkit-box-sizing: inherit;
+/*	-webkit-box-sizing: inherit;
 	-moz-box-sizing: inherit;
-	box-sizing: inherit;
+	box-sizing: inherit;*/
 }
 
 body {
@@ -1505,10 +1505,10 @@ blockquote:after,
  * 11.0 - Content
  */
 
-.site {
+/*.site {
 	background-color: #fff;
 }
-
+*/
 .site-inner {
 	margin: 0 auto;
 	max-width: 1320px;
@@ -2951,9 +2951,10 @@ p > video {
 	}
 
 	.wp-custom-logo .site-header-main {
-		-webkit-align-items: center;
-		-ms-flex-align: center;
-		align-items: center;
+		-webkit-align-items: flex-end;
+		-ms-flex-align: flex-end;
+		align-items: flex-end;
+		display: block;
 	}
 
 	.site-header-menu {
@@ -2964,7 +2965,8 @@ p > video {
 	}
 
 	.main-navigation {
-		margin: 0 -0.875em;
+		margin: auto;
+		display: table;
 	}
 
 	.main-navigation .primary-menu,
@@ -3376,14 +3378,14 @@ p > video {
 	}
 
 	.site-header {
-		padding: 5.25em 4.5455%;
+		padding: 0em 4.5455%;
 	}
 
 	.site-branding,
 	.site-header-menu,
 	.header-image {
 		margin-top: 1.75em;
-		margin-bottom: 1.75em;
+		margin-bottom: 0.5em;
 	}
 
 	.custom-logo {
@@ -3950,4 +3952,73 @@ p > video {
 	.widecolumn {
 		padding: 0;
 	}
+}
+/*
+*	custome css
+*/
+.menu-item-65 {
+	background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu65.png');
+	background-repeat: no-repeat;
+	height: 70px;
+    width: 130px;
+}
+
+.menu-item-66 {
+	background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu66.png');
+	background-repeat: no-repeat;
+	height: 70px;
+    width: 130px;
+}
+.menu-item-67, .menu-item-68, .menu-item-69, .menu-item-70, .menu-item-71{
+	background-color: #d5c651 !important;
+}
+.menu-item-72 {
+	background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu72.png');
+	background-repeat: no-repeat;
+	height: 70px;
+    width: 130px;
+}
+.menu-item-73, .menu-item-74, .menu-item-75, .menu-item-76{
+	background-color: #eb7400 !important;
+}
+.menu-item-77 {
+	background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu77.png');
+	background-repeat: no-repeat;
+	height: 70px;
+    width: 142px;
+}
+.menu-item-78, .menu-item-79, .menu-item-80, .menu-item-81, .menu-item-82, .menu-item-83, .menu-item-84, .menu-item-85, .menu-item-86 {
+	background-color: #db666c !important;
+}
+.menu-item-87 {
+	background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu87.png');
+	background-repeat: no-repeat;
+	height: 70px;
+    width: 162px;
+}
+
+.menu-item-50 {
+	background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu50.png');
+	background-repeat: no-repeat;
+	height: 70px;
+    width: 130px;
+}
+
+.menu-item  > a{
+	text-align: center; 
+	width: 128px; height: 72px; display: block; text-decoration: none; 
+	font-family: 'Finger Paint'; font-weight: 400; font-size: 17px; line-height: 82px; color: #fff; 
+	text-shadow:none; padding: 0; border: none; margin: 0;  border-radius:0px; -moz-border-radius:0px;
+	 -webkit-border-radius:0px; position: relative; overflow: hidden;
+	}
+.menu-item-87  > a {
+	width: 162px;
+}
+.menu-item-77  > a {
+	width: 142px;
+}
+
+.site-footer > img {
+	 overflow: visible;
+	 width: 100%;
 }
