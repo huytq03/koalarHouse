@@ -23,10 +23,10 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<div class="site-inner">
+	<div>
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
-		<header id="masthead" class="site-header" role="banner">
+		<header id="masthead" class="site-header site-inner" role="banner">
 			<div class="site-header-main">
 				<div class="site-branding">
 					<?php twentysixteen_the_custom_logo(); ?>
@@ -41,7 +41,10 @@
 					if ( $description || is_customize_preview() ) : ?>
 						<p class="site-description"><?php echo $description; ?></p>
 					<?php endif; ?>
-					<div class="social_wrapper"> <?php echo do_shortcode('[the-social-links]'); ?>
+					<div class="social_wrapper"> 
+						<div>
+							<?php echo do_shortcode('[the-social-links]'); ?>
+						</div>
 					</div>
 				</div><!-- .site-branding -->
 

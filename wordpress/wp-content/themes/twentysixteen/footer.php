@@ -13,33 +13,6 @@
 		</div><!-- .site-content -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<img src="http://localhost/wordpress/wp-content/uploads/2016/06/footer-2.png">
-
-<!-- 			<?php if ( has_nav_menu( 'primary' ) ) : ?>	
-				<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Primary Menu', 'twentysixteen' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu',
-						 ) );
-					?>
-				</nav>
-			<?php endif; ?>
-
-			<?php if ( has_nav_menu( 'social' ) ) : ?>
-				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentysixteen' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'social',
-							'menu_class'     => 'social-links-menu',
-							'depth'          => 1,
-							'link_before'    => '<span class="screen-reader-text">',
-							'link_after'     => '</span>',
-						) );
-					?>
-				</nav>
-			<?php endif; ?>
-
 			<div class="site-info">
 				<?php
 					/**
@@ -49,9 +22,28 @@
 					 */
 					do_action( 'twentysixteen_credits' );
 				?>
-				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentysixteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentysixteen' ), 'WordPress' ); ?></a>
-			</div> -->
+				<a href="<?php echo esc_url( __( 'https://koalhouse.com.vn', 'twentysixteen' ) ); ?>"><?php printf( __( 'KOALAHOUSE.COM.VN - FORUM | STIEMAP', 'twentysixteen' ) ); ?></a>
+
+				<table class="footer-address">
+					<tr>
+						<td>
+							* Số 5 Phan Kế Bính, Quận Ba Đình, Hà Nội, Việt Nam </br>
+							  &nbsp;&nbsp;&nbsp;Tel: +(84.4)3772 3060/ 3762 1453/ 3831 4426
+						</td>
+						<td>
+							* Số 340 Bà Triệu, Quận Hai Bà Trưng, Hà Nội, Việt Nam</br>
+							  &nbsp;&nbsp;&nbsp;Tel: +(84.4) 3974 7617/ 3974 7681
+						</td>
+					</tr>
+					<tr>
+						<td>
+							* Villa A48 Đỗ Quang, Quận Cầu Giấy, Hà Nội, Việt Nam</br>
+							  &nbsp;&nbsp;&nbsp;Tel: +(84.4) 6281 1296/ 6284 2746
+						</td>
+						<td></td>
+					</tr>
+				</table>
+			</div> 
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
 </div><!-- .site -->

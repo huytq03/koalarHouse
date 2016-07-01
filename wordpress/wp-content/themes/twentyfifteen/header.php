@@ -49,4 +49,4 @@
 		<?php get_sidebar(); ?>
 	</div><!-- .sidebar -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content site-inner">
