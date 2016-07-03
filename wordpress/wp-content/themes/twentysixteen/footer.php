@@ -31,16 +31,18 @@
 							  &nbsp;&nbsp;&nbsp;Tel: +(84.4)3772 3060/ 3762 1453/ 3831 4426
 						</td>
 						<td>
-							* Số 340 Bà Triệu, Quận Hai Bà Trưng, Hà Nội, Việt Nam</br>
-							  &nbsp;&nbsp;&nbsp;Tel: +(84.4) 3974 7617/ 3974 7681
 						</td>
 					</tr>
 					<tr>
 						<td>
+							* Số 340 Bà Triệu, Quận Hai Bà Trưng, Hà Nội, Việt Nam</br>
+							  &nbsp;&nbsp;&nbsp;Tel: +(84.4) 3974 7617/ 3974 7681
+						</td>
+
+						<td>
 							* Villa A48 Đỗ Quang, Quận Cầu Giấy, Hà Nội, Việt Nam</br>
 							  &nbsp;&nbsp;&nbsp;Tel: +(84.4) 6281 1296/ 6284 2746
 						</td>
-						<td></td>
 					</tr>
 				</table>
 			</div> 
