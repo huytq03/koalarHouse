@@ -71,4 +71,4 @@
 
 		</header><!-- .site-header width="1024" height="300" -->		
 		
-	<div id="content" class="site-content">
+	<div id="content" class="site-content site-inner">

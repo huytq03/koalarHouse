@@ -2002,6 +2002,27 @@ body:not(.search-results) .entry-summary > :last-child,
 	text-transform: uppercase;
 }
 
+.site-menu-child {
+	display: none;
+}
+.menu-child-items {
+	    padding: 5% 10%;
+}
+.menu-child-items > li{
+	padding: 10px 0px 10px 25px;
+    border-bottom: 1px dashed #fff;
+    color: black;
+}
+.menu-child-items > li > a{
+    color: black;
+}
+.menu-child-items > li > a:hover{
+    color: #fff;
+}
+.child-menu-title {
+	text-align: center;
+    margin-top: 30px;
+}
 /**
  * IE8 and earlier will drop any block with CSS3 selectors.
  * Do not combine these styles with the next block.
@@ -3089,6 +3110,7 @@ p > video {
 
 	.site-content {
 		padding: 0 4.5455%;
+		display: flex;
 	}
 
 	.content-area {
@@ -3364,7 +3386,7 @@ p > video {
 	.no-sidebar .page-content,
 	.no-sidebar .content-bottom-widgets {
 		margin-right: 15%;
-		margin-left: 15%;
+		/*margin-left: 15%;*/
 	}
 
 	.widecolumn {
@@ -3462,6 +3484,21 @@ p > video {
 	.social_wrapper >div {
 		margin: 15% auto;
 	    width: 50%;
+	}
+
+	.site-menu-child {
+		display: block;
+	    background-color: #E1AF2A;
+	    width: 35%;
+	    max-width: 370px;
+	    margin: 0 5% 5% 0;
+	    border-radius: 30px;
+	}
+	.site-header-menu-child {
+	    background-image: url('http://localhost/wordpress/wp-content/uploads/2016/07/sub-menu-brown-header.png');
+	    background-repeat: no-repeat;
+	    height: 116px;
+	    display: flex;;
 	}
 
 }

@@ -12,6 +12,31 @@
  */
 
 get_header(); ?>
+<?php
+
+	if ($post->post_parent)	{
+		$ancestors=get_post_ancestors($post->ID);
+		$root = count($ancestors)-1;
+		$parent = $ancestors[$root];
+	} else {
+		$parent = $post->ID;
+	}
+
+
+	$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
+
+	if ($children) : ?>
+
+	<div class="site-menu-child">
+		<div class="site-header-menu-child">
+			<img src="http://localhost/wordpress/wp-content/uploads/2016/07/<?php echo $parent;?>.png" style="padding: 35px 30px;" >
+			<h2 class="child-menu-title"> <?php echo get_the_title($parent); ?> </h2>
+		</div>
+		<ul class="menu-child-items">
+		<?php echo $children; ?>
+		</ul>
+	</div>
+<?php endif; ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
@@ -37,5 +62,5 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
