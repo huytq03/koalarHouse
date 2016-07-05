@@ -3432,13 +3432,16 @@ p > video {
 	.menu-item-78, .menu-item-79, .menu-item-80, .menu-item-81, .menu-item-82, .menu-item-83, .menu-item-84, .menu-item-85, .menu-item-86 {
 		background-color: #db666c !important;
 	}
+	
 	.menu-item-87 {
 		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu87.png');
 		background-repeat: no-repeat;
 		height: 70px;
 	    width: 162px;
 	}
-
+	.menu-item-199, .menu-item-201, .menu-item-200 {
+		background-color: #816d53 !important;
+	}
 	.menu-item-50 {
 		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu50.png');
 		background-repeat: no-repeat;
@@ -3493,6 +3496,7 @@ p > video {
 	    max-width: 370px;
 	    margin: 0 5% 5% 0;
 	    border-radius: 30px;
+	    height: 100%;
 	}
 	.site-header-menu-child {
 	    background-image: url('http://localhost/wordpress/wp-content/uploads/2016/07/sub-menu-brown-header.png');
