@@ -1511,8 +1511,8 @@ blockquote:after,
 */
 .site-inner {
 	margin: 0 auto;
-	/*max-width: 1320px;*/
-	max-width: 80%;
+	max-width: 1320px;
+	/*max-width: 80%;*/
 	position: relative;
 }
 
@@ -2703,11 +2703,79 @@ p > video {
 	margin-bottom: 0;
 }
 
+/**
+ * HOME PAGE
+ */	
 
 /**
  * 14.0 - Media Queries
  */
+.home-page-item {
+	/*float: left;*/
+	border-radius: 30px;
+	width: 80%;
+    margin: auto;
 
+}
+.tin-tuc {
+	height: 600px;
+	background-color: #E1AF2A;
+}
+.thong-bao {
+	height: 400px;
+	background-color: #D0D551;
+}
+.kien-thuc {
+	height: 400px;
+	background-color: #EB7400;
+}
+.thu-vien {
+	height: 180px;
+	background-color: #F2EACB;
+}
+.gioi-thieu {
+	height: 400px;
+	background-color: black;
+}
+.tay-nho {
+	height: 400px;
+	background-color: blue;
+}
+.vuon-rau {
+	height: 400px;
+	background-color: red;
+}
+
+.button-detail {
+    white-space: nowrap;
+    letter-spacing: 0px;
+    font-size: 16px;
+    line-height: 70px;
+    text-align: center;
+    display: inline-block;
+    min-width: 70px;
+    float: right;
+    -webkit-border-radius: 40px;
+    -webkit-transition: all 0.3s ease-out;
+}
+.button-tin-tuc {
+	color: #efc043;
+    border: 5px solid #efc043;
+    background: #fcf4db;
+}
+.button-tin-tuc:hover{ border-color: #fcf4db; color: #fcf4db; background: #816d53;}
+.button-thong-bao {
+	color: #efc043;
+    border: 5px solid #efc043;
+    background: #fcf4db;
+}
+.button-thong-bao:hover{ border-color: #fcf4db; color: #fcf4db; background: #816d53;}
+.button-kien-thuc {
+	color: #efc043;
+    border: 5px solid #efc043;
+    background: #fcf4db;
+}
+.button-kien-thuc:hover{ border-color: #fcf4db; color: #fcf4db; background: #816d53;}
 /**
  * Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
@@ -2722,7 +2790,7 @@ p > video {
 	width: device-width;
 }
 
-
+/** =============================================custome size======================================================================*/
 /**
  * 14.1 - >= 710px
  */
@@ -2754,7 +2822,10 @@ p > video {
 	}
 
 	.site {
-		/*margin: 21px;*/
+		margin: 21px;
+	}
+	.site  > div{
+		display: 21px;
 	}
 
 	.site-main {
@@ -2946,7 +3017,6 @@ p > video {
 
 }
 
-
 /**
  * 14.2 - >= 783px
  */
@@ -2963,6 +3033,37 @@ p > video {
  */
 
 @media screen and (min-width: 56.875em) {
+	.home-page-item {
+		float: left;
+		margin: 10px;
+	}
+
+	.tin-tuc {
+		width: 31%;
+	}
+
+	.thong-bao {
+		width: 31%;
+	}
+
+	.kien-thuc {
+		width: 31%;
+	}
+
+	.thu-vien {
+		width: 64%;
+	}
+
+	.gioi-thieu {
+		width: 68%;
+	}
+
+	.tay-nho {
+		width: 28%;
+	}
+	.vuon-rau {
+		width: 100%;
+	}
 	.site-header {
 		padding-right: 4.5455%;
 		padding-left: 4.5455%;
@@ -2972,13 +3073,14 @@ p > video {
 		-webkit-align-items: flex-start;
 		-ms-flex-align: start;
 		align-items: flex-start;
+	    display: flex;
 	}
 
 	.wp-custom-logo .site-header-main {
 		-webkit-align-items: flex-end;
 		-ms-flex-align: flex-end;
 		align-items: flex-end;
-		display: block;
+		display: flex;
 	}
 
 	.site-header-menu {
@@ -3351,6 +3453,7 @@ p > video {
 		padding: 0 25% 0;
 		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/07/footer-greensignkaola.png');
 		background-repeat: no-repeat;
+    	background-position: center; 
 		height: 419px;
 	}
 
@@ -3503,6 +3606,7 @@ p > video {
 	    background-repeat: no-repeat;
 	    height: 116px;
 	    display: flex;;
+	    background-size: contain;
 	}
 
 }
@@ -3527,6 +3631,7 @@ p > video {
 		margin-top: 1.75em;
 		margin-bottom: 0px;
 		display: flex;
+		width: 100%
 	}
 
 	.custom-logo {

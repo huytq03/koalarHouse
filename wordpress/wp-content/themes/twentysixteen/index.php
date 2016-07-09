@@ -18,42 +18,78 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+		<div class="tin-tuc home-page-item">
+			<div class="site-header-menu-child">
+			<img src="http://localhost/wordpress/wp-content/uploads/2016/07/tin-tuc.png" style="padding: 35px 30px;" >
+			<h2 class="child-menu-title">Tin tức nổi bật </h2>
+			</div>
+			<ul class="menu-child-items">
+			  <?php
+			    $args = array( 'posts_per_page' => 3, 'orderby' => 'post_date', 'category' => 6 );
+			    $count = 0;
+			    $hotnews = get_posts( $args );
+			    foreach ( $hotnews as $post ) : setup_postdata( $post );
+			    if($count == 0) 
+			    	the_post_thumbnail();
+			    $count++;
+			    ?>
+			        <li>
+			            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			        </li>
+			    <?php endforeach; 
+			    wp_reset_postdata();?>
+			</ul>
+			<?php if($myposts != 0) { ?>
+				<a href="#" class="button-detail button-tin-tuc">Chi tiết</a>
+			<?php } ?>
+		</div>
+		<div class="thong-bao home-page-item">
+			<div class="site-header-menu-child">
+			<img src="http://localhost/wordpress/wp-content/uploads/2016/07/thong-bao.png" style="padding: 35px 30px;" >
+			<h2 class="child-menu-title"> Bảng thông báo </h2>
+			</div>
+			<ul class="menu-child-items">
+				<?php
+			    $args = array( 'posts_per_page' => 3, 'orderby' => 'post_date', 'category' => 4 );
+			    $hotannotations = get_posts( $args );
+			    foreach ( $hotannotations as $post ) : setup_postdata( $post );			    ?>
+			        <li>
+			            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			        </li>
+			    <?php endforeach; 
+			    wp_reset_postdata();?>
+			</ul>
 
-		<?php if ( have_posts() ) : ?>
+			<?php if($hotannotations != 0) { ?>
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php endif; ?>
-
+			<a href="#" class="button-detail button-thong-bao">Chi tiết</a>
+			<?php } ?>
+		</div>
+		<div class="kien-thuc home-page-item">
+			<div class="site-header-menu-child">
+			<img src="http://localhost/wordpress/wp-content/uploads/2016/07/kien-thuc.png" style="padding: 35px 30px;" >
+			<h2 class="child-menu-title"> Kiến thức nuôi dạy trẻ </h2>
+			</div>
+			<ul class="menu-child-items">
 			<?php
-			// Start the loop.
-			while ( have_posts() ) : the_post();
+			    $args = array( 'posts_per_page' => 4, 'orderby' => 'post_date', 'category' => 5 );
+			    $hotknowledges = get_posts( $args );
+			    foreach ( $hotknowledges as $post ) : setup_postdata( $post );			    ?>
+			        <li>
+			            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			        </li>
+			    <?php endforeach; 
+			    wp_reset_postdata();?>
+			</ul>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			// End the loop.
-			endwhile;
-
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-				'next_text'          => __( 'Next page', 'twentysixteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
-			) );
-
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+			<?php if($hotknowledges != 0) { ?>
+			<a href="#" class="button-detail button-kien-thuc">Chi tiết</a>
+			<?php } ?>
+		</div>
+		<div class="thu-vien home-page-item"></div>
+		<div class="gioi-thieu home-page-item"></div>
+		<div class="tay-nho home-page-item"></div>
+		<div class="vuon-rau home-page-item"></div>
 
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
