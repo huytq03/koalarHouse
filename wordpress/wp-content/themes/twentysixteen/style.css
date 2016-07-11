@@ -3451,7 +3451,7 @@ p > video {
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		padding: 0 25% 0;
-		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/07/footer-greensignkaola.png');
+		background-image: url('../../uploads/2016/07/footer-greensignkaola.png');
 		background-repeat: no-repeat;
     	background-position: center; 
 		height: 419px;
@@ -3502,14 +3502,14 @@ p > video {
 	*	custome css
 	*/
 	.menu-item-65 {
-		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu65.png');
+		background-image: url('../../uploads/2016/06/menu65.png');
 		background-repeat: no-repeat;
 		height: 70px;
 	    width: 130px;
 	}
 
 	.menu-item-66 {
-		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu66.png');
+		background-image: url('../../uploads/2016/06/menu66.png');
 		background-repeat: no-repeat;
 		height: 70px;
 	    width: 130px;
@@ -3518,7 +3518,7 @@ p > video {
 		background-color: #d5c651 !important;
 	}
 	.menu-item-72 {
-		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu72.png');
+		background-image: url('../../uploads/2016/06/menu72.png');
 		background-repeat: no-repeat;
 		height: 70px;
 	    width: 130px;
@@ -3527,7 +3527,7 @@ p > video {
 		background-color: #eb7400 !important;
 	}
 	.menu-item-77 {
-		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu77.png');
+		background-image: url('../../uploads/2016/06/menu77.png');
 		background-repeat: no-repeat;
 		height: 70px;
 	    width: 142px;
@@ -3537,7 +3537,7 @@ p > video {
 	}
 	
 	.menu-item-87 {
-		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu87.png');
+		background-image: url('../../uploads/2016/06/menu87.png');
 		background-repeat: no-repeat;
 		height: 70px;
 	    width: 162px;
@@ -3546,7 +3546,7 @@ p > video {
 		background-color: #816d53 !important;
 	}
 	.menu-item-50 {
-		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/06/menu50.png');
+		background-image: url('../../uploads/2016/06/menu50.png');
 		background-repeat: no-repeat;
 		height: 70px;
 	    width: 130px;
@@ -3579,7 +3579,7 @@ p > video {
 		border: none;
 	}
 	.social_wrapper {
-		background-image: url('http://localhost/wordpress/wp-content/uploads/2016/07/social-icon-bg-cloud.png');
+		background-image: url('../../uploads/2016/07/social-icon-bg-cloud.png');
 		background-repeat: no-repeat;
 		    margin: auto 0 auto auto;
 		width: 212px;
@@ -3602,7 +3602,7 @@ p > video {
 	    height: 100%;
 	}
 	.site-header-menu-child {
-	    background-image: url('http://localhost/wordpress/wp-content/uploads/2016/07/sub-menu-brown-header.png');
+	    background-image: url('../../uploads/2016/07/sub-menu-brown-header.png');
 	    background-repeat: no-repeat;
 	    height: 116px;
 	    display: flex;;
