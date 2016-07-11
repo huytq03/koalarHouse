@@ -37,6 +37,10 @@ define('DB_CHARSET', 'utf8mb4');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+define( 'FTP_USER', 'deamon' );
+define( 'FTP_PASS', 'xampp' );
+define( 'FTP_HOST', '127.0.0.1:21' );
+define('FS_METHOD', 'direct');
 /**#@+
  * Authentication Unique Keys and Salts.
  *

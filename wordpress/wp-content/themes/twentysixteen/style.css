@@ -2735,15 +2735,15 @@ p > video {
 }
 .gioi-thieu {
 	height: 400px;
-	background-color: black;
+	background-color: transparent;
 }
 .tay-nho {
 	height: 400px;
-	background-color: blue;
+	background-color: transparent;
 }
 .vuon-rau {
 	height: 400px;
-	background-color: red;
+	background-color: transparent;
 }
 
 .button-detail {
@@ -2776,6 +2776,9 @@ p > video {
     background: #fcf4db;
 }
 .button-kien-thuc:hover{ border-color: #fcf4db; color: #fcf4db; background: #816d53;}
+.site-header-menu-child >img {
+	display: none;
+}
 /**
  * Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
@@ -3608,7 +3611,18 @@ p > video {
 	    display: flex;;
 	    background-size: contain;
 	}
-
+	.site-header-menu-child >img {
+		display: block;
+	}
+	.header-menu-child-tin-tuc {
+		background-image: url('../../uploads/2016/07/tin-tuc-1.png');
+	}
+	.header-menu-child-thong-bao {
+		background-image: url('../../uploads/2016/07/thong-bao-1.png');
+	}
+	.header-menu-child-kien-thuc {
+		background-image: url('../../uploads/2016/07/kien-thuc-1.png');
+	}
 }
 
 

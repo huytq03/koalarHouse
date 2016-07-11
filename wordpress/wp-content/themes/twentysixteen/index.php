@@ -19,8 +19,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<div class="tin-tuc home-page-item">
-			<div class="site-header-menu-child">
-			<img src="http://localhost/wordpress/wp-content/uploads/2016/07/tin-tuc.png" style="padding: 35px 30px;" >
+			<div class="site-header-menu-child header-menu-child-tin-tuc">
+			<img src="wp-content/uploads/2016/07/tin-tuc.png" style="padding: 35px 30px;" >
 			<h2 class="child-menu-title">Tin tức nổi bật </h2>
 			</div>
 			<ul class="menu-child-items">
@@ -39,13 +39,13 @@ get_header(); ?>
 			    <?php endforeach; 
 			    wp_reset_postdata();?>
 			</ul>
-			<?php if($myposts != 0) { ?>
+			<?php if($hotnews != 0) { ?>
 				<a href="#" class="button-detail button-tin-tuc">Chi tiết</a>
 			<?php } ?>
 		</div>
 		<div class="thong-bao home-page-item">
-			<div class="site-header-menu-child">
-			<img src="http://localhost/wordpress/wp-content/uploads/2016/07/thong-bao.png" style="padding: 35px 30px;" >
+			<div class="site-header-menu-child header-menu-child-thong-bao">
+			<img src="wp-content/uploads/2016/07/thong-bao.png" style="padding: 35px 30px;" >
 			<h2 class="child-menu-title"> Bảng thông báo </h2>
 			</div>
 			<ul class="menu-child-items">
@@ -66,8 +66,8 @@ get_header(); ?>
 			<?php } ?>
 		</div>
 		<div class="kien-thuc home-page-item">
-			<div class="site-header-menu-child">
-			<img src="http://localhost/wordpress/wp-content/uploads/2016/07/kien-thuc.png" style="padding: 35px 30px;" >
+			<div class="site-header-menu-child header-menu-child-kien-thuc">
+			<img src="wp-content/uploads/2016/07/kien-thuc.png" style="padding: 35px 30px;" >
 			<h2 class="child-menu-title"> Kiến thức nuôi dạy trẻ </h2>
 			</div>
 			<ul class="menu-child-items">
@@ -86,7 +86,20 @@ get_header(); ?>
 			<a href="#" class="button-detail button-kien-thuc">Chi tiết</a>
 			<?php } ?>
 		</div>
-		<div class="thu-vien home-page-item"></div>
+		<div class="thu-vien home-page-item">
+			<div>
+				<img src="wp-content/uploads/2016/07/home-icon-fun-story.png">
+				<span>Bé Koalar ngộ nghĩnh</span>
+			</div>
+			<div>
+				<img src="wp-content/uploads/2016/07/home-icon-images.png">
+				<span>Thư viện ảnh</span>
+			</div>
+			<div>
+				<img src="wp-content/uploads/2016/07/home-icon-video.png">
+				<span>Video Clip</span>
+			</div>
+		</div>
 		<div class="gioi-thieu home-page-item"></div>
 		<div class="tay-nho home-page-item"></div>
 		<div class="vuon-rau home-page-item"></div>
