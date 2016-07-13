@@ -20,7 +20,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 		<div class="tin-tuc home-page-item">
 			<div class="site-header-menu-child header-menu-child-tin-tuc">
-			<img src="wp-content/uploads/2016/07/tin-tuc.png" style="padding: 35px 30px;" >
+			<img src="wp-content/uploads/2016/07/tin-tuc.png" >
 			<h2 class="child-menu-title">Tin tức nổi bật </h2>
 			</div>
 			<ul class="menu-child-items">
@@ -45,7 +45,7 @@ get_header(); ?>
 		</div>
 		<div class="thong-bao home-page-item">
 			<div class="site-header-menu-child header-menu-child-thong-bao">
-			<img src="wp-content/uploads/2016/07/thong-bao.png" style="padding: 35px 30px;" >
+			<img src="wp-content/uploads/2016/07/thong-bao.png" >
 			<h2 class="child-menu-title"> Bảng thông báo </h2>
 			</div>
 			<ul class="menu-child-items">
@@ -67,7 +67,7 @@ get_header(); ?>
 		</div>
 		<div class="kien-thuc home-page-item">
 			<div class="site-header-menu-child header-menu-child-kien-thuc">
-			<img src="wp-content/uploads/2016/07/kien-thuc.png" style="padding: 35px 30px;" >
+			<img src="wp-content/uploads/2016/07/kien-thuc.png" >
 			<h2 class="child-menu-title"> Kiến thức nuôi dạy trẻ </h2>
 			</div>
 			<ul class="menu-child-items">
@@ -89,19 +89,37 @@ get_header(); ?>
 		<div class="thu-vien home-page-item">
 			<div>
 				<img src="wp-content/uploads/2016/07/home-icon-fun-story.png">
-				<span>Bé Koalar ngộ nghĩnh</span>
+				</br>
+				<a href=<?php echo get_page_link(217); ?>>Bé Koalar </br>ngộ nghĩnh</a>
 			</div>
 			<div>
-				<img src="wp-content/uploads/2016/07/home-icon-images.png">
-				<span>Thư viện ảnh</span>
+				<img src="wp-content/uploads/2016/07/home-icon-images.png" style="margin-bottom: 30px;">
+				</br><a href=<?php echo get_page_link(231); ?> >Thư viện ảnh</a>
 			</div>
 			<div>
-				<img src="wp-content/uploads/2016/07/home-icon-video.png">
-				<span>Video Clip</span>
+				<img src="wp-content/uploads/2016/07/home-icon-video.png" style="margin-bottom: 30px;">
+				</br><a href=<?php echo get_page_link(225); ?> >Video Clip</a>
 			</div>
 		</div>
 		<div class="gioi-thieu home-page-item"></div>
-		<div class="tay-nho home-page-item"></div>
+		<div class="tay-nho home-page-item">
+			<div class="">
+			<img src="wp-content/uploads/2016/07/Forma-11.png" >
+			<h2 > Quỹ bàn tay nhỏ </h2>
+			</div>
+			
+			<ul class="menu-child-items">
+			<?php
+			    $args = array( 'posts_per_page' => 3, 'orderby' => 'post_date', 'category' => 7 );
+			    $hotcharity = get_posts( $args );
+			    foreach ( $hotcharity as $post ) : setup_postdata( $post );			    ?>
+			        <li>
+			            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			        </li>
+			    <?php endforeach; 
+			    wp_reset_postdata();?>
+			</ul>
+		</div>
 		<div class="vuon-rau home-page-item"></div>
 
 		</main><!-- .site-main -->

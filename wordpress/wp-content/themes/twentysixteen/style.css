@@ -2006,7 +2006,8 @@ body:not(.search-results) .entry-summary > :last-child,
 	display: none;
 }
 .menu-child-items {
-	    padding: 5% 10%;
+	padding: 5% 10%;
+	margin-bottom: 5px;
 }
 .menu-child-items > li{
 	padding: 10px 0px 10px 25px;
@@ -2722,15 +2723,15 @@ p > video {
 	background-color: #E1AF2A;
 }
 .thong-bao {
-	height: 400px;
+	height: 380px;
 	background-color: #D0D551;
 }
 .kien-thuc {
-	height: 400px;
+	height: 380px;
 	background-color: #EB7400;
 }
 .thu-vien {
-	height: 180px;
+	height: 200px;
 	background-color: #F2EACB;
 }
 .gioi-thieu {
@@ -3055,8 +3056,11 @@ p > video {
 
 	.thu-vien {
 		width: 64%;
+		display: flex;
 	}
-
+	.thu-vien > div {
+		margin: auto;
+	}
 	.gioi-thieu {
 		width: 68%;
 	}
@@ -3616,12 +3620,22 @@ p > video {
 	}
 	.header-menu-child-tin-tuc {
 		background-image: url('../../uploads/2016/07/tin-tuc-1.png');
+		background-repeat: round;
+	}
+	.site-header-menu-child > img {
+		margin: auto;
+		margin-left: 5%;
+	}
+	.site-header-menu-child > h2 {
+		margin: 5% auto auto 2px;
 	}
 	.header-menu-child-thong-bao {
 		background-image: url('../../uploads/2016/07/thong-bao-1.png');
+		background-repeat: round;
 	}
 	.header-menu-child-kien-thuc {
 		background-image: url('../../uploads/2016/07/kien-thuc-1.png');
+		background-repeat: round;
 	}
 }
 
