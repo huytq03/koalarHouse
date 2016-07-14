@@ -57,7 +57,22 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * Normalizing styles have been helped along thanks to the fine work of
  * Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  */
-
+@font-face {
+   font-family: vnf-lobster;
+   src: url(css/font/VNF-Lobster.ttf);
+}
+@font-face {
+   font-family: utm-showcard;
+   src: url(css/font/UTM Showcard.ttf);
+}
+@font-face {
+   font-family: roboto-medium;
+   src: url(css/font/roboto/Roboto-Medium.ttf);
+}
+@font-face {
+   font-family: roboto;
+   src: url(css/font/roboto/Roboto-Regular.ttf);
+}
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -814,6 +829,8 @@ a:active {
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
 	font-weight: 700;
+	font-size: 17px;
+    font-family: vnf-lobster;
 }
 
 .main-navigation ul ul {
@@ -2023,6 +2040,9 @@ body:not(.search-results) .entry-summary > :last-child,
 .child-menu-title {
 	text-align: center;
     margin-top: 30px;
+    font-size: 25px;
+    font-family:  vnf-lobster;
+    color: white;
 }
 /**
  * IE8 and earlier will drop any block with CSS3 selectors.
@@ -2737,16 +2757,41 @@ p > video {
 .gioi-thieu {
 	height: 400px;
 	background-color: transparent;
+
+}
+.gioi-thieu > h2 {
+	color: #ca6400;
+    font-size: 21px;
+    text-decoration: underline;
 }
 .tay-nho {
 	height: 400px;
 	background-color: transparent;
+	margin-top: 80px;
+}
+.tay-nho-header {
+	display: flex;
+}
+.tay-nho-header > h2 {
+	margin: auto;
+	color: #ca6400;
+    font-size: 21px;
+    text-decoration: underline;
+}
+.tay-nho-menu > li > a {
+	color: #ca6400;
+	 font-size: 14px;
 }
 .vuon-rau {
 	height: 400px;
 	background-color: transparent;
+	margin-top: 50px;
 }
-
+.vuon-rau > h2 {
+	color: #ca6400;
+    font-size: 21px;
+    text-decoration: underline;
+}
 .button-detail {
     white-space: nowrap;
     letter-spacing: 0px;
@@ -3063,19 +3108,40 @@ p > video {
 	}
 	.gioi-thieu {
 		width: 68%;
+		margin-top: 50px;
 	}
 
 	.tay-nho {
 		width: 28%;
+		margin-top: 80px;
 	}
 	.vuon-rau {
 		width: 100%;
+		margin-top: 50px;
 	}
 	.site-header {
 		padding-right: 4.5455%;
 		padding-left: 4.5455%;
 	}
-
+	.bucket-post-home-page {
+		display: flex;
+	}
+	.bucket-post-home-page > span {
+		color: #ca6400
+	}
+	.bucket-post-home-page >img {
+		width: 400px;
+		height: 300px;
+	}
+	.green-post-home-page {
+		display: flex;
+	}
+	.green-post-home-page > span{
+		color: #ca6400
+	}
+	.green-post-home-page > img{
+		border-radius: 20px;
+	}
 	.site-header-main {
 		-webkit-align-items: flex-start;
 		-ms-flex-align: start;
@@ -3562,7 +3628,7 @@ p > video {
 	.menu-item  > a{
 		text-align: center; 
 		width: 128px; height: 72px; display: block; text-decoration: none; 
-		font-family: 'Finger Paint'; font-weight: 400; font-size: 17px; line-height: 82px; color: #fff; 
+    	font-family: vnf-lobster;font-weight: 400; font-size: 17px; line-height: 82px; color: #fff; 
 		text-shadow:none; padding: 0; border: none; margin: 0;  border-radius:0px; -moz-border-radius:0px;
 		 -webkit-border-radius:0px; position: relative; overflow: hidden;
 		}

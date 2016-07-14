@@ -15,7 +15,6 @@
 
 	<?php twentysixteen_post_thumbnail(); ?>
 
-	<?php twentysixteen_excerpt(); ?>
 
 	<?php if ( 'post' === get_post_type() ) : ?>
 

@@ -101,14 +101,31 @@ get_header(); ?>
 				</br><a href=<?php echo get_page_link(225); ?> >Video Clip</a>
 			</div>
 		</div>
-		<div class="gioi-thieu home-page-item"></div>
+		<div class="gioi-thieu home-page-item">
+			<?php 
+				$post_id = 292;
+				$bucket_post = get_post($post_id);
+			?>
+			<h2>
+				<?php echo get_the_post_thumbnail($post_id, array(100,100)) ?>
+				<?php echo $bucket_post->post_title; ?></h2>
+			<div class="bucket-post-home-page">
+				<span>
+					<?php echo $bucket_post->post_excerpt; ?>
+
+					<a class="more-link" href=<?php echo get_permalink($post_id) ?> >Xem tiếp >> </a>
+				</span>
+				<img src="wp-content/uploads/2016/07/imgcenter.png">
+			</div>
+		</div>
+		
 		<div class="tay-nho home-page-item">
-			<div class="">
+			<div class="tay-nho-header">
 			<img src="wp-content/uploads/2016/07/Forma-11.png" >
 			<h2 > Quỹ bàn tay nhỏ </h2>
 			</div>
 			
-			<ul class="menu-child-items">
+			<ul class="menu-child-items tay-nho-menu">
 			<?php
 			    $args = array( 'posts_per_page' => 3, 'orderby' => 'post_date', 'category' => 7 );
 			    $hotcharity = get_posts( $args );
@@ -120,7 +137,24 @@ get_header(); ?>
 			    wp_reset_postdata();?>
 			</ul>
 		</div>
-		<div class="vuon-rau home-page-item"></div>
+		<div class="vuon-rau home-page-item">
+			<?php 
+				$post_id = 296;
+				$bucket_post = get_post($post_id);
+			?>
+			<h2>
+				<?php echo get_the_post_thumbnail($post_id) ?>
+				<?php echo $bucket_post->post_title; ?></h2>
+			<div class="green-post-home-page">
+				<span>
+					<?php echo $bucket_post->post_excerpt; ?>
+
+					<a class="more-link" href=<?php echo get_permalink($post_id) ?> >Xem tiếp >> </a>
+				</span>
+				<img src="wp-content/uploads/2016/07/rausach.png">
+			</div>
+
+		</div>
 
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
