@@ -12,8 +12,8 @@
 
 		</div><!-- .site-content -->
 
-		<footer id="colophon" class="site-footer site-inner" role="contentinfo">
-			<div class="site-info">
+		<footer id="colophon" class="site-footer " role="contentinfo">
+			<div class="site-info site-content site-inner">
 				<?php
 					/**
 					 * Fires before the twentysixteen footer text for footer customization.
@@ -22,13 +22,15 @@
 					 */
 					do_action( 'twentysixteen_credits' );
 				?>
-				<a href="<?php echo esc_url( __( 'https://koalhouse.com.vn', 'twentysixteen' ) ); ?>"><?php printf( __( 'KOALAHOUSE.COM.VN - FORUM | STIEMAP', 'twentysixteen' ) ); ?></a>
+				<a href="<?php echo get_home_url() ?>">KOALAHOUSE.COM.VN - FORUM | SITEMAP</a>
 
 				<table class="footer-address">
 					<tr>
 						<td>
+							<p>
 							* Số 5 Phan Kế Bính, Quận Ba Đình, Hà Nội, Việt Nam </br>
 							  &nbsp;&nbsp;&nbsp;Tel: +(84.4)3772 3060/ 3762 1453/ 3831 4426
+							  </p>
 						</td>
 						<td>
 						</td>

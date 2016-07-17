@@ -49,21 +49,19 @@ get_header(); ?>
 			<h2 class="child-menu-title"> Bảng thông báo </h2>
 			</div>
 			<ul class="menu-child-items">
-				<?php
-			    $args = array( 'posts_per_page' => 3, 'orderby' => 'post_date', 'category' => 4 );
-			    $hotannotations = get_posts( $args );
-			    foreach ( $hotannotations as $post ) : setup_postdata( $post );			    ?>
-			        <li>
-			            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			        </li>
-			    <?php endforeach; 
-			    wp_reset_postdata();?>
+			    <li>
+			    	<a href="./lich-su-kien/">Lịch sự kiện</a>
+			    </li>
+			    <li>
+			    	<a href="./thuc-don-cua-be/">Thực đơn cho bé</a>
+			    </li>
+			    <li>
+			    	<a href="./ban-tin-thang/">Bản tin tháng</a>
+			    </li>
 			</ul>
-
-			<?php if($hotannotations != 0) { ?>
-
+			
 			<a href="#" class="button-detail button-thong-bao">Chi tiết</a>
-			<?php } ?>
+
 		</div>
 		<div class="kien-thuc home-page-item">
 			<div class="site-header-menu-child header-menu-child-kien-thuc">

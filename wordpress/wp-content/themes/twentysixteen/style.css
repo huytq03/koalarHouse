@@ -58,23 +58,23 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  */
 @font-face {
-   font-family: vnf-lobster;
+   font-family: 'vnf-lobster';
    src: url(css/font/VNF-Lobster.ttf);
 }
 @font-face {
-   font-family: utm-showcard;
+   font-family: 'utm-showcard';
    src: url(css/font/UTM Showcard.ttf);
 }
 @font-face {
-   font-family: roboto-medium;
-   src: url(css/font/roboto/Roboto-Medium.ttf);
+   font-family: 'roboto-medium';
+   src: url(css/font/Roboto-Medium.ttf);
 }
 @font-face {
-   font-family: roboto;
-   src: url(css/font/roboto/Roboto-Regular.ttf);
+   font-family: 'roboto';
+   src: url(css/font/Roboto-Regular.ttf);
 }
 html {
-	font-family: sans-serif;
+	font-family: 'roboto';
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
@@ -309,7 +309,7 @@ input,
 select,
 textarea {
 	color: #1a1a1a;
-	font-family: Merriweather, Georgia, serif;
+	font-family: 'roboto';
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.75;
@@ -823,7 +823,7 @@ a:active {
 
 .main-navigation a:hover,
 .main-navigation a:focus {
-	color: #007acc;
+	/*color: #007acc;*/
 }
 
 .main-navigation .current-menu-item > a,
@@ -1528,7 +1528,7 @@ blockquote:after,
 */
 .site-inner {
 	margin: 0 auto;
-	max-width: 1320px;
+	max-width: 1100px;
 	/*max-width: 80%;*/
 	position: relative;
 }
@@ -2423,7 +2423,7 @@ body.search-no-results .page-header {
  */
 
 .site-footer {
-	padding: 0 7.6923% 1.75em;
+/*	padding: 0 7.6923% 1.75em;*/
 }
 
 .site-info {
@@ -2434,7 +2434,9 @@ body.search-no-results .page-header {
 }
 
 .site-info a {
-	color: #686868;
+	font-size: 21px;
+    color: #0d3911;
+    font-family: 'roboto-medium';
 }
 
 .site-info a:hover,
@@ -2743,11 +2745,11 @@ p > video {
 	background-color: #E1AF2A;
 }
 .thong-bao {
-	height: 380px;
+	height: 350px;
 	background-color: #D0D551;
 }
 .kien-thuc {
-	height: 380px;
+	height: 350px;
 	background-color: #EB7400;
 }
 .thu-vien {
@@ -2777,6 +2779,7 @@ p > video {
 	color: #ca6400;
     font-size: 21px;
     text-decoration: underline;
+    margin-left: 5px;
 }
 .tay-nho-menu > li > a {
 	color: #ca6400;
@@ -2807,21 +2810,30 @@ p > video {
 .button-tin-tuc {
 	color: #efc043;
     border: 5px solid #efc043;
-    background: #fcf4db;
+    background: #fcf4db;   
+    position: absolute;
+    top: 90%;
+    right: 0;
 }
 .button-tin-tuc:hover{ border-color: #fcf4db; color: #fcf4db; background: #816d53;}
 .button-thong-bao {
-	color: #efc043;
-    border: 5px solid #efc043;
-    background: #fcf4db;
+	color: #0F4420;
+    border: 5px solid #D0D551;
+    background: #fcf4db;    
+    position: absolute;
+    top: 83%;
+    right: 0;
 }
-.button-thong-bao:hover{ border-color: #fcf4db; color: #fcf4db; background: #816d53;}
+.button-thong-bao:hover{ border-color: #fcf4db; color: #fcf4db; background: #A9BE54;}
 .button-kien-thuc {
-	color: #efc043;
-    border: 5px solid #efc043;
+	color: #EB7400;
+    border: 5px solid #EB7400;
     background: #fcf4db;
+    position: absolute;
+    top: 83%;
+    right: 0;
 }
-.button-kien-thuc:hover{ border-color: #fcf4db; color: #fcf4db; background: #816d53;}
+.button-kien-thuc:hover{ border-color: #fcf4db; color: #fcf4db; background: #CE6321;}
 .site-header-menu-child >img {
 	display: none;
 }
@@ -3085,6 +3097,7 @@ p > video {
 	.home-page-item {
 		float: left;
 		margin: 10px;
+		position: relative;
 	}
 
 	.tin-tuc {
@@ -3092,16 +3105,17 @@ p > video {
 	}
 
 	.thong-bao {
-		width: 31%;
+		width: 30%;
 	}
 
 	.kien-thuc {
-		width: 31%;
+		width: 33%;
 	}
 
 	.thu-vien {
 		width: 64%;
 		display: flex;
+		margin-top: 40px;
 	}
 	.thu-vien > div {
 		margin: auto;
@@ -3130,8 +3144,8 @@ p > video {
 		color: #ca6400
 	}
 	.bucket-post-home-page >img {
-		width: 400px;
-		height: 300px;
+		width: 40%;
+		height: 100%;
 	}
 	.green-post-home-page {
 		display: flex;
@@ -3141,6 +3155,8 @@ p > video {
 	}
 	.green-post-home-page > img{
 		border-radius: 20px;
+		width: 80%;
+		height: 100%;
 	}
 	.site-header-main {
 		-webkit-align-items: flex-start;
@@ -3174,7 +3190,7 @@ p > video {
 	}
 
 	.main-navigation .primary-menu > li {
-		float: left;
+		/*float: left;*/
 	}
 
 	.main-navigation a {
@@ -3185,7 +3201,7 @@ p > video {
 
 	.main-navigation li:hover > a,
 	.main-navigation li.focus > a {
-		color: #007acc;
+		/*color: #007acc;*/
 	}
 
 	.main-navigation ul ul {
@@ -3207,9 +3223,9 @@ p > video {
 	}
 
 	.main-navigation ul ul li {
-		background-color: #fff;
-		border: 1px solid #d1d1d1;
-		border-bottom-width: 0;
+		/*background-color: #fff;*/
+		border: none;
+		/*border-bottom-width: 0;*/
 	}
 
 	.main-navigation ul ul a {
@@ -3240,8 +3256,9 @@ p > video {
 
 	.main-navigation li:hover > ul,
 	.main-navigation li.focus > ul {
-		left: auto;
-		right: 0;
+		left: 0;
+    	right: auto;
+    	top: 100%;
 	}
 
 	.main-navigation ul ul li:hover > ul,
@@ -3523,11 +3540,11 @@ p > video {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		padding: 0 25% 0;
 		background-image: url('../../uploads/2016/07/footer-greensignkaola.png');
 		background-repeat: no-repeat;
     	background-position: center; 
 		height: 419px;
+		padding-left: 10%;
 	}
 
 	.site-footer .social-navigation {
@@ -3574,55 +3591,99 @@ p > video {
 	/*
 	*	custome css
 	*/
+	.primary-menu {
+		height: 100px;
+    	display: flex;
+	}
+	.primary-menu > li {
+		margin: auto;
+    	margin-bottom: 0;
+    	margin-right: 5px;
+	}
+	.primary-menu>li>a::after {
+		display: none;
+	}
+	.primary-menu>li>ul::after {
+		display: none;
+	}
+	.primary-menu>li>ul::before {
+		display: none;
+	}
 	.menu-item-65 {
 		background-image: url('../../uploads/2016/06/menu65.png');
-		background-repeat: no-repeat;
+		background-repeat: round;
 		height: 70px;
 	    width: 130px;
+    	margin-right: 5px;
 	}
-
+	.primary-menu>li:hover {
+		height: 90px;
+	}
 	.menu-item-66 {
 		background-image: url('../../uploads/2016/06/menu66.png');
-		background-repeat: no-repeat;
+		background-repeat: round;
 		height: 70px;
 	    width: 130px;
+    	margin-right: 5px;
 	}
-	.menu-item-67, .menu-item-68, .menu-item-69, .menu-item-70, .menu-item-71{
-		background-color: #d5c651 !important;
+	.sub-menu {
+		padding-top: 5px;
+	}
+	.sub-menu > li > a {
+		text-align: left;
+		margin-left: 5%;
+	}
+	.menu-item-66 >ul >li {
+		background-color: #d5c651;
+	}
+	.menu-item-66 > ul>li:hover {
+		background-color: #3E2E04;
 	}
 	.menu-item-72 {
 		background-image: url('../../uploads/2016/06/menu72.png');
-		background-repeat: no-repeat;
+		background-repeat: round;
 		height: 70px;
 	    width: 130px;
+    	margin-right: 5px;
 	}
-	.menu-item-73, .menu-item-74, .menu-item-75, .menu-item-76{
-		background-color: #eb7400 !important;
+	.menu-item-72 > ul >li{
+		background-color: #eb7400 ;
+	}
+	.menu-item-72 >ul >li:hover {
+		background-color: #3F2F05;
 	}
 	.menu-item-77 {
 		background-image: url('../../uploads/2016/06/menu77.png');
-		background-repeat: no-repeat;
+		background-repeat: round;
 		height: 70px;
 	    width: 142px;
+    	margin-right: 5px;
 	}
-	.menu-item-78, .menu-item-79, .menu-item-80, .menu-item-81, .menu-item-82, .menu-item-83, .menu-item-84, .menu-item-85, .menu-item-86 {
-		background-color: #db666c !important;
+	.menu-item-77 > ul >li {
+		background-color: #db666c;
 	}
-	
+	.menu-item-77 >ul>li:hover {
+		background-color: #700A29;
+	}
 	.menu-item-87 {
 		background-image: url('../../uploads/2016/06/menu87.png');
-		background-repeat: no-repeat;
+		background-repeat: round;
 		height: 70px;
 	    width: 162px;
+    	margin-right: 5px;
 	}
-	.menu-item-199, .menu-item-201, .menu-item-200 {
-		background-color: #816d53 !important;
+	.menu-item-87 > ul >li {
+		background-color: #816d53;
+	}
+	.menu-item-87 > ul > li:hover {
+		background-color: #412F19;
 	}
 	.menu-item-50 {
 		background-image: url('../../uploads/2016/06/menu50.png');
-		background-repeat: no-repeat;
+		background-repeat: round;
 		height: 70px;
 	    width: 130px;
+    	margin-right: 5px;
 	}
 
 	.menu-item  > a{
@@ -3632,6 +3693,9 @@ p > video {
 		text-shadow:none; padding: 0; border: none; margin: 0;  border-radius:0px; -moz-border-radius:0px;
 		 -webkit-border-radius:0px; position: relative; overflow: hidden;
 		}
+	.sub-menu > li > a {
+		font-family: 'roboto';
+	}
 	.menu-item-87  > a {
 		width: 162px;
 	}
@@ -3640,12 +3704,18 @@ p > video {
 	}
 
 	.site-info {
-		margin-top: 20%;
+		display: block;
+		margin: auto;
+    	margin-bottom: 0;
 	}
 	.footer-address {
 		border: none;
-		width: 100%;
-		margin-top: 4%;
+    	width: 100%;
+    	max-width: 800px;
+    	float: left;
+    	font-size: 14px;
+	    font-family: 'roboto';
+		color: #0d3911;
 
 	}
 	.footer-address >tbody>tr>td{
@@ -3688,6 +3758,15 @@ p > video {
 		background-image: url('../../uploads/2016/07/tin-tuc-1.png');
 		background-repeat: round;
 	}
+	.tin-tuc > ul {
+		list-style-type: none;
+	}
+	.thong-bao >ul>li>a {
+		color: #1D4022;
+	}
+	.thong-bao >ul>li {
+		border: none;
+	}
 	.site-header-menu-child > img {
 		margin: auto;
 		margin-left: 5%;
@@ -3702,6 +3781,15 @@ p > video {
 	.header-menu-child-kien-thuc {
 		background-image: url('../../uploads/2016/07/kien-thuc-1.png');
 		background-repeat: round;
+	}
+	.kien-thuc >ul>li>a{
+		color: white;
+	}
+	.kien-thuc >ul>li>a:hover{
+		color: black;
+	}
+	.kien-thuc >ul>li {
+		border: none;
 	}
 }
 
