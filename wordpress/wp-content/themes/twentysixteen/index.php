@@ -40,7 +40,7 @@ get_header(); ?>
 			    wp_reset_postdata();?>
 			</ul>
 			<?php if($hotnews != 0) { ?>
-				<a href="#" class="button-detail button-tin-tuc">Chi tiết</a>
+				<a href="./tin-tuc-noi-bat/" class="button-detail button-tin-tuc">Chi tiết</a>
 			<?php } ?>
 		</div>
 		<div class="thong-bao home-page-item">
@@ -81,22 +81,32 @@ get_header(); ?>
 			</ul>
 
 			<?php if($hotknowledges != 0) { ?>
-			<a href="#" class="button-detail button-kien-thuc">Chi tiết</a>
+			<a href="./kien-thuc-nuoi-day-tre/" class="button-detail button-kien-thuc">Chi tiết</a>
 			<?php } ?>
 		</div>
 		<div class="thu-vien home-page-item">
 			<div>
-				<img src="wp-content/uploads/2016/07/home-icon-fun-story.png">
-				</br>
-				<a href=<?php echo get_page_link(217); ?>>Bé Koalar </br>ngộ nghĩnh</a>
+				<a href=<?php echo get_page_link(217); ?>>
+					<img src="wp-content/uploads/2016/07/home-icon-fun-story.png" style="margin-bottom: 10px;">
+					</br>
+					<span>
+						Bé Koalar ngộ nghĩnh
+					</span>
+				</a>
 			</div>
 			<div>
-				<img src="wp-content/uploads/2016/07/home-icon-images.png" style="margin-bottom: 30px;">
-				</br><a href=<?php echo get_page_link(231); ?> >Thư viện ảnh</a>
+				<a href=<?php echo get_page_link(231); ?> >
+					<img src="wp-content/uploads/2016/07/home-icon-images.png" style="margin-bottom: 10px;">
+					</br>
+					<span>Thư viện ảnh</span>
+				</a>
 			</div>
 			<div>
-				<img src="wp-content/uploads/2016/07/home-icon-video.png" style="margin-bottom: 30px;">
-				</br><a href=<?php echo get_page_link(225); ?> >Video Clip</a>
+				<a href=<?php echo get_page_link(225); ?> >
+					<img src="wp-content/uploads/2016/07/home-icon-video.png" style="margin-bottom: 10px;">
+					</br>
+					<span>Video Clip</span>
+				</a>
 			</div>
 		</div>
 		<div class="gioi-thieu home-page-item">
@@ -119,7 +129,7 @@ get_header(); ?>
 		
 		<div class="tay-nho home-page-item">
 			<div class="tay-nho-header">
-			<img src="wp-content/uploads/2016/07/Forma-11.png" >
+			<img src="wp-content/uploads/2016/07/Forma-11.png">
 			<h2 > Quỹ bàn tay nhỏ </h2>
 			</div>
 			

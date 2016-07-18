@@ -15,6 +15,8 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
+//no comment please
+return;
 if ( post_password_required() ) {
 	return;
 }

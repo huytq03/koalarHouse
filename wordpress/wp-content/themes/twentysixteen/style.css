@@ -2741,7 +2741,7 @@ p > video {
 
 }
 .tin-tuc {
-	height: 600px;
+	height: 640px;
 	background-color: #E1AF2A;
 }
 .thong-bao {
@@ -2753,9 +2753,16 @@ p > video {
 	background-color: #EB7400;
 }
 .thu-vien {
-	height: 200px;
+	height: 240px;
 	background-color: #F2EACB;
 }
+.thu-vien >div {
+	text-align: center;
+}
+.thu-vien >div> a {
+	color:  #5C2918 ;
+}
+
 .gioi-thieu {
 	height: 400px;
 	background-color: transparent;
@@ -2794,6 +2801,7 @@ p > video {
 	color: #ca6400;
     font-size: 21px;
     text-decoration: underline;
+    font-family: 'roboto-medium';
 }
 .button-detail {
     white-space: nowrap;
@@ -4008,9 +4016,10 @@ p > video {
 
 	body.no-sidebar:not(.search-results) article:not(.type-page) .entry-content {
 		float: left;
-		margin-right: -100%;
+		/*margin-right: -100%;
 		margin-left: 34.99999999%;
-		width: 50.00000001%;
+		width: 50.00000001%;*/
+		margin: auto;
 	}
 
 	body.no-sidebar:not(.search-results) article:not(.type-page) .entry-footer {
