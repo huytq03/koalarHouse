@@ -436,7 +436,7 @@ function be_display_posts_shortcode( $atts ) {
 				$excerpt = get_the_excerpt();
 			}
 			
-			$excerpt = ' <span class="excerpt-dash">-</span> <span class="excerpt">' . $excerpt . '</span>';			
+			$excerpt = ' <span class="excerpt">' . $excerpt . '</span>';			
 			
 			
 		}

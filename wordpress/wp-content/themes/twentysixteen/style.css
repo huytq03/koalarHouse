@@ -61,10 +61,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
    font-family: 'vnf-lobster';
    src: url(css/font/VNF-Lobster.ttf);
 }
-@font-face {
-   font-family: 'utm-showcard';
-   src: url(css/font/UTM Showcard.ttf);
-}
+
 @font-face {
    font-family: 'roboto-medium';
    src: url(css/font/Roboto-Medium.ttf);
@@ -3586,8 +3583,8 @@ p > video {
 	.no-sidebar .page-header,
 	.no-sidebar .page-content,
 	.no-sidebar .content-bottom-widgets {
-		margin-right: 15%;
-		/*margin-left: 15%;*/
+		text-align: center;
+	    margin: auto;
 	}
 
 	.widecolumn {
@@ -3599,6 +3596,31 @@ p > video {
 	/*
 	*	custome css
 	*/
+	.my-grid-layout {
+		    list-style-type: none;
+	}
+	.my-grid-layout .title{
+		box-shadow: none;
+	    float: left;
+	    font: bold 20px/1.5 roboto-medium;
+	    color: black;
+	    width: 80%;
+    	text-align: left;
+	}
+	.my-grid-layout .image{
+		float: left;
+  		margin: 0 15px 0 0;
+	}
+	.my-grid-layout .excerpt {
+		font: 200 18px/1.5 roboto;
+		float: left;
+	    width: 80%;
+	    text-align: left;
+	}
+	.my-grid-layout > li {
+		padding: 10px;
+  		overflow: auto;
+	}
 	.primary-menu {
 		height: 100px;
     	display: flex;
@@ -3754,10 +3776,9 @@ p > video {
 	}
 	.site-header-menu-child {
 	    background-image: url('../../uploads/2016/07/sub-menu-brown-header.png');
-	    background-repeat: no-repeat;
-	    height: 116px;
-	    display: flex;;
-	    background-size: contain;
+    	background-repeat: round;
+    	height: 90px;
+    	display: flex;
 	}
 	.site-header-menu-child >img {
 		display: block;
@@ -3954,7 +3975,7 @@ p > video {
 
 	body:not(.search-results) article:not(.type-page) .entry-content {
 		float: right;
-		width: 71.42857144%;
+		/*width: 71.42857144%;*/
 	}
 
 	body:not(.search-results) article:not(.type-page) .entry-content > blockquote.alignleft.below-entry-meta {
