@@ -23,7 +23,7 @@ get_header(); ?>
 	}
 
 
-	$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
+	$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=0&sort_Column=ID");
 
 	if ($children) : ?>
 

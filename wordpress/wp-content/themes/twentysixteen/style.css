@@ -61,6 +61,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
    font-family: 'vnf-lobster';
    src: url(css/font/VNF-Lobster.ttf);
 }
+@font-face {
+   font-family: 'roboto-bold';
+   src: url(css/font/Roboto-Bold.ttf);
+}
 
 @font-face {
    font-family: 'roboto-medium';
@@ -2031,6 +2035,15 @@ body:not(.search-results) .entry-summary > :last-child,
 .menu-child-items > li > a{
     color: black;
 }
+.menu-child-items > .current_page_item {
+    font-family: 'roboto-bold';
+
+    font-size: 18px;
+    font-weight: bold;
+}
+.menu-child-items > .current_page_item > a{
+    color: white
+}
 .menu-child-items > li > a:hover{
     color: #fff;
 }
@@ -2757,7 +2770,9 @@ p > video {
 	text-align: center;
 }
 .thu-vien >div> a {
-	color:  #5C2918 ;
+	color:  #4e210e ;
+	font-family: 'roboto-bold';
+	font-size: 17px;
 }
 
 .gioi-thieu {
@@ -2769,6 +2784,8 @@ p > video {
 	color: #ca6400;
     font-size: 21px;
     text-decoration: underline;
+    font-family: 'vnf-lobster';
+    min-width: 270px;
 }
 .tay-nho {
 	height: 400px;
@@ -2784,6 +2801,7 @@ p > video {
     font-size: 21px;
     text-decoration: underline;
     margin-left: 5px;
+    font-family: 'vnf-lobster'
 }
 .tay-nho-menu > li > a {
 	color: #ca6400;
@@ -2798,7 +2816,7 @@ p > video {
 	color: #ca6400;
     font-size: 21px;
     text-decoration: underline;
-    font-family: 'roboto-medium';
+    font-family: 'vnf-lobster';
 }
 .button-detail {
     white-space: nowrap;
@@ -2820,7 +2838,7 @@ p > video {
     top: 90%;
     right: 0;
 }
-.button-tin-tuc:hover{ border-color: #fcf4db; color: #fcf4db; background: #816d53;}
+.button-tin-tuc:hover{ border-color: #fcf4db; color: #fcf4db; background: #b58203;}
 .button-thong-bao {
 	color: #0F4420;
     border: 5px solid #D0D551;
@@ -3599,10 +3617,16 @@ p > video {
 	.my-grid-layout {
 		    list-style-type: none;
 	}
+	 .koala-ngo-nghinh .title {
+	 	width: 70% !important;
+	 }
+	 .koala-ngo-nghinh .excerpt {
+	 	width: 70% !important;
+	 }
 	.my-grid-layout .title{
 		box-shadow: none;
 	    float: left;
-	    font: bold 20px/1.5 roboto-medium;
+	    font: bold 20px/1.5 'vnf-lobster';
 	    color: black;
 	    width: 80%;
     	text-align: left;
