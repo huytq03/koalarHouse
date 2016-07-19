@@ -3626,7 +3626,7 @@ p > video {
 	.my-grid-layout .title{
 		box-shadow: none;
 	    float: left;
-	    font: bold 20px/1.5 'vnf-lobster';
+	    font: bold 20px/1.5 'roboto-bold';
 	    color: black;
 	    width: 80%;
     	text-align: left;
@@ -3843,6 +3843,25 @@ p > video {
 	}
 	.kien-thuc >ul>li {
 		border: none;
+	}
+	.related-post {
+		float: left;
+    	width: 100%;
+    	border-top-style: solid;
+	    border-top-color: #DCBF70;
+	    margin-top: 10px;
+	}
+	.related-post > ul >li >a {
+	    /*list-style-type: none;*/
+	    color: #CFC9B5;
+	    font-size: 14px;
+	    font-family: 'roboto'
+	}
+	.related-post > h4 {
+		padding: 10px;
+	}
+	.related-post > ul {
+		margin-left: 30px;
 	}
 }
 
