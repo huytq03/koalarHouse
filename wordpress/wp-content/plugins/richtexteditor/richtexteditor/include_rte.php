@@ -1862,8 +1862,13 @@ class RTEWebFileProvider
 		if (is_dir($_x145))
 			throw (new Exception($_x23 . " is a folder"));
 
-		if (!is_dir($_x137->Value))
-			mkdir($_x137->Value,0777);
+		if (!is_dir($_x137->Value)) {
+			if(!mkdir($_x137->Value,0777))
+			 {
+			    $error = error_get_last();
+			    throw (new Exception( "huytq".$_x137->Value." === >".$error['message']));
+			}
+		}
 
 		$_x106->MoveTo($_x145);
 	}

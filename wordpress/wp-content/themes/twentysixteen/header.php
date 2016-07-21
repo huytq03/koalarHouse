@@ -65,7 +65,7 @@
 					</div><!-- .site-header-menu -->
 				<?php endif; ?>
 
-				<div class="headerslider"> <?php echo do_shortcode('[sp_responsiveslider design="design-3"  first_slide="1"  effect="fade" pagination="true" navigation="true"speed="3000" autoplay="true" autoplay_interval="3000"]'); ?>
+				<div class="headerslider"> <?php echo do_shortcode('[sp_responsiveslider design="design-3" first_slide="1"  effect="fade" pagination="true" navigation="true"speed="3000" autoplay="true" autoplay_interval="3000"]'); ?>
 				</div>
 			</div><!-- .site-header-main -->
 
