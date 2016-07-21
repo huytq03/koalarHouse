@@ -23,7 +23,7 @@
 					do_action( 'twentysixteen_credits' );
 				?>
 				<a href="<?php echo get_home_url() ?>">KOALAHOUSE.COM.VN - FORUM | SITEMAP</a>
-
+				</br>
 				<table class="footer-address">
 					<tr>
 						<td>

@@ -1529,7 +1529,7 @@ blockquote:after,
 */
 .site-inner {
 	margin: 0 auto;
-	max-width: 1222px;
+	max-width: 1200px;
 	/*max-width: 80%;*/
 	position: relative;
 }
@@ -3124,17 +3124,15 @@ p > video {
 	}
 
 	.tin-tuc {
-		width: 370px;
+		width: 31%;
 	}
 
 	.thong-bao {
-		width: 370px;
-    	margin-left: 29px;
+		width: 30%;
 	}
 
 	.kien-thuc {
-		width: 370px;
-    	margin-left: 29px;
+		width: 31%;
 	}
 
 	.thu-vien {
@@ -3146,7 +3144,7 @@ p > video {
 		margin: auto;
 	}
 	.gioi-thieu {
-		width: 68%;
+		width: 67%;
 		margin-top: 50px;
 	}
 
@@ -3767,7 +3765,8 @@ p > video {
 	.site-info {
 		display: block;
 		margin: auto;
-    	margin-bottom: 0;
+    	margin-bottom: 0;   
+    	width: 100%;
 	}
 	.footer-address {
 		border: none;
@@ -3839,10 +3838,12 @@ p > video {
 	.header-menu-child-thong-bao {
 		background-image: url('../../uploads/2016/07/thong-bao-1.png');
 		background-repeat: round;
+		height: 116px;
 	}
 	.header-menu-child-kien-thuc {
 		background-image: url('../../uploads/2016/07/kien-thuc-1.png');
 		background-repeat: round;
+		height: 116px;
 	}
 	.kien-thuc >ul>li>a{
 		color: white;
