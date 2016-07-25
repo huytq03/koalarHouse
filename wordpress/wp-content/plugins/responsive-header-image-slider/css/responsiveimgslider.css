@@ -2,6 +2,10 @@
    font-family: 'utm-showcard';
    src: url(../../../themes/twentysixteen/css/font/UTM-Showcard.ttf);
 }
+@font-face {
+   font-family: 'roboto';
+   src: url(../../../themes/twentysixteen/css/font/Roboto-Regular.ttf);
+}
 .slidesjs-container {
   height: 100% !important;
 }
@@ -30,9 +34,9 @@
 #slides.design-2 .slider-readmore{border:2px solid #fff; color:#fff !important; padding:8px 15px; text-transform:uppercase; font-size:14px; display:inline-block}
 
 #slides.design-3 .slider-content{left:35px; background:rgba(0,0,0,0.5); width:50%;  position:absolute; bottom:35px; text-align:left;  padding:15px;}
-#slides.design-3 .slide-title{color:#fff; text-shadow: 0 1px 2px #000; font-family: 'utm-showcard'}
+#slides.design-3 .slide-title{color:#fff; text-shadow: 0 1px 2px #000; font-family: 'utm-showcard'; font-size: 78.5px;}
 #slides.design-3 .slider-short-content{ text-align:center;}
-#slides.design-3 .slider-short-content p{ text-align:left; color:#fff; text-shadow: 0 1px 2px #000; font-size:18px;}
+#slides.design-3 .slider-short-content p{ text-align:left; color:#fff; text-shadow: 0 1px 2px #000; font-size:35px; font-family: 'roboto'}
 #slides.design-3 .slider-readmore{border:2px solid #fff; color:#fff !important; padding:8px 15px; text-transform:uppercase; font-size:14px; display:inline-block}
 
 a.slidesjs-next:focus, a.slidesjs-previous:focus{outline:none;}
