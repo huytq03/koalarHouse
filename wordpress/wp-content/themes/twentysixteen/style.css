@@ -825,11 +825,13 @@ a:active {
 .main-navigation a:focus {
 	/*color: #007acc;*/
 }
-
+.current-menu-item, .current-menu-parent {
+	height: 90px !important;
+}
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
 	font-weight: 700;
-	font-size: 16pt;
+	font-size: 16px;
     font-family: vnf-lobster;
 }
 
@@ -2036,13 +2038,13 @@ body:not(.search-results) .entry-summary > :last-child,
 }
 .menu-child-items > .current_page_item {
     font-family: 'roboto-bold';
-
     font-size: 18px;
     font-weight: bold;
 }
 .menu-child-items > .current_page_item > a{
     color: white
 }
+
 .menu-child-items > li > a:hover{
     color: #fff;
 }
@@ -3699,7 +3701,7 @@ p > video {
 	}
 	.primary-menu > li {
 		margin: auto;
-    	margin-bottom: -7px;
+    	margin-bottom: -5px;
     	margin-right: 5px;
 	}
 	.primary-menu>li>a::after {
@@ -3719,6 +3721,9 @@ p > video {
     	margin-right: 5px;
 	}
 	.primary-menu>li:hover {
+		height: 90px;
+	}
+	.primary-menu>li:active {
 		height: 90px;
 	}
 	.menu-item-66 {
@@ -3787,18 +3792,21 @@ p > video {
 	    width: 130px;
     	margin-right: 5px;
 	}
+	.menu-item  > a:active {
 
+	}
 	.menu-item  > a{
 		text-align: center; 
 		width: 128px; height: 72px; display: block; text-decoration: none; 
-    	font-family: vnf-lobster;font-weight: 400; font-size: 16px; line-height: 82px; color: #fff; 
+    	font-family: vnf-lobster;font-weight: 400 !important; font-size: 16px; line-height: 82px; color: #fff; 
 		text-shadow:none; padding: 0; border: none; margin: 0;  border-radius:0px; -moz-border-radius:0px;
 		 -webkit-border-radius:0px; position: relative; overflow: hidden;
 		}
 	.sub-menu > li > a {
-		font-family: 'roboto-medium';
-    	font-size: 14px;	
+		font-family: 'roboto-medium'  !important;
+    	font-size: 14px !important;	
     }
+
 	.menu-item-87  > a {
 		width: 162px;
 	}
@@ -3842,7 +3850,7 @@ p > video {
 	.site-menu-child {
 		display: block;
 	    background-color: #E1AF2A;
-	    width: 35%;
+        width: 600px;
 	    max-width: 370px;
 	    margin: 0 5% 5% 0;
 	    border-radius: 30px;
@@ -3851,8 +3859,8 @@ p > video {
 	.site-header-menu-child {
 	    background-image: url('../../uploads/2016/07/sub-menu-brown-header.png');
     	background-repeat: round;
-    	height: 90px;
-    	display: flex;
+    	height: 116px;
+	    display: flex;
 	}
 	.site-header-menu-child >img {
 		display: block;
@@ -3954,7 +3962,8 @@ p > video {
 		margin-top: 1.75em;
 		margin-bottom: 0px;
 		display: flex;
-		width: 100%
+		width: 100%;
+		z-index: 1;
 	}
 
 	.custom-logo {
