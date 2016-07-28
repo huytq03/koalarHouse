@@ -164,6 +164,17 @@ if ( !class_exists( 'FooBox_Free_Settings' ) ) {
 
 			//endregion
 
+            //region Demo Tab
+            $tabs['demo'] = __('Demo', 'foobox-image-lightbox');
+
+            $settings[] = array(
+                'id'      => 'demo_output',
+                'title'   => __( 'FooBox Demo', 'foobox-image-lightbox' ),
+                'type'    => 'demo_output',
+                'tab'     => 'demo'
+            );
+            //endregion
+
 			//region Debug Tab
 			$foobox_free = Foobox_Free::get_instance();
 

@@ -3,7 +3,7 @@
 Plugin Name: FooBox Free Image Lightbox
 Plugin URI: http://fooplugins.com/plugins/foobox/
 Description: The best responsive image lightbox for WordPress.
-Version: 1.0.10
+Version: 1.0.11
 Author: FooPlugins
 Author URI: http://fooplugins.com
 License: GPL2
@@ -21,7 +21,7 @@ if (!class_exists('Foobox_Free')) {
 	define( 'FOOBOXFREE_PATH', plugin_dir_path( __FILE__ ));
 	define( 'FOOBOXFREE_URL', plugin_dir_url( __FILE__ ));
 	define( 'FOOBOXFREE_FILE', __FILE__ );
-	define( 'FOOBOXFREE_VERSION', '1.0.10' );
+	define( 'FOOBOXFREE_VERSION', '1.0.11' );
 	define( 'FOOBOXFREE_ACTIVATION_REDIRECT_TRANSIENT_KEY', '_fooboxfree_activation_redirect' );
 
 	// Includes
@@ -99,6 +99,8 @@ if (!class_exists('Foobox_Free')) {
 				$this->render_upgrade_notice();
 			} else if ($type == 'poweredby') {
 				echo '<input readonly disabled type="checkbox" value="on" checked /><small>' . __('This cannot be turned off in the FREE version', 'foobox-image-lightbox') . '</small>';
+			} else if ($type = 'demo_output') {
+				$this->render_demo_1();
 			}
 		}
 
@@ -125,12 +127,39 @@ if (!class_exists('Foobox_Free')) {
 			echo '</pre>';
 		}
 
+		function render_demo_1() {
+			$size = 160; ?>
+			<div class="demo-gallery">
+				<a href="<?php echo trailingslashit(FOOBOXFREE_URL); ?>img/foobot.png">
+					<img height="150" title="I, FooBot" src="<?php echo trailingslashit(FOOBOXFREE_URL); ?>img/foobot.png">
+				</a>
+
+				<a title="This is the settings page you get with the <a target='_blank' href='<?php echo Foobox_Free::FOOBOX_URL; ?>'>PRO version of FooBox</a>!" href="<?php echo trailingslashit(FOOBOXFREE_URL); ?>img/foobox1.jpg">
+					<img height="150" title="FooBox PRO Settings Page" src="<?php echo trailingslashit(FOOBOXFREE_URL); ?>img/foobox1_thumb.jpg">
+				</a>
+
+				<a href="<?php echo trailingslashit(FOOBOXFREE_URL); ?>img/foobox.png">
+					<img height="150" title="<a target='_blank' class='caption_call_to_action' href='<?php echo Foobox_Free::FOOBOX_URL; ?>'>Get The PRO version now!</a>" src="<?php echo trailingslashit(FOOBOXFREE_URL); ?>img/foobox.png">
+				</a>
+
+				<a title="Another settings page you get with the <a target='_blank' href='<?php echo Foobox_Free::FOOBOX_URL; ?>'>PRO version of FooBox</a>! Mmmmm, pretty..." href="<?php echo trailingslashit(FOOBOXFREE_URL); ?>img/foobox2.jpg">
+					<img height="150" title="Another FooBox PRO Settings Page" src="<?php echo trailingslashit(FOOBOXFREE_URL); ?>img/foobox2_thumb.jpg">
+				</a>
+
+				<a title="One more settings page that you get with the <a target='_blank' href='<?php echo Foobox_Free::FOOBOX_URL; ?>'>PRO version of FooBox</a>! Try resizing your browser window" href="<?php echo trailingslashit(FOOBOXFREE_URL); ?>img/foobox3.jpg">
+					<img height="150" title="Yet Another FooBox PRO Settings Page" src="<?php echo trailingslashit(FOOBOXFREE_URL); ?>img/foobox3_thumb.jpg">
+				</a>
+
+
+			</div><?php
+		}
+
 		function render_upgrade_notice() {
 			require_once FOOBOXFREE_PATH . "includes/upgrade.php";
 		}
 
 		function settings_sidebar() {
-			require_once FOOBOXFREE_PATH . "includes/settings-sidebar.php";
+			//require_once FOOBOXFREE_PATH . "includes/settings-sidebar.php";
 		}
 
 		function frontend_init() {

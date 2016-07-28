@@ -28,6 +28,13 @@ $settings_url = admin_url( 'options-general.php?page=foobox-free' );
 		margin-bottom: 20px;
 	}
 
+	@media only screen and (max-width: 500px) {
+		.fooboxfree-badge-foobot,
+		.feature-section img {
+			display: none;
+		}
+	}
+
 </style>
 <div class="wrap about-wrap">
 	<h1><?php echo $title; ?></h1>

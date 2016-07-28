@@ -30,7 +30,6 @@
 .demo-gallery a
 {
   display: inline-block;
-  float: left;
   margin: 10px;
   text-align: center;
   padding: 2px;
@@ -80,7 +79,6 @@
 }
 
 ul.foobox_features {
-	width:700px;
 	padding: 10px;
 }
 
@@ -123,4 +121,33 @@ ul.foobox_features.single_column li {
 
 #foobot_says_tab tr:first-child {
 	display: none !important;
+}
+
+@media only screen and (max-width: 500px) {
+	.foobox-admin-notice-wrapper .foobox-admin-notice {
+		line-height: 1em;
+	}
+
+	.foobox-admin-notice-wrapper .foobox-admin-notice h3 {
+		visibility: hidden;
+		margin: 0;
+		line-height: 0.4em;
+	}
+
+	.foobox-free-settings-wrapper .foobox-free-settings-sidebar {
+		position: relative;
+		padding: 0;
+	}
+
+	div.demo-gallery {
+		width: 450px;
+	}
+
+	div.demo-gallery img {
+		height: 120px;
+	}
+
+	ul.foobox_features li {
+		width: 50%;
+	}
 }

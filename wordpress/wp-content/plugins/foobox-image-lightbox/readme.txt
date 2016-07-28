@@ -75,6 +75,11 @@ There is a setting to try and disable hard coded lightboxes, but this is not a s
 
 == Changelog ==
 
+= 1.0.11 =
+* Updated to use latest FooBox JS and CSS
+* Updated settings to include demo tab
+* Updated admin screens be responsive on phones
+
 = 1.0.10 =
 * Updated to use latest FooBox JS fixing few bugs
 * Smarter admin warnings when using with FooGallery

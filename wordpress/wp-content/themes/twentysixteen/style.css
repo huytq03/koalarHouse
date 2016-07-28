@@ -827,6 +827,7 @@ a:active {
 }
 .current-menu-item, .current-menu-parent {
 	height: 90px !important;
+	margin-bottom: -6px !important;
 }
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
@@ -3733,9 +3734,11 @@ p > video {
 	}
 	.primary-menu>li:hover {
 		height: 90px;
+		margin-bottom: -6px;
 	}
 	.primary-menu>li:active {
 		height: 90px;
+		margin-bottom: -6px;
 	}
 	.menu-item-66 {
 		background-image: url('../../uploads/2016/06/menu66.png');
