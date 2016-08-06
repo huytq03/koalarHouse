@@ -127,7 +127,7 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: 700;
+	font-weight: normal;
 }
 
 small {
@@ -265,7 +265,7 @@ textarea {
 }
 
 optgroup {
-	font-weight: bold;
+	font-weight: normal;
 }
 
 
@@ -312,7 +312,7 @@ textarea {
 	color: #1a1a1a;
 	font-family: 'roboto';
 	font-size: 17px;
-	line-height: 1.75;
+	line-height: normal;
 }
 
 h1,
@@ -322,7 +322,7 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-weight: 700;
+	font-weight: normal;
 	margin: 0;
 	text-rendering: optimizeLegibility;
 }
@@ -345,7 +345,7 @@ blockquote {
 	font-size: 19px;
 	font-size: 1.1875rem;
 	font-style: italic;
-	line-height: 1.4736842105;
+	line-height: normal;
 	margin: 0 0 1.4736842105em;
 	padding: 0 0 0 1.263157895em;
 }
@@ -372,7 +372,7 @@ blockquote small {
 	display: block;
 	font-size: 16px;
 	font-size: 1rem;
-	line-height: 1.75;
+	line-height: normal;
 }
 
 blockquote cite:before,
@@ -388,7 +388,7 @@ blockquote cite {
 
 blockquote strong,
 blockquote b {
-	font-weight: 400;
+	font-weight: normal;
 }
 
 blockquote > :last-child {
@@ -413,7 +413,7 @@ pre {
 	border: 1px solid #d1d1d1;
 	font-size: 16px;
 	font-size: 1rem;
-	line-height: 1.3125;
+	line-height: normal;
 	margin: 0 0 1.75em;
 	max-width: 100%;
 	overflow: auto;
@@ -503,7 +503,7 @@ dl {
 }
 
 dt {
-	font-weight: 700;
+	font-weight: normal;
 }
 
 dd {
@@ -547,7 +547,7 @@ td {
 
 th {
 	border-width: 0 1px 1px 0;
-	font-weight: 700;
+	font-weight: normal;
 }
 
 td {
@@ -608,9 +608,9 @@ input[type="submit"][disabled]:focus {
 	border-radius: 2px;
 	color: #fff;
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	font-weight: 700;
+	font-weight: normal;
 	letter-spacing: 0.046875em;
-	line-height: 1;
+	line-height: normal;
 	padding: 0.84375em 0.875em 0.78125em;
 	text-transform: uppercase;
 }
@@ -676,7 +676,7 @@ textarea:focus {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	letter-spacing: 0.076923077em;
-	line-height: 1.6153846154;
+	line-height: normal;
 	margin-bottom: 1.75em;
 	text-transform: uppercase;
 }
@@ -703,7 +703,7 @@ input[type="search"].search-field {
 	content: "\f400";
 	font-size: 24px;
 	left: 2px;
-	line-height: 42px;
+	line-height: normal;
 	position: relative;
 	width: 40px;
 }
@@ -816,7 +816,7 @@ a:active {
 .main-navigation a {
 	color: #1a1a1a;
 	display: block;
-	line-height: 1.3125;
+	line-height: normal;
 	outline-offset: -1px;
 	padding: 0.84375em 0;
 }
@@ -826,12 +826,12 @@ a:active {
 	/*color: #007acc;*/
 }
 .current-menu-item, .current-menu-parent {
-	height: 90px !important;
-	margin-bottom: -6px !important;
+	height: 88px !important;
+	margin-bottom: -9px !important;
 }
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
-	font-weight: 700;
+	font-weight: normal;
 	font-size: 16px;
     font-family: vnf-lobster;
 }
@@ -932,7 +932,7 @@ a:active {
 .social-navigation a:before {
 	content: "\f415";
 	height: 33px;
-	line-height: 33px;
+	line-height: normal;
 	text-align: center;
 	width: 33px;
 }
@@ -1074,7 +1074,7 @@ a:active {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	letter-spacing: 0.076923077em;
-	line-height: 1.6153846154;
+	line-height: normal;
 	margin-bottom: 0.5384615385em;
 	text-transform: uppercase;
 }
@@ -1084,8 +1084,8 @@ a:active {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 23px;
 	font-size: 1.4375rem;
-	font-weight: 700;
-	line-height: 1.2173913043;
+	font-weight: normal;
+	line-height: normal;
 	text-rendering: optimizeLegibility;
 }
 
@@ -1141,7 +1141,7 @@ a:active {
 .pagination .nav-links:after {
 	color: #fff;
 	font-size: 32px;
-	line-height: 51px;
+	line-height: normal;
 	opacity: 0.3;
 	position: absolute;
 	width: 52px;
@@ -1166,7 +1166,7 @@ a:active {
 .pagination .page-numbers {
 	display: none;
 	letter-spacing: 0.013157895em;
-	line-height: 1;
+	line-height: normal;
 	margin: 0 0.7368421053em 0 -0.7368421053em;
 	padding: 0.8157894737em 0.7368421053em 0.3947368421em;
 	text-transform: uppercase;
@@ -1174,7 +1174,7 @@ a:active {
 
 .pagination .current {
 	display: inline-block;
-	font-weight: 700;
+	/*font-weight: 700;*/
 }
 
 .pagination .prev,
@@ -1196,7 +1196,7 @@ a:active {
 .pagination .next:before {
 	font-size: 32px;
 	height: 53px;
-	line-height: 52px;
+	line-height: normal;
 	position: relative;
 	width: 53px;
 }
@@ -1242,7 +1242,7 @@ a:active {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	line-height: 1.6153846154;
+	line-height: normal;
 	margin: 0 7.6923% 2.1538461538em;
 	padding: 1.0769230769em 0;
 }
@@ -1297,7 +1297,7 @@ a:active {
 	display: block;
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 14px;
-	font-weight: 700;
+	font-weight: normal;
 	left: -9999em;
 	outline: none;
 	padding: 15px 23px 14px;
@@ -1419,7 +1419,7 @@ blockquote:after,
 	font-size: 16px;
 	font-size: 1rem;
 	letter-spacing: 0.046875em;
-	line-height: 1.3125;
+	line-height: normal;
 	margin: 0 0 1.75em;
 	text-transform: uppercase;
 }
@@ -1439,13 +1439,13 @@ blockquote:after,
 
 .widget_calendar td,
 .widget_calendar th {
-	line-height: 2.5625;
+	line-height: normal;
 	padding: 0;
 	text-align: center;
 }
 
 .widget_calendar caption {
-	font-weight: 900;
+	/*font-weight: 900;*/
 	margin-bottom: 1.75em;
 }
 
@@ -1453,7 +1453,7 @@ blockquote:after,
 	background-color: #007acc;
 	color: #fff;
 	display: block;
-	font-weight: 700;
+	/*font-weight: 700;*/
 }
 
 .widget_calendar tbody a:hover,
@@ -1469,7 +1469,7 @@ blockquote:after,
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	line-height: 1.615384615;
+	line-height: normal;
 	margin-bottom: 0.538461538em;
 }
 
@@ -1490,7 +1490,7 @@ blockquote:after,
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-style: normal;
-	line-height: 1.615384615;
+	line-height: normal;
 	margin-bottom: 0.538461538em;
 }
 
@@ -1508,7 +1508,7 @@ blockquote:after,
 	border-radius: 2px;
 	display: inline-block;
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	line-height: 1;
+	line-height: normal;
 	margin: 0 0.1875em 0.4375em 0;
 	padding: 0.5625em 0.4375em 0.5em;
 }
@@ -1594,8 +1594,8 @@ blockquote:after,
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 23px;
 	font-size: 1.4375rem;
-	font-weight: 700;
-	line-height: 1.2173913043;
+	font-weight: normal;
+	line-height: normal;
 	margin: 0;
 }
 
@@ -1617,8 +1617,8 @@ blockquote:after,
 	display: none;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	font-weight: 400;
-	line-height: 1.0769230769;
+	font-weight: normal;
+	line-height: normal;
 	margin: 0.538461538em 0 0;
 }
 
@@ -1695,8 +1695,8 @@ blockquote:after,
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 28px;
 	font-size: 1.75rem;
-	font-weight: 700;
-	line-height: 1.25;
+	font-weight: normal;
+	line-height: normal;
 	margin-bottom: 1em;
 }
 
@@ -1742,7 +1742,7 @@ a.post-thumbnail:focus {
 .textwidget h1 {
 	font-size: 28px;
 	font-size: 1.75rem;
-	line-height: 1.25;
+	line-height: normal;
 	margin-top: 2em;
 	margin-bottom: 1em;
 }
@@ -1753,7 +1753,7 @@ a.post-thumbnail:focus {
 .textwidget h2 {
 	font-size: 23px;
 	font-size: 1.4375rem;
-	line-height: 1.2173913043;
+	line-height: normal;
 	margin-top: 2.4347826087em;
 	margin-bottom: 1.2173913043em;
 }
@@ -1764,7 +1764,7 @@ a.post-thumbnail:focus {
 .textwidget h3 {
 	font-size: 19px;
 	font-size: 1.1875rem;
-	line-height: 1.1052631579;
+	line-height: normal;
 	margin-top: 2.9473684211em;
 	margin-bottom: 1.4736842105em;
 }
@@ -1783,7 +1783,7 @@ a.post-thumbnail:focus {
 .textwidget h6 {
 	font-size: 16px;
 	font-size: 1rem;
-	line-height: 1.3125;
+	line-height: normal;
 	margin-top: 3.5em;
 	margin-bottom: 1.75em;
 }
@@ -1827,7 +1827,7 @@ a.post-thumbnail:focus {
 .textwidget h4,
 .textwidget h5,
 .textwidget h6 {
-	font-weight: 900;
+	font-weight: normal;
 	font-family: 'roboto-bold'
 }
 
@@ -1871,7 +1871,7 @@ body:not(.search-results) .entry-summary {
 	color: #686868;
 	font-size: 19px;
 	font-size: 1.1875rem;
-	line-height: 1.4736842105;
+	line-height: normal;
 	margin-bottom: 1.4736842105em;
 }
 
@@ -1962,8 +1962,8 @@ body:not(.search-results) .entry-summary > :last-child,
 	clear: none;
 	font-size: 16px;
 	font-size: 1rem;
-	font-weight: 900;
-	line-height: 1.75;
+	font-weight: normal;
+	line-height: normal;
 	margin: 0;
 }
 
@@ -1971,7 +1971,7 @@ body:not(.search-results) .entry-summary > :last-child,
 	color: #686868;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	line-height: 1.6153846154;
+	line-height: normal;
 	margin-bottom: 1.6153846154em;
 	overflow: hidden;
 }
@@ -1985,7 +1985,7 @@ body:not(.search-results) .entry-summary > :last-child,
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	line-height: 1.6153846154;
+	line-height: normal;
 	margin-top: 2.1538461538em;
 }
 
@@ -2022,7 +2022,7 @@ body:not(.search-results) .entry-summary > :last-child,
 	font-size: 13px;
 	font-size: 0.8125rem;
 	letter-spacing: 0.076923077em;
-	line-height: 1.6153846154;
+	line-height: normal;
 	margin-bottom: 0.5384615385em;
 	text-transform: uppercase;
 }
@@ -2035,7 +2035,7 @@ body:not(.search-results) .entry-summary > :last-child,
 	margin-bottom: 5px;
 }
 .menu-child-items > li{
-	padding: 10px 0px 10px 25px;
+	padding: 10px 0px 10px 0px;
     border-bottom: 1px dashed #fff;
     color: black;
     font-size: 19px;
@@ -2046,7 +2046,7 @@ body:not(.search-results) .entry-summary > :last-child,
 .menu-child-items > .current_page_item {
     font-family: 'roboto-bold';
     font-size: 19px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     color: white;
 }
 .menu-child-items > .current_page_item > a{
@@ -2097,14 +2097,14 @@ body.search-no-results .page-header {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 23px;
 	font-size: 1.4375rem;
-	line-height: 1.2173913043;
+	line-height: normal;
 }
 
 .taxonomy-description {
 	color: #686868;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	line-height: 1.6153846154;
+	line-height: normal;
 }
 
 .taxonomy-description p {
@@ -2129,7 +2129,7 @@ body.search-no-results .page-header {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	height: 1.8461538462em;
-	line-height: 1.6923076923em;
+	line-height: normal;
 	margin-right: 0.3076923077em;
 	text-align: center;
 	width: 1.8461538462em;
@@ -2166,7 +2166,7 @@ body.search-no-results .page-header {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-style: italic;
-	line-height: 1.6153846154;
+	line-height: normal;
 	padding-top: 1.0769230769em;
 }
 
@@ -2198,7 +2198,7 @@ body.search-no-results .page-header {
 .format-chat .entry-title {
 	font-size: 19px;
 	font-size: 1.1875rem;
-	line-height: 1.473684211;
+	line-height: normal;
 	margin-bottom: 1.473684211em;
 }
 
@@ -2227,8 +2227,8 @@ body.search-no-results .page-header {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 23px;
 	font-size: 1.4375rem;
-	font-weight: 700;
-	line-height: 1.3125;
+	/*font-weight: 700;*/
+	line-height: normal;
 	padding-top: 1.217391304em;
 }
 
@@ -2283,7 +2283,7 @@ body.search-no-results .page-header {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	line-height: 1.6153846154;
+	line-height: normal;
 }
 
 .comment-metadata {
@@ -2333,7 +2333,7 @@ body.search-no-results .page-header {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	line-height: 1;
+	line-height: normal;
 	margin-top: 2.1538461538em;
 	padding: 0.5384615385em 0.5384615385em 0.4615384615em;
 }
@@ -2356,7 +2356,7 @@ body.search-no-results .page-header {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	letter-spacing: 0.076923077em;
-	line-height: 1.6153846154;
+	line-height: normal;
 	margin-bottom: 0.5384615385em;
 	text-transform: uppercase;
 }
@@ -2372,14 +2372,14 @@ body.search-no-results .page-header {
 	color: #686868;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	line-height: 1.6153846154;
+	line-height: normal;
 	margin-bottom: 2.1538461538em;
 }
 
 .no-comments {
 	border-top: 1px solid #d1d1d1;
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	font-weight: 700;
+	/*font-weight: 700;*/
 	margin: 0;
 	padding-top: 1.75em;
 }
@@ -2449,7 +2449,7 @@ body.search-no-results .page-header {
 	color: #686868;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	line-height: 1.6153846154;
+	line-height: normal;
 }
 
 .site-info a {
@@ -2466,7 +2466,7 @@ body.search-no-results .page-header {
 .site-footer .site-title {
 	font-family: inherit;
 	font-size: inherit;
-	font-weight: 400;
+	font-weight: normal;
 }
 
 .site-footer .site-title:after {
@@ -2569,7 +2569,7 @@ p > video {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-style: italic;
-	line-height: 1.6153846154;
+	line-height: normal;
 	padding-top: 0.5384615385em;
 }
 
@@ -2633,7 +2633,7 @@ p > video {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-style: italic;
-	line-height: 1.6153846154;
+	line-height: normal;
 	padding-top: 0.5384615385em;
 }
 
@@ -2674,8 +2674,8 @@ p > video {
 .widecolumn h2 {
 	font-size: 23px;
 	font-size: 1.4375rem;
-	font-weight: 900;
-	line-height: 1.2173913043;
+	font-weight: normal;
+	line-height: normal;
 	margin-bottom: 1.2173913043em;
 }
 
@@ -2693,9 +2693,9 @@ p > video {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	font-weight: 400;
+	font-weight: normal;
 	letter-spacing: 0.076923077em;
-	line-height: 1.6153846154;
+	line-height: normal;
 	text-transform: uppercase;
 }
 
@@ -2704,7 +2704,7 @@ p > video {
 }
 
 .widecolumn .mu_register label strong {
-	font-weight: 400;
+	/*font-weight: 400;*/
 }
 
 .widecolumn #key,
@@ -2853,7 +2853,7 @@ p > video {
     white-space: nowrap;
     letter-spacing: 0px;
     font-size: 16px;
-    line-height: 70px;
+    line-height: 4;
     text-align: center;
     display: inline-block;
     min-width: 70px;
@@ -2969,7 +2969,7 @@ p > video {
 	.site-title {
 		font-size: 28px;
 		font-size: 1.75rem;
-		line-height: 1.25;
+		line-height: normal;
 	}
 
 	.wp-custom-logo .site-title {
@@ -3010,7 +3010,7 @@ p > video {
 	.post-navigation .post-title {
 		font-size: 28px;
 		font-size: 1.75rem;
-		line-height: 1.25;
+		line-height: normal;
 	}
 
 	/* restore screen-reader-text */
@@ -3043,7 +3043,7 @@ p > video {
 	.entry-title {
 		font-size: 33px;
 		font-size: 2.0625rem;
-		line-height: 1.2727272727;
+		line-height: normal;
 		margin-bottom: 0.8484848485em;
 	}
 
@@ -3203,6 +3203,7 @@ p > video {
 	.bucket-post-home-page > span {
 		color: #ca6400;
 		margin-top: 30px;
+		width: 60%;
 	}
 	.bucket-post-home-page > span >a {
 		color: #ca6400;
@@ -3219,7 +3220,8 @@ p > video {
 	}
 	.green-post-home-page > span{
 		color: #ca6400;
-		margin-top: 30px;
+		margin-top: 30px;	
+		width: 40%;
 	}
 	.green-post-home-page > span >a {
 		color: #ca6400;
@@ -3229,7 +3231,7 @@ p > video {
 	}
 	.green-post-home-page > img{
 		border-radius: 20px;
-		width: 80%;
+		width: 60%;
 		height: 100%;
 	}
 	.site-header-main {
@@ -3348,7 +3350,7 @@ p > video {
 
 	.main-navigation .menu-item-has-children > a {
 		margin: 0;
-		padding-right: 2.25em;
+		/*padding-right: 2.25em;*/
 	}
 
 	.main-navigation .menu-item-has-children > a:after {
@@ -3480,14 +3482,14 @@ p > video {
 	.widget textarea {
 		font-size: 13px;
 		font-size: 0.8125rem;
-		line-height: 1.6153846154;
+		line-height: normal;
 	}
 
 	.widget button,
 	.widget input[type="button"],
 	.widget input[type="reset"],
 	.widget input[type="submit"] {
-		line-height: 1;
+		line-height: normal;
 		padding: 0.846153846em;
 	}
 
@@ -3505,21 +3507,21 @@ p > video {
 	.widget h1 {
 		font-size: 23px;
 		font-size: 1.4375rem;
-		line-height: 1.2173913043;
+		line-height: normal;
 		margin-bottom: 0.9130434783em;
 	}
 
 	.widget h2 {
 		font-size: 19px;
 		font-size: 1.1875rem;
-		line-height: 1.1052631579;
+		line-height: normal;
 		margin-bottom: 1.1052631579em;
 	}
 
 	.widget h3 {
 		font-size: 16px;
 		font-size: 1rem;
-		line-height: 1.3125;
+		line-height: normal;
 		margin-bottom: 1.3125em;
 	}
 
@@ -3528,7 +3530,7 @@ p > video {
 	.widget h6 {
 		font-size: 13px;
 		font-size: 0.8125rem;
-		line-height: 1.6153846154;
+		line-height: normal;
 		margin-bottom: 0.9130434783em;
 	}
 
@@ -3546,7 +3548,7 @@ p > video {
 
 	.widget_calendar td,
 	.widget_calendar th {
-		line-height: 2.6923076923;
+		line-height: normal;
 		padding: 0;
 	}
 
@@ -3562,7 +3564,7 @@ p > video {
 	.widget .search-submit:before {
 		font-size: 16px;
 		left: 1px;
-		line-height: 35px;
+		line-height: normal;
 		width: 34px;
 	}
 
@@ -3713,7 +3715,7 @@ p > video {
 	}
 	.primary-menu > li {
 		margin: auto;
-    	margin-bottom: -5px;
+    	margin-bottom: -1px;
     	margin-right: 5px;
 	}
 	.primary-menu>li>a::after {
@@ -3727,14 +3729,13 @@ p > video {
 	}
 	.menu-item-65 {
 		background-image: url('../../uploads/2016/06/menu65.png');
-		background-repeat: round;
 		height: 70px;
-	    width: 130px;
     	margin-right: 5px;
+    	width: 111px;
 	}
 	.primary-menu>li:hover {
 		height: 90px;
-		margin-bottom: -6px;
+		margin-bottom: -10px;
 	}
 	.primary-menu>li:active {
 		height: 90px;
@@ -3742,10 +3743,9 @@ p > video {
 	}
 	.menu-item-66 {
 		background-image: url('../../uploads/2016/06/menu66.png');
-		background-repeat: round;
 		height: 70px;
-	    width: 130px;
     	margin-right: 5px;
+    	    width: 111px;
 	}
 	.sub-menu {
 		padding-top: 5px;
@@ -3762,10 +3762,9 @@ p > video {
 	}
 	.menu-item-72 {
 		background-image: url('../../uploads/2016/06/menu72.png');
-		background-repeat: round;
 		height: 70px;
-	    width: 130px;
     	margin-right: 5px;
+    	width: 123px;
 	}
 	.menu-item-72 > ul {
 		background-color: #eb7400 ;
@@ -3775,10 +3774,9 @@ p > video {
 	}
 	.menu-item-77 {
 		background-image: url('../../uploads/2016/06/menu77.png');
-		background-repeat: round;
 		height: 70px;
-	    width: 142px;
     	margin-right: 5px;
+    	width: 153px;
 	}
 	.menu-item-77 > ul  {
 		background-color: #db666c;
@@ -3788,10 +3786,9 @@ p > video {
 	}
 	.menu-item-87 {
 		background-image: url('../../uploads/2016/06/menu87.png');
-		background-repeat: round;
 		height: 70px;
-	    width: 162px;
     	margin-right: 5px;
+    	width: 156px;
 	}
 	.menu-item-87 > ul  {
 		background-color: #816d53;
@@ -3801,20 +3798,34 @@ p > video {
 	}
 	.menu-item-50 {
 		background-image: url('../../uploads/2016/06/menu50.png');
-		background-repeat: round;
 		height: 70px;
-	    width: 130px;
     	margin-right: 5px;
+    	width: 98px;
+	}
+	.menu-item-50:hover, .menu-item-50:active {
+		height: 86px !important;
 	}
 	.menu-item  > a:active {
 
 	}
 	.menu-item  > a{
 		text-align: center; 
-		width: 128px; height: 72px; display: block; text-decoration: none; 
-    	font-family: vnf-lobster;font-weight: 400 !important; font-size: 16px; line-height: 82px; color: #fff; 
-		text-shadow:none; padding: 0; border: none; margin: 0;  border-radius:0px; -moz-border-radius:0px;
-		 -webkit-border-radius:0px; position: relative; overflow: hidden;
+		display: block; 
+		text-decoration: none; 
+    	font-family: vnf-lobster;
+    	/*font-weight: 400 !important; */
+    	font-size: 16px; 
+    	line-height: 82px; 
+    	color: #fff; 
+		text-shadow:none; 
+		padding: 0; 
+		border: none; 
+		margin: 0;  
+		border-radius:0px;
+		 -moz-border-radius:0px;
+		 -webkit-border-radius:0px;
+		  position: relative; 
+		  overflow: hidden;
 		}
 	.sub-menu > li > a {
 		font-family: 'roboto-medium'  !important;
@@ -3888,14 +3899,18 @@ p > video {
 		list-style-type: none;
 	}
 	.thong-bao >ul >li {
-	    color: #17431f;
-    	font-weight: bold;
+	    color: #17431f;/*
     	font-size: 30px;
-    	padding: 0;
+    	padding: 0;*/
 	}
 	.thong-bao >ul>li>a {
 		color: #17431f;
     	font-size: 18px;
+	}
+	.thong-bao >ul >li:hover {
+	    color: white;/*
+    	font-size: 30px;
+    	padding: 0;*/
 	}
 	.thong-bao >ul>li {
 		border: none;
@@ -3919,11 +3934,13 @@ p > video {
 		height: 116px;
 	}
 	.kien-thuc >ul >li {
-	    color: white;
-    	font-weight: bold;
+	    color: white;/*
     	font-size: 30px;
-    	padding: 0;
+    	padding: 0;*/
 
+	}
+	.kien-thuc >ul>li:hover{
+		color: black;
 	}
 	.kien-thuc >ul>li>a{
 		color: white;
@@ -4018,7 +4035,7 @@ p > video {
 	.entry-title {
 		font-size: 40px;
 		font-size: 2.5rem;
-		line-height: 1.225;
+		line-height: normal;
 		margin-bottom: 1.05em;
 	}
 
@@ -4033,7 +4050,7 @@ p > video {
 	.format-chat .entry-title {
 		font-size: 23px;
 		font-size: 1.4375em;
-		line-height: 1.304347826;
+		line-height: normal;
 		margin-bottom: 1.826086957em;
 	}
 
@@ -4046,7 +4063,7 @@ p > video {
 	.comment-content h1 {
 		font-size: 33px;
 		font-size: 2.0625rem;
-		line-height: 1.2727272727;
+		line-height: normal;
 		margin-top: 1.696969697em;
 		margin-bottom: 0.8484848485em;
 	}
@@ -4056,7 +4073,7 @@ p > video {
 	.comment-content h2 {
 		font-size: 28px;
 		font-size: 1.75rem;
-		line-height: 1.25;
+		line-height: normal;
 		margin-top: 2em;
 		margin-bottom: 1em;
 	}
@@ -4066,7 +4083,7 @@ p > video {
 	.comment-content h3 {
 		font-size: 23px;
 		font-size: 1.4375rem;
-		line-height: 1.2173913043;
+		line-height: normal;
 		margin-top: 2.4347826087em;
 		margin-bottom: 1.2173913043em;
 	}
@@ -4089,7 +4106,7 @@ p > video {
 	.comment-content h6 {
 		font-size: 19px;
 		font-size: 1.1875rem;
-		line-height: 1.1052631579;
+		line-height: normal;
 		margin-top: 2.9473684211em;
 		margin-bottom: 1.473684211em;
 	}
@@ -4206,7 +4223,7 @@ p > video {
 	body:not(.search-results) .entry-summary {
 		font-size: 23px;
 		font-size: 1.4375rem;
-		line-height: 1.5217391304;
+		line-height: normal;
 		margin-bottom: 1.826086957em;
 	}
 
@@ -4238,7 +4255,7 @@ p > video {
 	body:not(.search-results) .entry-summary blockquote {
 		font-size: 23px;
 		font-size: 1.4375rem;
-		line-height: 1.5217391304;
+		line-height: normal;
 		margin: 0 0 1.5217391304em;
 		padding-left: 1.347826087em;
 	}
@@ -4255,7 +4272,7 @@ p > video {
 	body:not(.search-results) .entry-summary blockquote small {
 		font-size: 19px;
 		font-size: 1.1875rem;
-		line-height: 1.8421052632;
+		line-height: normal;
 	}
 
 	body:not(.search-results) .entry-summary th,
@@ -4266,7 +4283,7 @@ p > video {
 	body:not(.search-results) .entry-summary pre {
 		font-size: 16px;
 		font-size: 1rem;
-		line-height: 1.75;
+		line-height: normal;
 		margin-bottom: 1.75em;
 		padding: 1.75em;
 	}
@@ -4384,7 +4401,7 @@ p > video {
 
 	.entry-title {
 		font-size: 24.75pt;
-		line-height: 1.2727272727;
+		line-height: normal;
 		margin-bottom: 1.696969697em;
 	}
 
@@ -4398,7 +4415,7 @@ p > video {
 	.format-audio .entry-title,
 	.format-chat .entry-title {
 		font-size: 17.25pt;
-		line-height: 1.304347826;
+		line-height: normal;
 		margin-bottom: 1.826086957em;
 	}
 

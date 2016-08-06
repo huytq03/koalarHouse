@@ -90,7 +90,7 @@ get_header(); ?>
 					<img src="wp-content/uploads/2016/07/home-icon-fun-story.png" style="margin-bottom: 10px;">
 					</br>
 					<span>
-						Bé Koalar ngộ nghĩnh
+						Bé Koala ngộ nghĩnh
 					</span>
 				</a>
 			</div>

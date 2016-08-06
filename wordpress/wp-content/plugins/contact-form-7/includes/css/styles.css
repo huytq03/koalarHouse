@@ -1,8 +1,77 @@
 div.wpcf7 {
 	margin: 0;
-	padding: 0;
+}
+.contact-form {
+	float: left;
+	background-image: url('../../images/lien-he.png');
+	width: 716px;
+	background-repeat: no-repeat;
+    height: 500px;
+    margin-left: 60px;
+}
+.contact-detail >p >input[type="text"] {
+	border-radius: 5px;
+}
+.contact-detail >p >input[type="submit"] {
+	color: #7e0000 ;
+    font-family: 'roboto';
+    font-size: 18px;
+    border: none;
+    background-image: url('../../images/contact-save-bg.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    letter-spacing: 0;
+    padding: 0;
+    text-transform: none;
+    width: 140px;
+    float: right;
+    height: 31px;
+}
+.contact-menu {
+	float: left;
+	width: 370px;
+	background-image: url('../../images/lien-he-menu.png');
+	background-repeat: no-repeat;
+	height: 209px;
+}
+.wpcf7-form {
+	margin: auto;
 }
 
+.contact-detail {
+	width: 50%;
+	float: left;
+	margin-left: 65px;
+	margin-top: 60px;
+	max-width: 320px;
+}
+.contact-detail> p {
+	padding: 5px;
+	color: black;
+	font-size: 15pt;
+	margin: 0
+}
+.contact-info {
+	float: left;
+	width: 50%;
+	font-size: 12pt;
+	max-width: 260px;
+	margin-top: 200px;
+	margin-left: 40px;
+}
+.contact-info > p {
+	padding: 0;
+    margin: 0;
+}
+.wpcf7-text {
+	width: 285px !important;
+	height: 24px;
+	padding: 0 !important;
+}
+.wpcf7-textarea {
+	width: 290px;
+	height: 80px;
+}
 div.wpcf7-response-output {
 	margin: 2em 0.5em 1em;
 	padding: 0.2em 1em;
