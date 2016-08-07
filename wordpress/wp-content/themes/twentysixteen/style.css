@@ -2044,7 +2044,7 @@ body:not(.search-results) .entry-summary > :last-child,
     color: black;
 }
 .menu-child-items > .current_page_item {
-    font-family: 'roboto-bold';
+    font-family: 'roboto';
     font-size: 19px;
     /*font-weight: bold;*/
     color: white;
@@ -3715,7 +3715,7 @@ p > video {
 	}
 	.primary-menu > li {
 		margin: auto;
-    	margin-bottom: -1px;
+    	margin-bottom: -6px;
     	margin-right: 5px;
 	}
 	.primary-menu>li>a::after {
@@ -3732,6 +3732,7 @@ p > video {
 		height: 70px;
     	margin-right: 5px;
     	width: 111px;
+    	background-repeat: round;
 	}
 	.primary-menu>li:hover {
 		height: 90px;
@@ -3746,6 +3747,9 @@ p > video {
 		height: 70px;
     	margin-right: 5px;
     	    width: 111px;
+
+
+    	background-repeat: round;
 	}
 	.sub-menu {
 		padding-top: 5px;
@@ -3765,6 +3769,8 @@ p > video {
 		height: 70px;
     	margin-right: 5px;
     	width: 123px;
+
+    	background-repeat: round;
 	}
 	.menu-item-72 > ul {
 		background-color: #eb7400 ;
@@ -3777,6 +3783,7 @@ p > video {
 		height: 70px;
     	margin-right: 5px;
     	width: 153px;
+    	background-repeat: round;
 	}
 	.menu-item-77 > ul  {
 		background-color: #db666c;
@@ -3789,6 +3796,7 @@ p > video {
 		height: 70px;
     	margin-right: 5px;
     	width: 156px;
+    	background-repeat: round;
 	}
 	.menu-item-87 > ul  {
 		background-color: #816d53;
@@ -3801,6 +3809,7 @@ p > video {
 		height: 70px;
     	margin-right: 5px;
     	width: 98px;
+    	background-repeat: round;
 	}
 	.menu-item-50:hover, .menu-item-50:active {
 		height: 86px !important;

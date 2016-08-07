@@ -23,7 +23,9 @@ get_header(); ?>
 	}
 
 
-	$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=0&sort_Column=ID");
+	#$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=0&sort_Column=ID");
+	$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=0");
+
 
 	if ($children) : ?>
 
@@ -33,7 +35,7 @@ get_header(); ?>
 			<h2 class="child-menu-title"> <?php echo get_the_title($parent); ?> </h2>
 		</div>
 		<ul class="menu-child-items">
-		<?php echo $children; ?>
+		<?php echo $children;?>
 		</ul>
 	</div>
 <?php endif; ?>
