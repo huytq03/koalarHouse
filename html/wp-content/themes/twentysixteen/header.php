@@ -43,7 +43,9 @@
 					<?php endif; ?>
 					<div class="social_wrapper"> 
 						<div>
-							<?php echo do_shortcode('[the-social-links]'); ?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img style="width: 40px;height: 24px;" src="wp-content/uploads/2016/08/vietnam.gif"></a>
+							
+							<a href=""><img src="wp-content/uploads/2016/08/en.png"></a>
 						</div>
 					</div>
 				</div><!-- .site-branding -->

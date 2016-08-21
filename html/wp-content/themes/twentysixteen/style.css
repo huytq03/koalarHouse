@@ -1531,7 +1531,7 @@ blockquote:after,
 */
 .site-inner {
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 62.5%;
 	/*max-width: 80%;*/
 	position: relative;
 }
@@ -2795,7 +2795,7 @@ p > video {
 }
 .gioi-thieu > div > h2 {
 	color: #ca6400;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'vnf-lobster';
     min-width: 270px;
     text-decoration: none;
@@ -2842,7 +2842,7 @@ p > video {
 }
 .vuon-rau >div > h2 {
 	color: #ca6400;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'vnf-lobster';
     text-decoration: none;
     border-bottom: 2.5px solid #ca6400;
@@ -3710,7 +3710,7 @@ p > video {
   		overflow: auto;
 	}
 	.primary-menu {
-		height: 100px;
+		height: 90px;
     	display: flex;
 	}
 	.primary-menu > li {
@@ -3927,9 +3927,10 @@ p > video {
 	.site-header-menu-child > img {
 	    margin: auto;
     	max-width: 105px;
+    	margin-top: 7%;
 	}
 	.site-header-menu-child > h2 {
-		margin: 5% auto auto 0px;
+		margin: 7% auto auto 0px;
     	width: 220px;
 	}
 	.header-menu-child-thong-bao {
@@ -4010,7 +4011,7 @@ p > video {
 	.site-branding,
 	.site-header-menu,
 	.header-image {
-		margin-top: 1.75em;
+		margin-top: 0px;
 		margin-bottom: 0px;
 		display: flex;
 		width: 100%;

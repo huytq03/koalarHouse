@@ -53,7 +53,7 @@ get_header(); ?>
 			    	<a href="./lich-su-kien/">Lịch sự kiện</a>
 			    </li>
 			    <li>
-			    	<a href="./thuc-don-cua-be/">Thực đơn cho bé</a>
+			    	<a href="./thong-bao-3/">Thông báo</a>
 			    </li>
 			    <li>
 			    	<a href="./ban-tin-thang/">Bản tin tháng</a>
