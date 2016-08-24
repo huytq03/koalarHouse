@@ -87,7 +87,7 @@ get_header(); ?>
 		<div class="thu-vien home-page-item">
 			<div>
 				<a href=<?php echo get_page_link(217); ?>>
-					<img src="wp-content/uploads/2016/07/home-icon-fun-story.png" style="margin-bottom: 10px;">
+					<img src="wp-content/uploads/2016/07/home-icon-fun-story.png" style="margin-bottom: 10px;width: 70% !important;">
 					</br>
 					<span>
 						Bé Koala ngộ nghĩnh
@@ -96,14 +96,14 @@ get_header(); ?>
 			</div>
 			<div>
 				<a href=<?php echo get_page_link(231); ?> >
-					<img src="wp-content/uploads/2016/07/home-icon-images.png" style="margin-bottom: 10px;">
+					<img src="wp-content/uploads/2016/07/home-icon-images.png" style="margin-bottom: 10px; width: 70% !important;">
 					</br>
 					<span>Thư viện ảnh</span>
 				</a>
 			</div>
 			<div>
 				<a href=<?php echo get_page_link(225); ?> >
-					<img src="wp-content/uploads/2016/07/home-icon-video.png" style="margin-bottom: 10px;">
+					<img src="wp-content/uploads/2016/07/home-icon-video.png" style="margin-bottom: 10px; width: 70%!important;">
 					</br>
 					<span>Video Clip</span>
 				</a>
@@ -115,7 +115,7 @@ get_header(); ?>
 				$bucket_post = get_post($post_id);
 			?>
 			<div class="gioi-thieu-header">
-				<?php echo get_the_post_thumbnail($post_id, array(100,100)) ?>
+				<?php echo get_the_post_thumbnail($post_id, array(65,65)) ?>
 				<h2>
 				<?php echo $bucket_post->post_title; ?>
 				</h2>

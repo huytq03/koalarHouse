@@ -272,7 +272,9 @@ optgroup {
 /**
  * 2.0 - Genericons
  */
-
+.custom-background-iamge {
+	background-size: 100%;
+}
 .menu-item-has-children a:after,
 .social-navigation a:before,
 .dropdown-toggle:after,
@@ -311,12 +313,12 @@ select,
 textarea {
 	color: #1a1a1a;
 	font-family: 'roboto';
-	font-size: 17px;
+	font-size: 12px;
 	line-height: normal;
 }
 
 h1,
-h2,
+h2
 h3,
 h4,
 h5,
@@ -468,6 +470,7 @@ html {
 
 body {
 	background: #1a1a1a;
+	background-size: 100%;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -826,13 +829,16 @@ a:active {
 	/*color: #007acc;*/
 }
 .current-menu-item, .current-menu-parent {
-	height: 88px !important;
+	height: 70px !important;
 	margin-bottom: -9px !important;
+}
+.current_page_item {
+	height: 48px !important;
 }
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
 	font-weight: normal;
-	font-size: 16px;
+	font-size: 12px;
     font-family: vnf-lobster;
 }
 
@@ -2038,14 +2044,14 @@ body:not(.search-results) .entry-summary > :last-child,
 	padding: 10px 0px 10px 0px;
     border-bottom: 1px dashed #fff;
     color: black;
-    font-size: 19px;
+    font-size: 13px;
 }
 .menu-child-items > li > a{
     color: black;
 }
 .menu-child-items > .current_page_item {
     font-family: 'roboto';
-    font-size: 19px;
+    font-size: 13px;
     /*font-weight: bold;*/
     color: white;
 }
@@ -2059,7 +2065,7 @@ body:not(.search-results) .entry-summary > :last-child,
 .child-menu-title {
 	text-align: left;
     margin-top: 30px;
-    font-size: 25px;
+    font-size: 16.5px;
     font-family:  vnf-lobster;
     color: white;
 }
@@ -2453,7 +2459,7 @@ body.search-no-results .page-header {
 }
 
 .site-info a {
-	font-size: 21px;
+	font-size: 14px;
     color: #0d3911;
     font-family: 'roboto-medium';
 }
@@ -2754,25 +2760,25 @@ p > video {
  */
 .home-page-item {
 	/*float: left;*/
-	border-radius: 30px;
+	border-radius: 20px;
 	width: 80%;
     margin: auto;
 
 }
 .tin-tuc {
-	height: 640px;
+	height: 416px;
 	background-color: #E1AF2A;
 }
 .thong-bao {
-	height: 350px;
+	height: 227.5px;
 	background-color: #D0D551;
 }
 .kien-thuc {
-	height: 350px;
+	height: 227.5px;
 	background-color: #EB7400;
 }
 .thu-vien {
-	height: 240px;
+	height: 130px;
 	background-color: #F2EACB;
 }
 .thu-vien >div {
@@ -2781,21 +2787,25 @@ p > video {
 .thu-vien >div> a {
 	color:  #4e210e ;
 	font-family: 'roboto-bold';
-	font-size: 17px;
+	font-size: 12px;
 }
 
 .gioi-thieu {
-	height: 400px;
+	height: 260px;
 	background-color: transparent;
 
 }
 .gioi-thieu-header  {
 	display: flex;
-	height: 100px;
+	/*height: 100px;*/
+}
+.gioi-thieu-header >img {
+	width: 65px;
+	height: 65px;
 }
 .gioi-thieu > div > h2 {
 	color: #ca6400;
-    font-size: 25px;
+    font-size: 16.5px;
     font-family: 'vnf-lobster';
     min-width: 270px;
     text-decoration: none;
@@ -2804,17 +2814,21 @@ p > video {
     margin-left: 10px;
 }
 .tay-nho {
-	height: 400px;
+	height: 260px;
 	background-color: transparent;
 	margin-top: 80px;
 }
 .tay-nho-header {
 	display: flex;
 }
+.tay-nho-header > img {
+	width: 39px;
+	height: 32.5px;
+}
 .tay-nho-header >h2 {
     margin: auto;
     color: #ca6400;
-    font-size: 25px;
+    font-size: 16.5px;
     font-family: 'vnf-lobster';
     text-decoration: none;
     border-bottom: 2.5px solid #ca6400;
@@ -2833,16 +2847,16 @@ p > video {
 }
 .tay-nho-menu > li > a {
 	color: #ca6400;
-	 font-size: 15px;
+	 font-size: 10px;
 }
 .vuon-rau {
-	height: 400px;
+	height: 260px;
 	background-color: transparent;
 	margin-top: 50px;
 }
 .vuon-rau >div > h2 {
 	color: #ca6400;
-    font-size: 25px;
+    font-size: 16.5px;
     font-family: 'vnf-lobster';
     text-decoration: none;
     border-bottom: 2.5px solid #ca6400;
@@ -2856,7 +2870,7 @@ p > video {
     line-height: 4;
     text-align: center;
     display: inline-block;
-    min-width: 70px;
+    min-width: 50px;
     float: right;
     -webkit-border-radius: 40px;
     -webkit-transition: all 0.3s ease-out;
@@ -2868,7 +2882,7 @@ p > video {
     position: absolute;
     top: 90%;
     right: 0;
-    font-size: 18px;
+    font-size: 12.5px;
     font-family: 'roboto';
 }
 .button-tin-tuc:hover{ border-color: #fcf4db; color: #fcf4db; background: #b58203;}
@@ -2879,7 +2893,7 @@ p > video {
     position: absolute;
     top: 83%;
     right: 0;
-    font-size: 18px;
+    font-size: 12.5px;
     font-family: 'roboto';
 }
 .button-thong-bao:hover{ border-color: #fcf4db; color: #fcf4db; background: #A9BE54;}
@@ -2890,7 +2904,7 @@ p > video {
     position: absolute;
     top: 83%;
     right: 0;
-    font-size: 18px;
+    font-size: 12.5px;
     font-family: 'roboto';
 }
 .button-kien-thuc:hover{ border-color: #fcf4db; color: #fcf4db; background: #CE6321;}
@@ -2964,6 +2978,7 @@ p > video {
 
 	.custom-logo {
 		max-width: 210px;
+		width: 156px;
 	}
 
 	.site-title {
@@ -3156,7 +3171,7 @@ p > video {
 @media screen and (min-width: 56.875em) {
 	.home-page-item {
 		float: left;
-		margin: 13px;
+		margin: 8.5px;
 		position: relative;
 	}
 
@@ -3175,23 +3190,23 @@ p > video {
 	.thu-vien {
 		width: 64%;
 		display: flex;
-		margin-top: 40px;
+		margin-top: 26px;
 	}
 	.thu-vien > div {
 		margin: auto;
 	}
 	.gioi-thieu {
 		width: 67%;
-		margin-top: 50px;
+		margin-top: 32.5px;
 	}
 
 	.tay-nho {
 		width: 28%;
-		margin-top: 80px;
+		margin-top: 52px;
 	}
 	.vuon-rau {
 		width: 100%;
-		margin-top: 50px;
+		margin-top: 10px;
 	}
 	.site-header {
 		padding-right: 4.5455%;
@@ -3202,7 +3217,7 @@ p > video {
 	}
 	.bucket-post-home-page > span {
 		color: #ca6400;
-		margin-top: 30px;
+		margin-top: 10px;
 		width: 60%;
 	}
 	.bucket-post-home-page > span >a {
@@ -3220,7 +3235,7 @@ p > video {
 	}
 	.green-post-home-page > span{
 		color: #ca6400;
-		margin-top: 30px;	
+		margin-top: 10px;	
 		width: 40%;
 	}
 	.green-post-home-page > span >a {
@@ -3624,8 +3639,9 @@ p > video {
 		background-image: url('../../uploads/2016/07/footer-greensignkaola.png');
 		background-repeat: no-repeat;
     	background-position: center; 
-		height: 419px;
+		height: 272.5px;
 		padding-left: 10%;
+		background-size: contain;
 	}
 
 	.site-footer .social-navigation {
@@ -3642,7 +3658,7 @@ p > video {
 		order: 1;
 	}
 	.site-info .site-info-forum {
-		font-size: 16px;
+		font-size: 14px;
 	}
 	.no-sidebar .content-area {
 		float: none;
@@ -3696,7 +3712,7 @@ p > video {
   		margin: 0 30px 0 0;
 	}
 	.my-grid-layout .excerpt {
-		font:  17px roboto;
+		font:  12px roboto;
 		float: left;
 	    width: 80%;
 	    text-align: left;
@@ -3710,7 +3726,7 @@ p > video {
   		overflow: auto;
 	}
 	.primary-menu {
-		height: 90px;
+		height: 70px;
     	display: flex;
 	}
 	.primary-menu > li {
@@ -3729,24 +3745,24 @@ p > video {
 	}
 	.menu-item-65 {
 		background-image: url('../../uploads/2016/06/menu65.png');
-		height: 70px;
+		height: 45.5px;
     	margin-right: 5px;
-    	width: 111px;
+    	width: 74px;
     	background-repeat: round;
 	}
 	.primary-menu>li:hover {
-		height: 90px;
+		height: 58.5px;
 		margin-bottom: -10px;
 	}
 	.primary-menu>li:active {
-		height: 90px;
+		height: 58.5px;
 		margin-bottom: -6px;
 	}
 	.menu-item-66 {
 		background-image: url('../../uploads/2016/06/menu66.png');
-		height: 70px;
+		height: 45.5px;
     	margin-right: 5px;
-    	    width: 111px;
+    	    width: 72.5px;
 
 
     	background-repeat: round;
@@ -3766,9 +3782,9 @@ p > video {
 	}
 	.menu-item-72 {
 		background-image: url('../../uploads/2016/06/menu72.png');
-		height: 70px;
+		height: 45.5px;
     	margin-right: 5px;
-    	width: 123px;
+    	width: 80px;
 
     	background-repeat: round;
 	}
@@ -3780,9 +3796,9 @@ p > video {
 	}
 	.menu-item-77 {
 		background-image: url('../../uploads/2016/06/menu77.png');
-		height: 70px;
+		height: 45.5px;
     	margin-right: 5px;
-    	width: 153px;
+    	width: 99.5px;
     	background-repeat: round;
 	}
 	.menu-item-77 > ul  {
@@ -3793,9 +3809,9 @@ p > video {
 	}
 	.menu-item-87 {
 		background-image: url('../../uploads/2016/06/menu87.png');
-		height: 70px;
+		height: 45.5px;
     	margin-right: 5px;
-    	width: 156px;
+    	width: 101.5px;
     	background-repeat: round;
 	}
 	.menu-item-87 > ul  {
@@ -3806,13 +3822,13 @@ p > video {
 	}
 	.menu-item-50 {
 		background-image: url('../../uploads/2016/06/menu50.png');
-		height: 70px;
+		height: 45.5px;
     	margin-right: 5px;
-    	width: 98px;
+    	width: 64px;
     	background-repeat: round;
 	}
 	.menu-item-50:hover, .menu-item-50:active {
-		height: 86px !important;
+		height: 58.5px !important;
 	}
 	.menu-item  > a:active {
 
@@ -3823,8 +3839,8 @@ p > video {
 		text-decoration: none; 
     	font-family: vnf-lobster;
     	/*font-weight: 400 !important; */
-    	font-size: 16px; 
-    	line-height: 82px; 
+    	font-size: 11px; 
+    	line-height: 41px; 
     	color: #fff; 
 		text-shadow:none; 
 		padding: 0; 
@@ -3842,10 +3858,10 @@ p > video {
     }
 
 	.menu-item-87  > a {
-		width: 162px;
+		/*width: 162px;*/
 	}
 	.menu-item-77  > a {
-		width: 142px;
+		/*width: 142px;*/
 	}
 
 	.site-info {
@@ -3859,7 +3875,7 @@ p > video {
     	width: 100%;
     	max-width: 800px;
     	float: left;
-    	font-size: 14px;
+    	font-size: 9.5px;
 	    font-family: 'roboto';
 		color: #0d3911;
 
@@ -3869,12 +3885,12 @@ p > video {
 	}
 	.social_wrapper {
 		background-image: url('../../uploads/2016/07/social-icon-bg-cloud.png');
-		background-repeat: no-repeat;
-		    margin: auto 0 auto auto;
-		width: 212px;
-		height: 98px;
-		position: relative;
-		display: block;
+    	background-repeat: round;
+    	margin: auto 0 auto auto;
+    	width: 138px;
+    	height: 64px;
+    	position: relative;
+    	display: block;
 	}
 	.social_wrapper >div {
 		margin: 15% auto;
@@ -3884,7 +3900,7 @@ p > video {
 	.site-menu-child {
 		display: block;
 	    background-color: #e1af2a;
-        width: 600px;
+        width: 390px;
 	    max-width: 370px;
 	    margin: 0 5% 5% 0;
 	    border-radius: 30px;
@@ -3893,7 +3909,7 @@ p > video {
 	.site-header-menu-child {
 	    background-image: url('../../uploads/2016/07/sub-menu-brown-header.png');
     	background-repeat: round;
-    	height: 116px;
+    	height: 75.5px;
 	    display: flex;
 	}
 	.site-header-menu-child >img {
@@ -3902,7 +3918,7 @@ p > video {
 	.header-menu-child-tin-tuc {
 		background-image: url('../../uploads/2016/07/tin-tuc-1.png');
 		background-repeat: round;
-		height: 116px;
+		height: 75.5px;
 	}
 	.tin-tuc > ul {
 		list-style-type: none;
@@ -3914,7 +3930,7 @@ p > video {
 	}
 	.thong-bao >ul>li>a {
 		color: #17431f;
-    	font-size: 18px;
+    	font-size: 12.5px;
 	}
 	.thong-bao >ul >li:hover {
 	    color: white;/*
@@ -3926,8 +3942,10 @@ p > video {
 	}
 	.site-header-menu-child > img {
 	    margin: auto;
-    	max-width: 105px;
     	margin-top: 7%;
+    	margin-left: 7%;
+    	width: 32.5px;
+    	margin-right: 10%;
 	}
 	.site-header-menu-child > h2 {
 		margin: 7% auto auto 0px;
@@ -3936,12 +3954,12 @@ p > video {
 	.header-menu-child-thong-bao {
 		background-image: url('../../uploads/2016/07/thong-bao-1.png');
 		background-repeat: round;
-		height: 116px;
+		height: 75.5px;
 	}
 	.header-menu-child-kien-thuc {
 		background-image: url('../../uploads/2016/07/kien-thuc-1.png');
 		background-repeat: round;
-		height: 116px;
+		height: 75.5px;
 	}
 	.kien-thuc >ul >li {
 	    color: white;/*
@@ -3954,7 +3972,7 @@ p > video {
 	}
 	.kien-thuc >ul>li>a{
 		color: white;
-		font-size: 17px;
+		font-size: 12px;
 	}
 	.kien-thuc >ul>li>a:hover{
 		color: black;
@@ -3986,7 +4004,7 @@ p > video {
 		padding: 10px;
 		color: #454544;
 		font-family: 'roboto-medium';
-		font-size: 18px;
+		font-size: 12.5px;
 	}
 	.related-post > ul {
 		margin-left: 30px;	
