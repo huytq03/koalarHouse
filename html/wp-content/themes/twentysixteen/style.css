@@ -832,7 +832,7 @@ a:active {
 	height: 70px !important;
 	margin-bottom: -9px !important;
 }
-.current_page_item {
+.sub-menu .current_page_item {
 	height: 48px !important;
 }
 .main-navigation .current-menu-item > a,
