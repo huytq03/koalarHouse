@@ -2,20 +2,21 @@ div.wpcf7 {
 	margin: 0;
 }
 .contact-form {
-	float: left;
-	background-image: url('../../images/lien-he.png');
-	width: 716px;
-	background-repeat: no-repeat;
+    float: left;
+    background-image: url('../../images/lien-he.png');
+    width: 500px;
+    background-repeat: no-repeat;
     height: 500px;
-    margin-left: 60px;
+    margin-left: 39px;
+    background-size: contain;
 }
 .contact-detail >p >input[type="text"] {
 	border-radius: 5px;
 }
 .contact-detail >p >input[type="submit"] {
-	color: #7e0000 ;
+    color: #7e0000;
     font-family: 'roboto';
-    font-size: 18px;
+    font-size: 12px;
     border: none;
     background-image: url('../../images/contact-save-bg.png');
     background-repeat: no-repeat;
@@ -23,54 +24,54 @@ div.wpcf7 {
     letter-spacing: 0;
     padding: 0;
     text-transform: none;
-    width: 140px;
+    width: 91px;
     float: right;
-    height: 31px;
+    height: 30px;
 }
 .contact-menu {
-	float: left;
-	width: 370px;
-	background-image: url('../../images/lien-he-menu.png');
-	background-repeat: no-repeat;
-	height: 209px;
+    float: left;
+    width: 240.5px;
+    background-image: url('../../images/lien-he-menu.png');
+    background-repeat: no-repeat;
+    height: 209px;
+    background-size: contain;
 }
 .wpcf7-form {
 	margin: auto;
 }
 
 .contact-detail {
-	width: 50%;
-	float: left;
-	margin-left: 65px;
-	margin-top: 60px;
-	max-width: 320px;
+    width: 50%;
+    float: left;
+    margin-left: 39px;
+    margin-top: 10px;
+    max-width: 320px;
 }
 .contact-detail> p {
 	padding: 5px;
 	color: black;
-	font-size: 15pt;
+	font-size: 9.5pt;
 	margin: 0
 }
 .contact-info {
 	float: left;
-	width: 50%;
-	font-size: 12pt;
-	max-width: 260px;
-	margin-top: 200px;
-	margin-left: 40px;
+    width: 50%;
+    font-size: 9pt;
+    max-width: 192px;
+    margin-top: 130px;
 }
 .contact-info > p {
 	padding: 0;
     margin: 0;
 }
 .wpcf7-text {
-	width: 285px !important;
-	height: 24px;
+	width: 185.5px !important;
+	height: 15.5px;
 	padding: 0 !important;
 }
 .wpcf7-textarea {
-	width: 290px;
-	height: 80px;
+	width: 169px;
+	height: 52px;
 }
 div.wpcf7-response-output {
 	margin: 2em 0.5em 1em;
