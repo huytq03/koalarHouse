@@ -23,8 +23,9 @@
 	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
+			$continue = "";
 			the_content( sprintf(
-				__( 'Xem tiếp<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+				__( '%s<span class="screen-reader-text"> "%s"</span>', $continue,'twentysixteen' ),
 				get_the_title()
 			) );
 

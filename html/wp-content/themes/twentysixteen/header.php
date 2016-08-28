@@ -42,11 +42,16 @@
 						<p class="site-description"><?php echo $description; ?></p>
 					<?php endif; ?>
 					<div class="social_wrapper"> 
+
 						<div>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img style="width: 30px;" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/uploads/2016/08/vietnam.gif"></a>
+
+							<a href="<?php echo esc_url( home_url( '/vi/' ) ); ?>"><img style="width: 25px;" src="<?php echo esc_url( home_url( '/' ) ); ?>../wp-content/uploads/2016/08/1472393531_Flag_of_Vietnam.png"></a>
 							
-							<a href=""><img style="width: 30px;"  src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/uploads/2016/08/en.png"></a>
+							<a href="<?php echo esc_url( home_url( '/en/' ) ); ?>"><img style="width: 25px;"  src="<?php echo esc_url( home_url( '/' ) ); ?>../wp-content/uploads/2016/08/1472393634_Flag_of_United_Kingdom.png"></a>
+							<a href="https://www.facebook.com/MamNonKoalaHouse/"><img style="width: 25px;"  src="<?php echo esc_url( home_url( '/' ) ); ?>../wp-content/uploads/2016/08/1472393468_facebook_circle_color.png"></a>
 						</div>
+
+							<?php get_search_form(); ?>
 					</div>
 				</div><!-- .site-branding -->
 

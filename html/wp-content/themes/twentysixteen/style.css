@@ -2911,6 +2911,15 @@ p > video {
 .site-header-menu-child >img {
 	display: none;
 }
+.search-page {
+	width: 160px;
+    height: 160px;
+    position: fixed;
+    margin-left: 85%;
+    background-image: url('../../uploads/2016/08/g428.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 /**
  * Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
@@ -3743,7 +3752,7 @@ p > video {
 	.primary-menu>li>ul::before {
 		display: none;
 	}
-	.menu-item-65 {
+	.menu-item-65, .menu-item-593 {
 		background-image: url('../../uploads/2016/06/menu65.png');
 		height: 45.5px;
     	margin-right: 5px;
@@ -3758,7 +3767,7 @@ p > video {
 		height: 58.5px;
 		margin-bottom: -6px;
 	}
-	.menu-item-66 {
+	.menu-item-66 , .menu-item-598{
 		background-image: url('../../uploads/2016/06/menu66.png');
 		height: 45.5px;
     	margin-right: 5px;
@@ -3774,13 +3783,13 @@ p > video {
 		text-align: left;
 		margin-left: 5%;
 	}
-	.menu-item-66 >ul  {
+	.menu-item-66 >ul , .menu-item-598>ul  {
 		background-color: #d5c651;
 	}
-	.menu-item-66 > ul>li:hover {
+	.menu-item-66 > ul>li:hover  ,.menu-item-598 > ul>li:hover {
 		background-color: #3E2E04;
 	}
-	.menu-item-72 {
+	.menu-item-72 , .menu-item-594{
 		background-image: url('../../uploads/2016/06/menu72.png');
 		height: 45.5px;
     	margin-right: 5px;
@@ -3788,46 +3797,46 @@ p > video {
 
     	background-repeat: round;
 	}
-	.menu-item-72 > ul {
+	.menu-item-72  ul, .menu-item-594 > ul {
 		background-color: #eb7400 ;
 	}
-	.menu-item-72 >ul >li:hover {
+	.menu-item-72>ul >li:hover, .menu-item-594 >ul >li:hover {
 		background-color: #3F2F05;
 	}
-	.menu-item-77 {
+	.menu-item-77, .menu-item-604 {
 		background-image: url('../../uploads/2016/06/menu77.png');
 		height: 45.5px;
     	margin-right: 5px;
     	width: 99.5px;
     	background-repeat: round;
 	}
-	.menu-item-77 > ul  {
+	.menu-item-77> ul, .menu-item-604 > ul  {
 		background-color: #db666c;
 	}
-	.menu-item-77 >ul>li:hover {
+	.menu-item-77.menu-item-604 >ul>li:hover, .menu-item-604 >ul>li:hover {
 		background-color: #700A29;
 	}
-	.menu-item-87 {
+	.menu-item-87, .menu-item-615 {
 		background-image: url('../../uploads/2016/06/menu87.png');
 		height: 45.5px;
     	margin-right: 5px;
     	width: 101.5px;
     	background-repeat: round;
 	}
-	.menu-item-87 > ul  {
+	.menu-item-87> ul, .menu-item-615 > ul  {
 		background-color: #816d53;
 	}
-	.menu-item-87 > ul > li:hover {
+	.menu-item-87> ul > li:hover, .menu-item-615 > ul > li:hover {
 		background-color: #412F19;
 	}
-	.menu-item-50 {
+	.menu-item-50, .menu-item-619 {
 		background-image: url('../../uploads/2016/06/menu50.png');
 		height: 45.5px;
     	margin-right: 5px;
     	width: 64px;
     	background-repeat: round;
 	}
-	.menu-item-50:hover, .menu-item-50:active {
+	.menu-item-50:hover, .menu-item-50:active, .menu-item-604:hover, .menu-item-604:active {
 		height: 58.5px !important;
 	}
 	.menu-item  > a:active {
@@ -3887,16 +3896,24 @@ p > video {
 		background-image: url('../../uploads/2016/07/social-icon-bg-cloud.png');
     	background-repeat: round;
     	margin: auto 0 auto auto;
-    	width: 138px;
-    	height: 64px;
+    	width: 190px;
+    	height: 80px;
     	position: relative;
     	display: block;
 	}
 	.social_wrapper >div {
-		margin: 15% auto;
-	    width: 50%;
+	    margin-left: 50px;
+    	margin-top: 15px;
 	}
-
+	.social_wrapper > form >button {
+		display: none;
+	}
+	.social_wrapper > form >label >input {
+		    height: 20px;
+    border-radius: 20px !important;
+    margin-top: 5px;
+    margin-left: 20px;
+	}
 	.site-menu-child {
 		display: block;
 	    background-color: #e1af2a;

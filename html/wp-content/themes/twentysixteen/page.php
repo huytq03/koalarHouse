@@ -31,7 +31,7 @@ get_header(); ?>
 
 	<div class="site-menu-child">
 		<div class="site-header-menu-child">
-			<img src="../../wp-content/uploads/2016/07/<?php echo $parent;?>.png">
+			<img src="../../../wp-content/uploads/2016/07/<?php echo $parent;?>.png">
 			<h2 class="child-menu-title"> <?php echo get_the_title($parent); ?> </h2>
 		</div>
 		<ul class="menu-child-items">
