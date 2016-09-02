@@ -53,7 +53,7 @@ $is_vi = strpos($_SERVER["REQUEST_URI"], "/vi/"); ?>
 		<div class="thong-bao home-page-item">
 			<div class="site-header-menu-child header-menu-child-thong-bao">
 			<img src="../wp-content/uploads/2016/07/thong-bao.png" >
-			<h2 class="child-menu-title"> <?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ echo"Bảng thông báo"; }else {echo "Bulletin Board";} ?>  </h2>
+			<h2 class="child-menu-title"> <?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ echo"Bảng tin"; }else {echo "Bulletin Board";} ?>  </h2>
 			</div>
 			<ul class="menu-child-items">
 			    <li>

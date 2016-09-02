@@ -1537,8 +1537,8 @@ blockquote:after,
 */
 .site-inner {
 	margin: 0 auto;
-	max-width: 62.5%;
-	/*max-width: 80%;*/
+	width: 62.5%;
+	max-width: 1000px;
 	position: relative;
 }
 
@@ -3245,7 +3245,7 @@ p > video {
 	.green-post-home-page > span{
 		color: #ca6400;
 		margin-top: 10px;	
-		width: 40%;
+		width: 50%;
 	}
 	.green-post-home-page > span >a {
 		color: #ca6400;
@@ -3255,7 +3255,7 @@ p > video {
 	}
 	.green-post-home-page > img{
 		border-radius: 20px;
-		width: 60%;
+		width: 50%;
 		height: 100%;
 	}
 	.site-header-main {
@@ -3771,7 +3771,7 @@ p > video {
 		background-image: url('../../uploads/2016/06/menu66.png');
 		height: 45.5px;
     	margin-right: 5px;
-    	    width: 72.5px;
+    	    width: 80px;
 
 
     	background-repeat: round;
@@ -3793,7 +3793,7 @@ p > video {
 		background-image: url('../../uploads/2016/06/menu72.png');
 		height: 45.5px;
     	margin-right: 5px;
-    	width: 80px;
+    	width: 90px;
 
     	background-repeat: round;
 	}
@@ -3807,20 +3807,20 @@ p > video {
 		background-image: url('../../uploads/2016/06/menu77.png');
 		height: 45.5px;
     	margin-right: 5px;
-    	width: 99.5px;
+    	width: 110px;
     	background-repeat: round;
 	}
 	.menu-item-77> ul, .menu-item-604 > ul  {
 		background-color: #db666c;
 	}
-	.menu-item-77.menu-item-604 >ul>li:hover, .menu-item-604 >ul>li:hover {
+	.menu-item-77 >ul>li:hover, .menu-item-604 >ul>li:hover {
 		background-color: #700A29;
 	}
 	.menu-item-87, .menu-item-615 {
 		background-image: url('../../uploads/2016/06/menu87.png');
 		height: 45.5px;
     	margin-right: 5px;
-    	width: 101.5px;
+    	width: 130px;
     	background-repeat: round;
 	}
 	.menu-item-87> ul, .menu-item-615 > ul  {
@@ -3848,7 +3848,7 @@ p > video {
 		text-decoration: none; 
     	font-family: vnf-lobster;
     	/*font-weight: 400 !important; */
-    	font-size: 11px; 
+    	font-size: 13px; 
     	line-height: 41px; 
     	color: #fff; 
 		text-shadow:none; 
@@ -3863,7 +3863,7 @@ p > video {
 		}
 	.sub-menu > li > a {
 		font-family: 'roboto-medium'  !important;
-    	font-size: 9.2px !important;	
+    	font-size: 11px !important;	
     }
 
 	.menu-item-87  > a {

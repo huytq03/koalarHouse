@@ -11,3 +11,6 @@ span.wpcf7-list-item {
 	margin-left: 0;
 	margin-right: 0.5em;
 }
+.rc-anchor-error-message {
+	font-size: 11px;
+}

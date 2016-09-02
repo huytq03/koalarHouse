@@ -22,11 +22,12 @@ div.wpcf7 {
     background-repeat: no-repeat;
     background-color: transparent;
     letter-spacing: 0;
-    padding: 0;
     text-transform: none;
     width: 91px;
+    text-align: right;
     float: right;
     height: 30px;
+    padding: 5px;
 }
 .contact-menu {
     float: left;
