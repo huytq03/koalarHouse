@@ -1,9 +1,9 @@
 === FooBox Image Lightbox ===
-Contributors: bradvin, fooplugins
+Contributors: bradvin, fooplugins, freemius
 Donate link: http://fooplugins.com
 Tags: lightbox,media,images,gallery,modal
 Requires at least: 3.5.1
-Tested up to: 4.5.2
+Tested up to: 4.6.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,6 +74,39 @@ There is a setting to try and disable hard coded lightboxes, but this is not a s
 2. Phone example
 
 == Changelog ==
+
+= 1.1.10 =
+* Fix deactivation issue when PRO is activated
+
+= 1.1.9 =
+* New setting for dropping IE7 support (for valid CSS)
+* Fix for when multiple jQuery versions loaded on page!
+* Fix for not including scripts for setting 'disable other lightboxes'
+
+= 1.1.8 =
+* IMPORTANT : clear your site cache when updating - if you use a caching plugin.
+* Added clear cache message to getting started page
+* Removed duplicate settings page
+* Updated opt-in message
+* Fix : loosing scroll position when scrollbars are hidden
+
+= 1.1.7 =
+* Integrated Freemius tracking and upgrade system
+* Moved FooBox into top-level menu item
+* Complete overhaul of Getting Started page, including demo
+* Updated to use latest FooBox JS and CSS
+
+= 1.0.14 =
+* Hide foo admin notice on mobile devices
+* More CSS tweaks for admin on smaller screen sizes
+
+= 1.0.13 =
+* Updated settings page to be responsive
+* Tested with WP 4.6
+
+= 1.0.12 =
+* Updated to use latest FooBox JS and CSS
+* Removed discount for FooBox PRO
 
 = 1.0.11 =
 * Updated to use latest FooBox JS and CSS

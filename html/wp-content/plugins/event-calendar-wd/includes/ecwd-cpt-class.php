@@ -14,6 +14,7 @@ class ECWD_Cpt {
     public $rewriteSlug;
 
     private function __construct() {
+        global $ecwd_options;
         $this->tax = ECWD_PLUGIN_PREFIX . '_event_category';
         $this->tag = ECWD_PLUGIN_PREFIX . '_event_tag';
 
@@ -24,6 +25,9 @@ class ECWD_Cpt {
         add_action('pre_get_posts', array($this, 'add_custom_post_type_to_query'));
         add_action('pre_get_posts', array($this, 'category_archive_page_query'));
         add_action('pre_get_posts', array($this, 'events_archive_page_query'));
+        if(isset($ecwd_options['change_events_archive_page_post_date']) && $ecwd_options['change_events_archive_page_post_date'] == '1'){
+            add_filter('the_post', array($this, 'ecwd_events_archive_page'));
+        }
         add_action('add_meta_boxes', array($this, 'calendars_cpt_meta'));
         add_action('add_meta_boxes', array($this, 'events_cpt_meta'));
         add_action('add_meta_boxes', array($this, 'themes_cpt_meta'));
@@ -92,6 +96,30 @@ class ECWD_Cpt {
         add_filter('init', array($this, 'event_restrict_manage'));
         add_action('the_title', array($this, 'is_events_list_page_title'), 11, 2);
         add_action('after_setup_theme', array($this, 'add_thumbnails_for_themes'));
+        add_action('ecwd_venue_after_save_meta',array($this,'change_events_locations'));
+
+    }
+
+    public function change_events_locations($venue_id) {
+        $venue_location = (isset($_POST['ecwd_venue_location'])) ? $_POST['ecwd_venue_location'] : "";
+        $venue_lat_long = (isset($_POST['ecwd_venue_lat_long']) && !empty($venue_location)) ? $_POST['ecwd_venue_lat_long'] : "";
+
+        $args = array(
+            'numberposts' => '-1',
+            'post_type' => 'ecwd_event',
+            'meta_key' => 'ecwd_event_venue',
+            'meta_value' => $venue_id
+        );
+        $events = get_posts($args);
+        if (empty($events)) {
+            return false;
+        }
+
+        foreach ($events as $event) {
+            update_post_meta($event->ID, 'ecwd_event_location', $venue_location);
+            update_post_meta($event->ID, 'ecwd_lat_long', $venue_lat_long);
+        }
+
     }
 
     public function add_thumbnails_for_themes() {
@@ -248,7 +276,7 @@ class ECWD_Cpt {
             'new_item' => __('New Calendar', 'ecwd'),
             'edit_item' => __('Edit Calendar', 'ecwd'),
             'view_item' => __('View Calendar', 'ecwd'),
-            'all_items' => __('All Calendars', 'ecwd'),
+            'all_items' => __('Calendars', 'ecwd'),
             'search_items' => __('Search Calendar', 'ecwd'),
             'not_found' => __('No Calendars found.', 'ecwd'),
             'not_found_in_trash' => __('No Calendars found in Trash.', 'ecwd')
@@ -273,47 +301,7 @@ class ECWD_Cpt {
         );
 
         register_post_type(self::CALENDAR_POST_TYPE, $calendar_args);
-
-
-        //events organizers
-        $organizers_labels = array(
-            'name' => __('Organizers', 'ecwd'),
-            'singular_name' => __('Organizer', 'ecwd'),
-            'name_admin_bar' => __('Organizer', 'ecwd'),
-            'add_new' => __('Add New', 'ecwd'),
-            'add_new_item' => __('Add New Organizer', 'ecwd'),
-            'new_item' => __('New Organizer', 'ecwd'),
-            'edit_item' => __('Edit Organizer', 'ecwd'),
-            'view_item' => __('View Organizer', 'ecwd'),
-            'all_items' => __('All Organizers', 'ecwd'),
-            'search_items' => __('Search Organizer', 'ecwd'),
-            'not_found' => __('No Organizers found.', 'ecwd'),
-            'not_found_in_trash' => __('No Organizers found in Trash.', 'ecwd')
-        );
-
-        $organizers_args = array(
-            'labels' => $organizers_labels,
-            'public' => true,
-            'publicly_queryable' => true,
-            'show_ui' => true,
-            'show_in_menu' => true,
-            'menu_position' => '26,13',
-            'query_var' => true,
-            'capability_type' => 'post',
-            'taxonomies' => array(),
-            'has_archive' => true,
-            'hierarchical' => true,
-            'menu_icon' => plugins_url('/assets/organizer-icon.png', ECWD_MAIN_FILE),
-            'supports' => array(
-                'title',
-                'editor',
-                'thumbnail'
-            ),
-            'rewrite' => $organizer_rewrite
-        );
-
-        register_post_type(self::ORGANIZER_POST_TYPE, $organizers_args);
-
+        
 
 //events
         $labels = array(
@@ -325,7 +313,7 @@ class ECWD_Cpt {
             'new_item' => __('New Event', 'ecwd'),
             'edit_item' => __('Edit Event', 'ecwd'),
             'view_item' => __('View Event', 'ecwd'),
-            'all_items' => __('All Events', 'ecwd'),
+            'all_items' => __('Events', 'ecwd'),
             'search_items' => __('Search Event', 'ecwd'),
             'not_found' => __('No events found.', 'ecwd'),
             'not_found_in_trash' => __('No events found in Trash.', 'ecwd')
@@ -335,8 +323,9 @@ class ECWD_Cpt {
             'public' => true,
             'publicly_queryable' => true,
             'show_ui' => true,
-            'show_in_menu' => true,
-            'menu_position' => '26,14',
+//            'show_in_menu' => true,
+//            'menu_position' => '26,14',
+            'show_in_menu' => 'edit.php?post_type=ecwd_calendar',
             'query_var' => true,
             'capability_type' => 'post',
             'taxonomies' => array(
@@ -359,6 +348,47 @@ class ECWD_Cpt {
         register_post_type(self::EVENT_POST_TYPE, $args);
 
 
+        //events organizers
+        $organizers_labels = array(
+          'name' => __('Organizers', 'ecwd'),
+          'singular_name' => __('Organizer', 'ecwd'),
+          'name_admin_bar' => __('Organizer', 'ecwd'),
+          'add_new' => __('Add New', 'ecwd'),
+          'add_new_item' => __('Add New Organizer', 'ecwd'),
+          'new_item' => __('New Organizer', 'ecwd'),
+          'edit_item' => __('Edit Organizer', 'ecwd'),
+          'view_item' => __('View Organizer', 'ecwd'),
+          'all_items' => __('Organizers', 'ecwd'),
+          'search_items' => __('Search Organizer', 'ecwd'),
+          'not_found' => __('No Organizers found.', 'ecwd'),
+          'not_found_in_trash' => __('No Organizers found in Trash.', 'ecwd')
+        );
+
+        $organizers_args = array(
+          'labels' => $organizers_labels,
+          'public' => true,
+          'publicly_queryable' => true,
+          'show_ui' => true,
+//          'show_in_menu' => true,
+//          'menu_position' => '26,13',
+          'show_in_menu' => 'edit.php?post_type=ecwd_calendar',
+          'query_var' => true,
+          'capability_type' => 'post',
+          'taxonomies' => array(),
+          'has_archive' => true,
+          'hierarchical' => true,
+          'menu_icon' => plugins_url('/assets/organizer-icon.png', ECWD_MAIN_FILE),
+          'supports' => array(
+            'title',
+            'editor',
+            'thumbnail'
+          ),
+          'rewrite' => $organizer_rewrite
+        );
+
+        register_post_type(self::ORGANIZER_POST_TYPE, $organizers_args);
+
+
         //venues
         $venues_labels = array(
             'name' => __('Venues', 'ecwd'),
@@ -369,7 +399,7 @@ class ECWD_Cpt {
             'new_item' => __('New Venue', 'ecwd'),
             'edit_item' => __('Edit Venue', 'ecwd'),
             'view_item' => __('View Venue', 'ecwd'),
-            'all_items' => __('All Venues', 'ecwd'),
+            'all_items' => __('Venues', 'ecwd'),
             'search_items' => __('Search Venue', 'ecwd'),
             'not_found' => __('No Venues found.', 'ecwd'),
             'not_found_in_trash' => __('No Venues found in Trash.', 'ecwd')
@@ -380,8 +410,9 @@ class ECWD_Cpt {
             'public' => true,
             'publicly_queryable' => true,
             'show_ui' => true,
-            'show_in_menu' => true,
-            'menu_position' => '26,15',
+//            'show_in_menu' => true,
+//            'menu_position' => '26,15',
+            'show_in_menu' => 'edit.php?post_type=ecwd_calendar',
             'query_var' => true,
             'capability_type' => 'post',
             'taxonomies' => array(),
@@ -1073,7 +1104,7 @@ class ECWD_Cpt {
             }
         }
 
-
+        do_action($post_type.'_after_save_meta',$post_id);
         return $post_id;
     }
 
@@ -1315,11 +1346,28 @@ class ECWD_Cpt {
     }
 
     public function category_archive_page_query($query) {
-        if (is_tax('ecwd_event_category') === true) {
+        if (is_admin() === false && is_tax('ecwd_event_category') === true) {
             $query->query_vars['posts_per_page'] = 5;
         }
     }
-    
+
+    public function ecwd_events_archive_page($post) {
+        global $ecwd_options;
+
+        if (is_admin() === true || is_archive() === false || is_post_type_archive(array("ecwd_event")) === false) {
+            return $post;
+        }
+        $from = get_post_meta($post->ID, "ecwd_event_date_from", true);
+        if (empty($from)) {
+            return $post;
+        }
+        $date_format = (!empty($ecwd_options['date_format'])) ? $ecwd_options['date_format'] : "Y/m/d";
+        $sec = strtotime($from);
+        $date = date($date_format,$sec);
+        $post->post_date = $date;
+        return $post;
+    }
+
     public function events_archive_page_query($query) {
         if (is_archive() && !is_admin()) {
             if (isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'ecwd_event') {

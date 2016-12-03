@@ -135,7 +135,7 @@ if (isset($ecwd_options['cat_title_color']) && $ecwd_options['cat_title_color'] 
 
 get_header();
 ?>
-<div id="ecwd-events-content" class="ecwd-events-single hentry">
+<div id="ecwd-events-content" class="ecwd-events-single hentry site-content">
 
 
     <?php
@@ -336,7 +336,7 @@ get_header();
                             ?>
                     </div>
                     <!-- Content -->
-                    <div>
+                    <div class="entry-content">
                         <?php the_content(); ?>
                     </div>
                     <!-- End Content -->
@@ -498,8 +498,8 @@ get_header();
         ecwd_js_init_call = new ecwd_js_init();
     }</script>
 <?php
-if (defined('ECWD_TEHEME') && ECWD_TEHEME == 'twentyfourteen') {
-    get_sidebar();
+if(isset($ecwd_options['enable_sidebar_in_event']) && $ecwd_options['enable_sidebar_in_event'] == '1'){
+        get_sidebar();
 }
 get_footer();
 ?>

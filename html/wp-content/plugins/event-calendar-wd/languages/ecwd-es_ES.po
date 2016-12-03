@@ -2,17 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: event_calendar_wd\n"
 "POT-Creation-Date: 2015-07-23 13:04+0400\n"
-"PO-Revision-Date: 2016-06-15 12:25+0400\n"
+"PO-Revision-Date: 2016-12-02 10:52+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: views/admin\n"
 "X-Poedit-SearchPathExcluded-1: js\n"
 "X-Poedit-SearchPathExcluded-2: includes/ecwd-cpt-class.php\n"
@@ -21,7 +22,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-5: includes/ecwd-google-events-class.php\n"
 "X-Poedit-SearchPathExcluded-6: includes/ecwd-facebook-events-class.php\n"
 "X-Poedit-SearchPathExcluded-7: ecwd_admin_class.php\n"
-"X-Poedit-SearchPath-0: .\n"
 
 #: includes/calendar-class.php:175 includes/calendar-class.php:176
 #: views/widgets.php:168
@@ -380,7 +380,7 @@ msgstr "Eventos relacionados"
 
 #: views/single-event.php:163
 msgid "Back"
-msgstr "Espalda"
+msgstr "Volver"
 
 #: ecwd_class.php:173
 msgid "Event Details"

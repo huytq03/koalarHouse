@@ -324,6 +324,22 @@ function foundation_featured_settings( $page_options ) {
 	if ( $wptouch_pro->get_current_theme() == 'bauhaus' || ( $wptouch_pro->is_child_theme() && $wptouch_pro->get_parent_theme_info()->base == 'bauhaus' ) ) {
 		$featured_enhanced_setting = array(
 			wptouch_add_setting(
+				'checkbox',
+				'featured_blog',
+				__( 'Show on blog', 'wptouch-pro' ),
+				false,
+				WPTOUCH_SETTING_BASIC,
+				'2.0'
+			),
+			wptouch_add_setting(
+				'checkbox',
+				'featured_homepage',
+				__( 'Show on homepage', 'wptouch-pro' ),
+				false,
+				WPTOUCH_SETTING_BASIC,
+				'2.0'
+			),
+			wptouch_add_setting(
 				'list',
 				'featured_style',
 				__( 'Featured slider style', 'wptouch-pro' ),
@@ -334,7 +350,7 @@ function foundation_featured_settings( $page_options ) {
 					'enhanced' => __( 'Enhanced', 'wptouch-pro' ),
 					'streamlined' => __( 'Streamlined', 'wptouch-pro' )
 				)
-			)
+			),
 		);
 	} else {
 		$featured_enhanced_setting = array();
@@ -363,7 +379,7 @@ function foundation_featured_settings( $page_options ) {
 			'2.0',
 			array(
 				'min' => 1,
-				'max' => 10,
+				'max' => 15,
 				'step' => 1
 			)
 		),
@@ -472,22 +488,6 @@ function foundation_featured_settings( $page_options ) {
 					'checkbox',
 					'featured_enabled',
 					__( 'Enable featured slider', 'wptouch-pro' ),
-					false,
-					WPTOUCH_SETTING_BASIC,
-					'2.0'
-				),
-				wptouch_add_setting(
-					'checkbox',
-					'featured_blog',
-					__( 'Show on blog', 'wptouch-pro' ),
-					false,
-					WPTOUCH_SETTING_BASIC,
-					'2.0'
-				),
-				wptouch_add_setting(
-					'checkbox',
-					'featured_homepage',
-					__( 'Show on homepage', 'wptouch-pro' ),
 					false,
 					WPTOUCH_SETTING_BASIC,
 					'2.0'

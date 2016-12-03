@@ -2,7 +2,7 @@
 if ( !defined( 'FOUNDATION_SETTING_DOMAIN' ) ) {
     define( 'FOUNDATION_SETTING_DOMAIN', 'foundation' );
 }
-if ( !wptouch_is_controlled_network() || ( wptouch_is_controlled_network() && is_network_admin() ) ) {
+if ( ( !wptouch_is_controlled_network() || ( wptouch_is_controlled_network() && is_network_admin() ) ) && !defined( 'WPTOUCH_IS_FREE' ) ) {
 	add_filter( 'wptouch_admin_page_render_wptouch-admin-general-settings', 'wptouch_render_updates_page' );
 }
 
@@ -28,7 +28,7 @@ function wptouch_render_updates_page( $page_options ) {
 			__( 'Updates Available', 'wptouch-pro' ),
 			'updates-available',
 			array(
-				wptouch_add_setting(
+				wptouch_add_pro_setting(
 					'updates-available',
 					'theme-extension-updates-available',
 					false,
@@ -169,7 +169,7 @@ function wptouch_render_general_page( $page_options ) {
 		__( 'Desktop / Mobile Switching', 'wptouch-pro' ),
 		'setup-general',
 		array(
-			wptouch_add_pro_setting(
+			wptouch_add_setting(
 				'checkbox',
 				'show_switch_link',
 				_x( 'Theme switch toggle', 'switches between desktop and mobile themes', 'wptouch-pro' ),
@@ -343,21 +343,23 @@ function wptouch_render_compat_page( $page_options ) {
 
 	$page_options = apply_filters( 'wptouch_settings_compat', $page_options );
 
-	wptouch_add_page_section(
-		WPTOUCH_ADMIN_SETUP_COMPAT,
-		__( 'Active Plugins', 'wptouch-pro' ),
-		'setup-general-plugin-compat',
-		array(
-			wptouch_add_pro_setting(
-				'custom',
-				'plugin-compat'
-			)
-		),
-		$page_options,
-		'wptouch_pro',
-		false,
-		wptouchize_it( __( 'Attempts to disable plugins for mobile visitors. Some plugins don‘t support this feature due to the way they load in WordPress.', 'wptouch-pro' ) )
-	);
+    if ( !defined( 'WPTOUCH_IS_FREE' ) ) {
+    	wptouch_add_page_section(
+    		WPTOUCH_ADMIN_SETUP_COMPAT,
+    		__( 'Active Plugins', 'wptouch-pro' ),
+    		'setup-general-plugin-compat',
+    		array(
+    			wptouch_add_pro_setting(
+    				'custom',
+    				'plugin-compat'
+    			)
+    		),
+    		$page_options,
+    		'wptouch_pro',
+    		false,
+    		wptouchize_it( __( 'Attempts to disable plugins for mobile visitors. Some plugins don‘t support this feature due to the way they load in WordPress.', 'wptouch-pro' ) )
+    	);
+    }
 
 	return $page_options;
 }

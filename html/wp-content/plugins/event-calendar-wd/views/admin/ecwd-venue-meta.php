@@ -36,9 +36,21 @@ if(!$ecwd_map_zoom){
                 <input type="hidden" name="<?php echo ECWD_PLUGIN_PREFIX;?>_map_zoom" id="<?php echo ECWD_PLUGIN_PREFIX;?>_map_zoom"
                        value="<?php echo $ecwd_map_zoom; ?>"/>
 
-                <div id="map-canvas" style="width: 100%; height: 100%; min-height: 300px;">
+                <div id="map-canvas" style="width: 100%; height: 300px; min-height: 300px;">
 
                 </div>
+                <?php
+                $latitude = $longitude = '';
+                if(!empty($ecwd_venue_lat_long)){
+                    $lat_long_data = explode(',',$ecwd_venue_lat_long);
+                    if(is_array($lat_long_data) && count($lat_long_data) == 2) {
+                        $latitude = $lat_long_data[0];
+                        $longitude = $lat_long_data[1];
+                    }
+                }
+                ?>
+                <label style="width:85px" for="<?php echo ECWD_PLUGIN_PREFIX;?>_latitude">Latitude:</label><input type="text" id="<?php echo ECWD_PLUGIN_PREFIX;?>_latitude" value="<?php echo $latitude; ?>"/><br/>
+                <label style="width:85px" for="<?php echo ECWD_PLUGIN_PREFIX;?>_longitude">Longitude:</label><input type="text" id="<?php echo ECWD_PLUGIN_PREFIX;?>_longitude" value="<?php echo $longitude; ?>"/>
             </div>
             <p class="description">
                 <?php _e('Fill in the address of the venue or click on the map to drag and drop the marker to a specific location', 'ecwd'); ?>

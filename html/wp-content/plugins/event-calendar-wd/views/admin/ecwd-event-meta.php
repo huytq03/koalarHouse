@@ -506,9 +506,22 @@ $ecwd_event_video         = get_post_meta( $post->ID, ECWD_PLUGIN_PREFIX . '_eve
 				       id="<?php echo ECWD_PLUGIN_PREFIX; ?>_map_zoom"
 				       value="<?php echo $ecwd_map_zoom; ?>"/>
 
-				<div id="map-canvas" style="width: 100%; height: 100%; min-height: 300px;">
+				<div id="map-canvas" style="width: 100%; height: 300px; min-height: 300px;">
 
 				</div>
+				<?php
+				$latitude = $longitude = '';
+				if(!empty($ecwd_lat_long)){
+					$lat_long_data = explode(',',$ecwd_lat_long);
+					if(is_array($lat_long_data) && count($lat_long_data) == 2) {
+						$latitude = $lat_long_data[0];
+						$longitude = $lat_long_data[1];
+					}
+				}
+				?>
+				<label style="width:85px;display:inline-block;" for="<?php echo ECWD_PLUGIN_PREFIX;?>_latitude">Latitude:</label><input type="text" id="<?php echo ECWD_PLUGIN_PREFIX;?>_latitude" value="<?php echo $latitude; ?>"/><br/>
+				<label style="width:85px;display:inline-block;" for="<?php echo ECWD_PLUGIN_PREFIX;?>_longitude">Longitude:</label><input type="text" id="<?php echo ECWD_PLUGIN_PREFIX;?>_longitude" value="<?php echo $longitude; ?>"/>
+
 			</div>
 			<p class="description">
 				<?php _e( 'If venue is not specified you can fill in the address of the event location or click on the map to drag and drop the marker to the event location.', 'ecwd' ); ?>

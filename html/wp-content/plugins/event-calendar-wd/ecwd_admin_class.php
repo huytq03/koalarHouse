@@ -6,7 +6,7 @@
 class ECWD_Admin {
 
     protected static $instance = null;
-    protected $version = '1.0.68';
+    protected $version = '1.0.78';
     protected $ecwd_page = null;
     protected $notices = null;
 
@@ -29,7 +29,10 @@ class ECWD_Admin {
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
 
         // Add the options page and menu item.
-        add_action('admin_menu', array($this, 'add_plugin_admin_menu'), 2);
+        add_action('admin_menu', array($this, 'add_plugin_admin_menu'), 10);
+        add_action('admin_menu', array($this, 'featured_plugins'), 30);
+        add_filter('parent_file', array($this,'ecwd_set_current_menu'));
+
         foreach (array('post.php', 'post-new.php') as $hook) {
             add_action("admin_head-$hook", array($this, 'admin_head'));
         }
@@ -80,8 +83,41 @@ class ECWD_Admin {
         include_once ECWD_DIR . '/includes/ecwd_config.php';
         $conf = ECWD_Config::get_instance();
         $conf->update_conf_file();
+        if (get_option("ecwd_version") == false) {
+            self::fix_events_locations();
+            update_option('ecwd_version', ECWD_VERSION);
+        }
     }
 
+    static function fix_events_locations(){
+        $venue_cache = array();
+        $args = array(
+            'numberposts' => -1,
+            'post_type' => 'ecwd_event'
+        );
+        $events = get_posts($args);
+        if(empty($events)){
+            return;
+        }
+
+        foreach ($events as $event) {
+            $venue_id = intval(get_post_meta($event->ID,'ecwd_event_venue',true));
+            if(empty($venue_id)){
+                continue;
+            }
+
+            if(!isset($venue_cache[$venue_id])){
+                $venue_cache[$venue_id] = array(
+                    'ecwd_venue_location' => get_post_meta($venue_id,'ecwd_venue_location',true),
+                    'ecwd_venue_lat_long' => get_post_meta($venue_id,'ecwd_venue_lat_long',true)
+                );
+            }
+            update_post_meta($event->ID,'ecwd_event_location',$venue_cache[$venue_id]['ecwd_venue_location']);
+            update_post_meta($event->ID,'ecwd_lat_long',$venue_cache[$venue_id]['ecwd_venue_lat_long']);
+        }
+
+    }
+    
     public static function uninstall() {
         
     }
@@ -89,12 +125,29 @@ class ECWD_Admin {
     public function add_plugin_admin_menu() {
         global $ecwd_config;
         $this->ecwd_page[] = add_submenu_page(
-                'edit.php?post_type=ecwd_calendar', __('Settings', 'ecwd'), __('Settings', 'ecwd'), 'manage_options', $this->prefix . '_general_settings', array(
-            $this,
-            'display_admin_page'
-                )
+            'edit.php?post_type=ecwd_calendar',
+            __('Event Categories', 'ecwd'),
+            __('Event Categories', 'ecwd'),
+            'manage_options',
+            'edit-tags.php?taxonomy=ecwd_event_category&post_type=ecwd_event',
+            null
         );
 
+        $this->ecwd_page[] = add_submenu_page(
+            'edit.php?post_type=ecwd_calendar',
+            __('Event Tags', 'ecwd'),
+            __('Event Tags', 'ecwd'),
+            'manage_options',
+            'edit-tags.php?taxonomy=ecwd_event_tag&post_type=ecwd_event',
+            null
+        );
+
+        $this->ecwd_page[] = add_submenu_page(
+          'edit.php?post_type=ecwd_calendar', __('Settings', 'ecwd'), __('Settings', 'ecwd'), 'manage_options', $this->prefix . '_general_settings', array(
+            $this,
+            'display_admin_page'
+          )
+        );
 
         $this->ecwd_page[] = add_submenu_page(
                 'edit.php?post_type=ecwd_calendar', __('Licensing', 'ecwd'), __('Licensing', 'ecwd'), 'manage_options', $this->prefix . '_licensing', array(
@@ -103,18 +156,18 @@ class ECWD_Admin {
                 )
         );
 
-        $this->ecwd_page[] = add_submenu_page(
-                'edit.php?post_type=ecwd_calendar', __('Featured plugins', 'ecwd'), __('Featured plugins', 'ecwd'), 'manage_options', $this->prefix . '_featured_plugins', array(
-            $this,
-            'display_featured_plugins'
-                )
-        );
-        $this->ecwd_page[] = add_submenu_page(
-                'edit.php?post_type=ecwd_calendar', __('Featured themes', 'ecwd'), __('Featured themes', 'ecwd'), 'manage_options', $this->prefix . '_featured_themes', array(
-            $this,
-            'display_featured_themes'
-                )
-        );
+//        $this->ecwd_page[] = add_submenu_page(
+//                'edit.php?post_type=ecwd_calendar', __('Featured plugins', 'ecwd'), __('Featured plugins', 'ecwd'), 'manage_options', $this->prefix . '_featured_plugins', array(
+//            $this,
+//            'display_featured_plugins'
+//                )
+//        );
+//        $this->ecwd_page[] = add_submenu_page(
+//                'edit.php?post_type=ecwd_calendar', __('Featured themes', 'ecwd'), __('Featured themes', 'ecwd'), 'manage_options', $this->prefix . '_featured_themes', array(
+//            $this,
+//            'display_featured_themes'
+//                )
+//        );
         $this->ecwd_page[] = add_menu_page(
                 __('Calendar Add-ons', 'ecwd'), __('Calendar Add-ons', 'ecwd'), 'manage_options', $this->prefix . '_addons', array(
             $this,
@@ -134,6 +187,41 @@ class ECWD_Admin {
                 'display_config_page'
                     )
             );
+        }
+    }
+
+    public function featured_plugins(){
+        $this->ecwd_page[] = add_submenu_page(
+          'edit.php?post_type=ecwd_calendar', __('Featured plugins', 'ecwd'), __('Featured plugins', 'ecwd'), 'manage_options', $this->prefix . '_featured_plugins', array(
+            $this,
+            'display_featured_plugins'
+          )
+        );
+        $this->ecwd_page[] = add_submenu_page(
+          'edit.php?post_type=ecwd_calendar', __('Featured themes', 'ecwd'), __('Featured themes', 'ecwd'), 'manage_options', $this->prefix . '_featured_themes', array(
+            $this,
+            'display_featured_themes'
+          )
+        );
+    }
+
+    public function ecwd_set_current_menu() {
+
+        global $submenu_file, $current_screen, $pagenow;
+        if ($current_screen->post_type == 'ecwd_event') {
+            if ($pagenow == 'post.php') {
+                $submenu_file = 'edit.php?post_type=' . $current_screen->post_type;
+            }
+
+            if ($pagenow == 'edit-tags.php') {
+                if($_GET['taxonomy'] == 'ecwd_event_tag'){
+                    $submenu_file = 'edit-tags.php?taxonomy=ecwd_event_tag&post_type=' . $current_screen->post_type;
+                }else{
+                    $submenu_file = 'edit-tags.php?taxonomy=ecwd_event_category&post_type=' . $current_screen->post_type;
+                }
+            }
+            $parent_file = 'edit.php?post_type=ecwd_calendar';
+            return $parent_file;
         }
     }
 
@@ -255,6 +343,8 @@ class ECWD_Admin {
 
     public function display_featured_themes() {
         include_once( ECWD_DIR . '/views/admin/ecwd-featured-themes.php' );
+        $theme = new ECWDFeaturedThemes();
+        $theme->display();
     }
 
     public function display_featured_plugins() {
@@ -322,7 +412,7 @@ class ECWD_Admin {
             wp_enqueue_style($this->prefix . '-calendar-style', plugins_url('css/style.css', __FILE__), '', $this->version, 'all');
             wp_enqueue_style($this->prefix . '_font-awesome', plugins_url('/css/font-awesome/font-awesome.css', __FILE__), '', $this->version, 'all');
             wp_enqueue_style($this->prefix . '-featured_plugins', plugins_url('/css/admin/featured_plugins.css', __FILE__), '', $this->version, 'all');
-            wp_enqueue_style($this->prefix . '-featured_themes', plugins_url('/css/admin/featured_themes.css', __FILE__), '', $this->version, 'all');
+           // wp_enqueue_style($this->prefix . '-featured_themes', plugins_url('/css/admin/featured_themes.css', __FILE__), '', $this->version, 'all');
             wp_enqueue_style($this->prefix . '-licensing', plugins_url('/css/admin/licensing.css', __FILE__), '', $this->version, 'all');
             wp_enqueue_style($this->prefix . '-popup-styles', plugins_url('/css/ecwd_popup.css', __FILE__), '', $this->version, 'all');
         }
@@ -367,7 +457,7 @@ class ECWD_Admin {
             }
             
             $gmap_key = (isset($ecwd_options['gmap_key'])) ? $ecwd_options['gmap_key'] : "";
-
+            $params['gmap_style'] = (isset($ecwd_options['gmap_style'])) ? $ecwd_options['gmap_style'] : "";
 
             wp_localize_script($this->prefix . '-admin-scripts', 'params', $params);
             wp_localize_script(ECWD_PLUGIN_PREFIX . '-public', 'ecwd', array(
@@ -375,7 +465,8 @@ class ECWD_Admin {
                 'ajaxnonce' => wp_create_nonce(ECWD_PLUGIN_PREFIX . '_ajax_nonce'),
                 'loadingText' => __('Loading...', 'ecwd'),
                 'plugin_url' => ECWD_URL,
-                'gmap_key' => $gmap_key
+                'gmap_key' => $gmap_key,
+                'gmap_style' => (isset($ecwd_options['gmap_style'])) ? $ecwd_options['gmap_style'] : ""
             ));
 
             wp_enqueue_script($this->prefix . '-admin-scripts');

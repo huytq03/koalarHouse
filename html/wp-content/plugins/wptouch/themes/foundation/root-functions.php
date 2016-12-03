@@ -29,10 +29,8 @@ add_action( 'wptouch_post_head', 'foundation_setup_homescreen_icons' );
 add_action( 'wptouch_post_head', 'foundation_inline_styles' );
 add_action( 'wptouch_post_head', 'foundation_add_meta_theme_color' );
 
-if ( !defined( 'WPTOUCH_IS_FREE' ) ) {
-	add_action( 'pre_get_posts', 'foundation_posts_per_page' );
-	add_filter( 'pre_get_posts', 'foundation_exclude_categories_tags' );
-}
+add_action( 'pre_get_posts', 'foundation_posts_per_page' );
+add_filter( 'pre_get_posts', 'foundation_exclude_categories_tags' );
 
 add_action( 'wptouch_pre_footer', 'foundation_handle_footer' );
 add_action( 'wptouch_post_footer', 'foundation_enqueue_color_data' );

@@ -11,7 +11,8 @@ function ecwd_print_calendar($calendar_ids, $display = 'mini', $args = array(), 
         'ajaxnonce' => wp_create_nonce(ECWD_PLUGIN_PREFIX . '_ajax_nonce'),
         'loadingText' => __('Loading...', 'ecwd'),
         'plugin_url' => ECWD_URL,
-        'gmap_key'=>$gmap_key
+        'gmap_key'=>$gmap_key,
+        'gmap_style' => (isset($ecwd_options['gmap_style'])) ? $ecwd_options['gmap_style'] : ""
     ));
 
     $defaults = array(
@@ -30,13 +31,8 @@ function ecwd_print_calendar($calendar_ids, $display = 'mini', $args = array(), 
     }
 
     $ecwd_calendar_theme = get_post_meta($ids[0], ECWD_PLUGIN_PREFIX . '_calendar_theme', true);
-    $css_file = $ids[0] . '_' . $ecwd_calendar_theme;
-    $ecwd_default_color = $ecwd_calendar_theme && $ecwd_calendar_theme == 'calendar_grey' ? $ecwd_calendar_theme : 'Default';
-//    wp_enqueue_style( 'ecwd-calendar-main', plugins_url( '../css/calendar.css', __FILE__ ), '', 1 );
-
-    /* 	if ( $ecwd_calendar_theme && file_exists( ECWD_DIR . '/css/themes/' . $css_file . ".css" ) ) {
-      wp_enqueue_style( 'ecwd-calendar-theme_' . $css_file, plugins_url( '../css/themes/' . $css_file . '.css', __FILE__ ), '', 1 );
-      } */
+    
+    $ecwd_default_color = (!empty($ecwd_calendar_theme)) ? $ecwd_calendar_theme : "calendar_grey";
     if ($ecwd_default_color && file_exists(ECWD_DIR . '/css/' . $ecwd_default_color . ".css")) {
         wp_enqueue_style('ecwd-calendar-main', plugins_url('../css/' . $ecwd_default_color . '.css', __FILE__), '', 1);
     }

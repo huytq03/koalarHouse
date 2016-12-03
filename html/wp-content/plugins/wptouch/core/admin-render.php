@@ -71,6 +71,7 @@
 
 						<?php if ( defined( 'WPTOUCH_IS_FREE' ) )  { ?>
 							<li><a href="#" class="setup-general-general<?php if ( isset( $_COOKIE['wptouch-4-admin-menu'] ) && ( $_COOKIE['wptouch-4-admin-menu'] == 'setup-general-general' ) ) { echo ' active'; } ?>" data-page-slug="setup-general-general"><?php _e( 'General', 'wptouch-pro' ); ?></a></li>
+							<li><a href="#" class="<?php wptouch_multisite_page_classes( 'site-compat' ); ?> setup-compat<?php if ( isset( $_COOKIE['wptouch-4-admin-menu'] ) && ( $_COOKIE['wptouch-4-admin-menu'] == 'setup-compat' ) ) { echo ' active'; } ?>" data-page-slug="setup-compat"><?php _e( 'Site Compatibility', 'wptouch-pro' ); ?></a></li>
 							<li><a href="#" class="setup-devices<?php if ( isset( $_COOKIE['wptouch-4-admin-menu'] ) && ( $_COOKIE['wptouch-4-admin-menu'] == 'setup-devices' ) ) { echo ' active'; } ?>" data-page-slug="setup-devices"><?php _e( 'Devices', 'wptouch-pro' ); ?></a></li>
 							<li><a href="#" class="menu-icons-manage-icon-sets<?php if ( isset( $_COOKIE['wptouch-4-admin-menu'] ) && ( $_COOKIE['wptouch-4-admin-menu'] == 'menu-icons-manage-icon-sets' ) ) { echo ' active'; } ?>" data-page-slug="menu-icons-manage-icon-sets"><?php _e( 'Menu Settings', 'wptouch-pro' ); ?></a></li>
 								<?php if ( wptouch_admin_use_customizer() ) { ?>
@@ -163,7 +164,7 @@
 								<?php } ?>
 								<ul class="padded">
 								<?php foreach( $section->settings as $setting ) { ?>
-									<?php if ( !$setting->is_pro || !defined( 'WPTOUCH_IS_FREE' ) ) { ?>
+									<?php if ( wptouch_should_show_setting( $setting ) ) { ?>
 										<li class="wptouch-setting setting-<?php echo $setting->type; ?>" id="setting-<?php echo wptouch_convert_to_class_name( $setting->name ); ?>">
 											<?php wptouch_admin_render_setting( $setting ); ?>
 										</li>

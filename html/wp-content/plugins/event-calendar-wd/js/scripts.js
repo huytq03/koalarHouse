@@ -680,7 +680,8 @@ if (typeof ecwd_js_init != "function")
                         map: {
                             options: {
                                 zoom: zoom,
-                                zoomControl: true
+                                zoomControl: true,
+                                styles: (ecwd.gmap_style !== "") ? JSON.parse(ecwd.gmap_style) : null,
                             }
                         },
                         marker: {

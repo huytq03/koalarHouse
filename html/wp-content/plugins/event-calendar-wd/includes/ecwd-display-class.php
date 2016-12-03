@@ -228,7 +228,8 @@ class ECWD_Display {
             $facebook_events = array();
             //fetch google calendar events
 
-
+            global $ecwd_options;
+            $event_desc_length = isset($ecwd_options['event_description_max_length']) ? $ecwd_options['event_description_max_length'] : "";
 
             foreach ($ecwd_events as $ecwd_event) {
 
@@ -260,6 +261,9 @@ class ECWD_Display {
                 }
 
                 $permalink = get_permalink($ecwd_event->ID);
+                if ($event_desc_length !== '') {
+                    $ecwd_event->post_content = $this->the_excerpt_max_charlength(intval($event_desc_length), $ecwd_event->post_content, $permalink);
+                }
                 if (isset($ecwd_event_metas[ECWD_PLUGIN_PREFIX . '_event_calendars'][0])) {
                     if (is_serialized($ecwd_event_metas[ECWD_PLUGIN_PREFIX . '_event_calendars'][0])) {
                         $event_calendar_ids = unserialize($ecwd_event_metas[ECWD_PLUGIN_PREFIX . '_event_calendars'][0]);
@@ -279,6 +283,27 @@ class ECWD_Display {
             global $ecwd_options;
 
             $this->get_events_for_long_days();
+        }
+    }
+
+    public function the_excerpt_max_charlength($charlength, $content,$permalink) {
+        $excerpt = $content;
+        $excerpt = strip_shortcodes($excerpt);
+        $excerpt = strip_tags($excerpt);
+        $charlength++;
+
+        if (mb_strlen($excerpt) > $charlength) {
+            $read_more = '<a href="'.$permalink.'">[' . __('Read more', 'ecwd') . ']</a>';
+            $subex = mb_substr($excerpt, 0, $charlength);
+            $exwords = explode(' ', $subex);
+            $excut = -(mb_strlen($exwords[count($exwords) - 1]));
+            if ($excut < 0) {
+                return mb_substr($subex, 0, $excut) . '...' .$read_more;
+            } else {
+                return $subex . '...'.$read_more;
+            }
+        } else {
+            return str_replace('[&hellip;]', '', $excerpt);
         }
     }
 

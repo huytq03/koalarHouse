@@ -22,7 +22,7 @@ $is_vi = strpos($_SERVER["REQUEST_URI"], "/vi/"); ?>
 		<div class="tin-tuc home-page-item">
 			<div class="site-header-menu-child header-menu-child-tin-tuc">
 			<img src="../wp-content/uploads/2016/07/tin-tuc.png" >
-			<h2 class="child-menu-title"><?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ echo"Tin tức nổi bật"; }else {echo "Hot News";} ?>  </h2>
+			<h2 class="child-menu-title"><?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ echo"Tin tức nổi bật"; }else {echo "From the Director";} ?>  </h2>
 			</div>
 			<ul class="menu-child-items">
 			  <?php
@@ -47,51 +47,53 @@ $is_vi = strpos($_SERVER["REQUEST_URI"], "/vi/"); ?>
 			if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ ?>
 				<a href="./tin-tuc-noi-bat/" class="button-detail button-tin-tuc"> Chi tiết</a>
 			<?php } else { ?>
-				<a href="./hot-news/" class="button-detail button-tin-tuc"> Detail</a>
+				<!-- <a href="./hot-news/" class="button-detail button-tin-tuc"> Detail</a> -->
 			<?php }}?> 
 		</div>
 		<div class="thong-bao home-page-item">
 			<div class="site-header-menu-child header-menu-child-thong-bao">
 			<img src="../wp-content/uploads/2016/07/thong-bao.png" >
-			<h2 class="child-menu-title"> <?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ echo"Bảng tin"; }else {echo "Bulletin Board";} ?>  </h2>
+			<h2 class="child-menu-title"> <?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ echo"Bảng tin"; }else {echo "Newsletter";} ?>  </h2>
 			</div>
 			<ul class="menu-child-items">
+                        <?php
+			if(strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ ?>
 			    <li>
-			    	<?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ ?>
 			    		<a href="./lich-su-kien/"> Lịch sự kiện</a>
-			    		<?php } else { ?>
-			    		<a href="./events/"> Events</a>
-			    	<?php } ?>
 			    </li>
 			    <li>
-			    	<?php  if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ ?>
 			    		<a href="./thong-bao-3/">Thông báo</a>
-			    		<?php } else { ?>
-			    		<a href="./announcement/"> Announcements</a>
-			    	<?php } ?>
 			    </li>
 			    <li>
-			    	<?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ ?>
 			    		<a href="./ban-tin-thang/">Bản tin tháng</a>
-			    		<?php } else { ?>
-			    		<a href="./news/"> News</a>
-			    	<?php } ?>
+			    
 			    </li>
+                         <?php } else { 
+                            $cate_tag_2 = 82;
+			    $args = array( 'posts_per_page' => 3, 'orderby' => 'post_date', 'category' => $cate_tag_2 );
+			    $hotknowledges = get_posts( $args );
+			    foreach ( $hotknowledges as $post ) : setup_postdata( $post ); ?>
+			        <li>
+			            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			        </li>
+			    <?php endforeach; 
+			    wp_reset_postdata(); ?>
 			</ul>
 			
-			<!-- <a href="#" class="button-detail button-thong-bao">Chi tiết</a> -->
+			 <a href="./announcement/" class="button-detail button-thong-bao">Detail</a>
+                        <?php } ?>
 		</div>
 		<div class="kien-thuc home-page-item">
 			<div class="site-header-menu-child header-menu-child-kien-thuc">
 			<img src="../wp-content/uploads/2016/07/kien-thuc.png" >
-			<h2 class="child-menu-title"> <?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ echo"Kiến thức nuôi dạy trẻ"; }else {echo "Knowledge Of Parenting";} ?>  </h2>
+			<h2 class="child-menu-title"> <?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ echo"Kiến thức nuôi dạy trẻ"; }else {echo "Parenting tips";} ?>  </h2>
 			</div>
 			<ul class="menu-child-items">
 			<?php
 			if($is_vi)
 			  	$cate_tag_2 = 5;
 			  	else $cate_tag_2 = 70;
-			    $args = array( 'posts_per_page' => 4, 'orderby' => 'post_date', 'category' => $cate_tag_2 );
+			    $args = array( 'posts_per_page' => 3, 'orderby' => 'post_date', 'category' => $cate_tag_2 );
 			    $hotknowledges = get_posts( $args );
 			    foreach ( $hotknowledges as $post ) : setup_postdata( $post );			    ?>
 			        <li>
@@ -109,29 +111,29 @@ $is_vi = strpos($_SERVER["REQUEST_URI"], "/vi/"); ?>
 			<?php }}?> 
 		</div>
 		<div class="thu-vien home-page-item">
-			<div>
-				<a href=<?php if($is_vi) echo get_page_link(217); else echo get_page_link(586) ?>>
+			<div <?php if(strpos($_SERVER["REQUEST_URI"], "/vi/")!==false) {echo ""; } else {echo "style=display:none;";} ?> >
+				<a href=<?php if(strpos($_SERVER["REQUEST_URI"], "/vi/")!==false) echo get_page_link(217); else echo get_page_link(586); ?>>
 					<img src="../wp-content/uploads/2016/07/home-icon-fun-story.png" style="margin-bottom: 10px;width: 70% !important;">
 					</br>
 					<span>
-						<?php if ($is_vi) echo"Bé Koala ngộ nghĩnh"; else echo "Funny Stories"; ?>
+						<?php if(strpos($_SERVER["REQUEST_URI"], "/vi/")!==false) {echo "Bé Koala ngộ nghĩnh";} else {echo "Funny Stories";} ?>
 					</span>
 				</a>
 			</div>
 			<div>
-				<a href=<?php if($is_vi) echo get_page_link(231); else echo get_page_link(582);?> >
+				<a href=<?php if(strpos($_SERVER["REQUEST_URI"], "/vi/")!==false) echo get_page_link(231); else echo get_page_link(582);?> >
 					<img src="../wp-content/uploads/2016/07/home-icon-images.png" style="margin-bottom: 10px; width: 70% !important;">
 					</br>
 					<span>
-						<?php if ($is_vi) echo"Thư viện ảnh"; else echo "Gallery"; ?>
+						<?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false) echo "Thư viện ảnh"; else echo "Gallery"; ?>
 					</span>
 				</a>
 			</div>
 			<div>
-				<a href=<?php if($is_vi) echo get_page_link(225); else echo get_page_link(574); ?> >
+				<a href=<?php if(strpos($_SERVER["REQUEST_URI"], "/vi/")!==false) echo get_page_link(225); else echo get_page_link(574); ?> >
 					<img src="../wp-content/uploads/2016/07/home-icon-video.png" style="margin-bottom: 10px; width: 70%!important;">
 					</br>
-					<span>Video Clip</span>
+					<span>Video Clips</span>
 				</a>
 			</div>
 		</div>
@@ -153,7 +155,7 @@ $is_vi = strpos($_SERVER["REQUEST_URI"], "/vi/"); ?>
 				<span>
 					<?php echo $bucket_post->post_excerpt; ?>
 
-					<a class="more-link" href=<?php echo get_permalink($post_id) ?> > </br> <?php if($is_vi) echo"Xem tiếp"; else echo"continue"; ?> >> </a>
+					<a class="more-link" href=<?php echo get_permalink($post_id) ?> > </br> <?php if(pll_current_language() != 'en') echo"Xem tiếp"; else echo"Continue"; ?> >> </a>
 				</span>
 				<img src="../wp-content/uploads/2016/07/imgcenter.png">
 			</div>
@@ -162,7 +164,7 @@ $is_vi = strpos($_SERVER["REQUEST_URI"], "/vi/"); ?>
 		<div class="tay-nho home-page-item">
 			<div class="tay-nho-header">
 			<img src="../wp-content/uploads/2016/07/Forma-11.png">
-			<h2 > <?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ echo"Quỹ bàn tay nhỏ"; }else {echo "Koala Funds";} ?> </h2>
+			<h2 > <?php if (strpos($_SERVER["REQUEST_URI"], "/vi/")!==false){ echo"Quỹ bàn tay nhỏ"; }else {echo '"Little hand" community projects';} ?> </h2>
 			</div>
 			
 			<ul class="menu-child-items tay-nho-menu">
@@ -197,9 +199,9 @@ $is_vi = strpos($_SERVER["REQUEST_URI"], "/vi/"); ?>
 				<span>
 					<?php echo $bucket_post->post_excerpt; ?>
 
-					<a class="more-link" href=<?php echo get_permalink($post_id) ?> ></br><?php if($is_vi) echo"Xem tiếp"; else echo"continue"; ?> >> </a>
+					<a class="more-link" href=<?php echo get_permalink($post_id) ?> ></br><?php if(pll_current_language() != 'en') echo"Xem tiếp"; else echo"Continue"; ?> >> </a>
 				</span>
-				<img src="../wp-content/uploads/2016/07/rausach.png">
+				<img style="border-radius: 20px;" src="../wp-content/uploads/2016/09/anh-vuon-rau-e1474471563582.jpg">
 			</div>
 
 		</div>

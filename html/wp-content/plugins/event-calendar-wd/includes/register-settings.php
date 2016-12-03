@@ -56,9 +56,10 @@ function ecwd_register_settings() {
 
     $ecwd_tabs = array(
         'general' => 'General',
+        'events'  => 'Events',
         'category_archive' => 'Category Page',
         'custom_css' => 'Custom CSS',
-        'google_map' => 'Google Map',
+        'google_map' => 'Google Maps',
         'fb' => 'FB settings',
         'gcal' => 'Gcal settings',
         'ical' => 'Ical settings',
@@ -68,14 +69,6 @@ function ecwd_register_settings() {
         /* General Settings */
 
         'general' => array(
-            'clear_auto_gen' => array(
-                'id' => 'clear_auto_gen',
-                'name' => __('Clear auto generated data', 'ecwd'),
-                'desc' => __('Click to clear auto generated data', 'ecwd'),
-                'size' => 'small-text',
-                'type' => 'link',
-                'href' => $_SERVER['REQUEST_URI'] . '&ecwd_clear_autogen=1'
-            ),
             'toure_option' => array(
                 'id' => 'toure_option',
                 'name' => __('Start tour', 'ecwd'),
@@ -83,6 +76,14 @@ function ecwd_register_settings() {
                 'size' => 'small-text',
                 'type' => 'link',
                 'href' => $_SERVER['REQUEST_URI'] . '&ecwd_start_tour=1'
+            ),
+            'clear_auto_gen' => array(
+                'id' => 'clear_auto_gen',
+                'name' => __('Clear auto generated data', 'ecwd'),
+                'desc' => __('Click to clear auto generated data', 'ecwd'),
+                'size' => 'small-text',
+                'type' => 'link',
+                'href' => $_SERVER['REQUEST_URI'] . '&ecwd_clear_autogen=1'
             ),
             'time_zone' => array(
                 'id' => 'time_zone',
@@ -135,66 +136,17 @@ function ecwd_register_settings() {
                 'type' => 'radio',
                 'default' => 1
             ),
-            'events_slug' => array(
-                'id' => 'events_slug',
-                'name' => __('Events slug', 'ecwd'),
-                'default' => 'events',
-                'desc' => __('Define the slug for the events list page.', 'ecwd'),
-                'size' => 'medium-text',
-                'type' => 'text'
-            ),
-            'event_slug' => array(
-                'id' => 'event_slug',
-                'name' => __('Single Event slug', 'ecwd'),
-                'default' => 'event',
-                'desc' => __('Define the slug for the single event page.', 'ecwd'),
-                'size' => 'medium-text',
-                'type' => 'text'
-            ),
-            'event_comments' => array(
-                'id' => 'event_comments',
-                'name' => __('Enable comments for events', 'ecwd'),
-                'desc' => __('Check to enable commenting.', 'ecwd'),
-                'type' => 'checkbox'
-            ),
-            'event_loop' => array(
-                'id' => 'event_loop',
-                'name' => __('Include events in main loop', 'ecwd'),
-                'desc' => __('Check to display events within website post list in main pages.', 'ecwd'),
-                'type' => 'checkbox'
-            ),
             'cpt_order' => array(
                 'id' => 'cpt_order',
                 'name' => __('Order of Organizers and Venues by', 'ecwd'),
                 'desc' => __('Select Order of Organizers and Venues.', 'ecwd'),
                 'type' => 'order_select'
             ),
-            'show_events_detail' => array(
-                'id' => 'show_events_detail',
-                'name' => __('Show events detail on hover', 'ecwd'),
-                'desc' => '',
-                'type' => 'radio',
-                'default' => 1
-            ),
-            'events_new_tab' => array(
-                'id' => 'events_new_tab',
-                'name' => __('Open events in new tab', 'ecwd'),
-                'desc' => '',
-                'type' => 'radio',
-                'default' => 0
-            ),
             'social_icons' => array(
                 'id' => 'social_icons',
                 'name' => __('Enable Social Icons', 'ecwd'),
                 'desc' => __('Check to display social icons in event, organizer and venue pages.', 'ecwd'),
                 'type' => 'checkbox'
-            ),
-            'related_events' => array(
-                'id' => 'related_events',
-                'name' => __('Show related events in the event page', 'ecwd'),
-                'desc' => '',
-                'type' => 'radio',
-                'default' => 1
             ),
             'cat_title_color' => array(
                 'id' => 'cat_title_color',
@@ -209,10 +161,41 @@ function ecwd_register_settings() {
                 'desc' => __('Check to display category and Tags.', 'ecwd'),
                 'type' => 'checkbox'
             ),
-            'events_in_popup' => array(
-                'id' => 'events_in_popup',
-                'name' => __('Display Events in popup', 'ecwd'),
-                'desc' => __('Check to display events in popup.', 'ecwd'),
+            'move_first_image' => array(
+                'id' => 'move_first_image',
+                'name' => __('Grab the first post image', 'ecwd'),
+                'desc' => '',
+                'type' => 'radio',
+                'default' => 1
+            ),
+            'event_description_max_length' => array(
+                'id' => 'event_description_max_length',
+                'name' => __('Event description max length.', 'ecwd'),
+                'desc' => __('Event description max length.', 'ecwd'),
+                'size' => 'medium-text',
+                'type' => 'text'
+            ),
+        ),
+        'events' => array(
+            'events_archive_page_order' => array(
+                'id' => 'events_archive_page_order',
+                'name' => __('Order of events archive page', 'ecwd'),
+                'desc' => __('Sort by event start', 'ecwd'),
+                'type' => 'custom_radio',
+                'default' => '0',
+                'labels' => array('DESC', 'ASC')
+            ),
+            'change_events_archive_page_post_date' => array(
+              'id' => 'change_events_archive_page_post_date',
+              'name' => __('In Events Archive page change post date to event start date', 'ecwd'),
+              'desc' => '',
+              'type' => 'radio',
+              'default' => 0
+            ),
+            'enable_sidebar_in_event' => array(
+                'id' => 'enable_sidebar_in_event',
+                'name' => __('Enable sidebar in event page', 'ecwd'),
+                'desc' => __('', 'ecwd'),
                 'type' => 'checkbox'
             ),
             'event_default_description' => array(
@@ -244,17 +227,57 @@ function ecwd_register_settings() {
                 'type' => 'text',
                 'default' => ''
             ),
-            'events_archive_page_order' => array(
-                'id' => 'events_archive_page_order',
-                'name' => __('Order of events archive page', 'ecwd'),
-                'desc' => __('Sort by event start', 'ecwd'),
-                'type' => 'custom_radio',
-                'default' => '0',
-                'labels' => array('DESC', 'ASC')
+            'events_in_popup' => array(
+                'id' => 'events_in_popup',
+                'name' => __('Display Events in popup', 'ecwd'),
+                'desc' => __('Check to display events in popup.', 'ecwd'),
+                'type' => 'checkbox'
             ),
-            'move_first_image' => array(
-                'id' => 'move_first_image',
-                'name' => __('Grab the first post image', 'ecwd'),
+            'events_slug' => array(
+                'id' => 'events_slug',
+                'name' => __('Events slug', 'ecwd'),
+                'default' => 'events',
+                'desc' => __('Define the slug for the events list page.', 'ecwd'),
+                'size' => 'medium-text',
+                'type' => 'text'
+            ),
+            'event_slug' => array(
+                'id' => 'event_slug',
+                'name' => __('Single Event slug', 'ecwd'),
+                'default' => 'event',
+                'desc' => __('Define the slug for the single event page.', 'ecwd'),
+                'size' => 'medium-text',
+                'type' => 'text'
+            ),
+            'event_comments' => array(
+                'id' => 'event_comments',
+                'name' => __('Enable comments for events', 'ecwd'),
+                'desc' => __('Check to enable commenting.', 'ecwd'),
+                'type' => 'checkbox'
+            ),
+            'event_loop' => array(
+                'id' => 'event_loop',
+                'name' => __('Include events in main loop', 'ecwd'),
+                'desc' => __('Check to display events within website post list in main pages.', 'ecwd'),
+                'type' => 'checkbox'
+            ),
+            'show_events_detail' => array(
+                'id' => 'show_events_detail',
+                'name' => __('Show events detail on hover', 'ecwd'),
+                'desc' => '',
+                'type' => 'radio',
+                'default' => 1
+            ),
+            'events_new_tab' => array(
+                'id' => 'events_new_tab',
+                'name' => __('Open events in new tab', 'ecwd'),
+                'desc' => '',
+                'type' => 'radio',
+                'default' => 0
+            ),
+            'related_events' => array(
+                'id' => 'related_events',
+                'name' => __('Show related events in the event page', 'ecwd'),
                 'desc' => '',
                 'type' => 'radio',
                 'default' => 1
@@ -308,7 +331,15 @@ function ecwd_register_settings() {
                 'name' => __('API key', 'ecwd'),
                 'desc' => '',
                 'type' => 'text',                
-            )         
+            ),
+            'gmap_style' => array(
+              'id' => 'gmap_style',
+              'name' => __('Map style', 'ecwd'),
+              'desc' => '',
+              'type' => 'textarea',
+              'cols' => '45',
+              'rows' => '15'
+            )
         )
     );
     
@@ -825,9 +856,10 @@ function ecwd_missing_callback($args) {
 function ecwd_get_settings() {
     $ecwd_tabs = array(
         'general' => 'General',
+        'events'  => 'Events',
         'category_archive' => 'Category Page',
         'custom_css' => 'Custom CSS',
-        'google_map' => 'Google Map',
+        'google_map' => 'Google Maps',
         'fb' => 'FB settings',
         'gcal' => 'Gcal settings',
         'ical' => 'Ical settings',

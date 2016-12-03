@@ -46,6 +46,26 @@
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-form.html" class="download">Download plugin &#9658;</a>
                 </li>
+                <li class="google-analytics">
+                    <div class="product"></div>
+                    <div class="title">
+                        <strong class="heading">Google Analytics WD</strong>
+                    </div>
+                    <div class="description">
+                        <p>A Google Analytics integration plugin.</p>
+                    </div>
+                    <a target="_blank" href="https://web-dorado.com/products/wordpress-google-analytics-plugin.html" class="download">Download plugin &#9658;</a>
+                </li>
+                <li class="fb-feed">
+                    <div class="product"></div>
+                    <div class="title">
+                        <strong class="heading">Facebook Feed WD</strong>
+                    </div>
+                    <div class="description">
+                        <p>Facebook Feed WD is a completely customizable, responsive solution to help you display your Facebook feed on your WordPress website.</p>
+                    </div>
+                    <a target="_blank" href="https://web-dorado.com/products/wordpress-facebook-feed-plugin.html" class="download">Download plugin &#9658;</a>
+                </li>
                 <li class="faq-wd">
                     <div class="product"></div>
                     <div class="title">
@@ -82,7 +102,7 @@
                         <strong class="heading">Slider WD</strong>
                     </div>
                     <div class="description">
-                        <p>Create responsive, highly configurable sliders with various effects for your WordPress site. </p>			
+                        <p>Create responsive, highly configurable sliders with various effects for your WordPress site. </p>
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-slider-plugin.html" class="download">Download plugin &#9658;</a>
                 </li>
@@ -92,7 +112,7 @@
                         <strong class="heading">Spider Catalog</strong>
                     </div>
                     <div class="description">
-                        <p>Spider Catalog for WordPress is a convenient tool for organizing the products represented on your website into catalogs.</p>	
+                        <p>Spider Catalog for WordPress is a convenient tool for organizing the products represented on your website into catalogs.</p>
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-catalog.html" class="download">Download plugin &#9658;</a>
                 </li>
@@ -112,7 +132,7 @@
                         <strong class="heading">Spider Contacts</strong>
                     </div>
                     <div class="description">
-                        <p>Spider Contacts helps you to display information about the group of people more intelligible, effective and convenient.</p>	
+                        <p>Spider Contacts helps you to display information about the group of people more intelligible, effective and convenient.</p>
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-contacts-plugin.html" class="download">Download plugin &#9658;</a>
                 </li>
@@ -132,7 +152,7 @@
                         <strong class="heading">Spider FAQ</strong>
                     </div>
                     <div class="description">
-                        <p>The Spider FAQ WordPress plugin is for creating an FAQ (Frequently Asked Questions) section for your website.</p>	
+                        <p>The Spider FAQ WordPress plugin is for creating an FAQ (Frequently Asked Questions) section for your website.</p>
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-faq-plugin.html" class="download">Download plugin &#9658;</a>
                 </li>
@@ -142,7 +162,7 @@
                         <strong class="heading">Zoom</strong>
                     </div>
                     <div class="description">
-                        <p>Zoom enables site users to resize the predefined areas of the web site.</p>	
+                        <p>Zoom enables site users to resize the predefined areas of the web site.</p>
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-zoom.html" class="download">Download plugin &#9658;</a>
                 </li>
@@ -152,7 +172,7 @@
                         <strong class="heading">Flash Calendar</strong>
                     </div>
                     <div class="description">
-                        <p>Spider Flash Calendar is a highly configurable Flash calendar plugin which allows you to have multiple organized events.</p>	
+                        <p>Spider Flash Calendar is a highly configurable Flash calendar plugin which allows you to have multiple organized events.</p>
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-events-calendar.html" class="download">Download plugin &#9658;</a>
                 </li>
@@ -162,7 +182,7 @@
                         <strong class="heading">Contact Form Maker</strong>
                     </div>
                     <div class="description">
-                        <p>WordPress Contact Form Maker is an advanced and easy-to-use tool for creating forms.</p>			 
+                        <p>WordPress Contact Form Maker is an advanced and easy-to-use tool for creating forms.</p>
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-contact-form-maker-plugin.html" class="download">Download plugin &#9658;</a>
                 </li>
@@ -182,7 +202,7 @@
                         <strong class="heading">Contact Form Builder</strong>
                     </div>
                     <div class="description">
-                        <p>Contact Form Builder is the best tool for quickly arranging a contact form for your clients and visitors. </p>		 
+                        <p>Contact Form Builder is the best tool for quickly arranging a contact form for your clients and visitors. </p>
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-contact-form-builder.html" class="download">Download plugin &#9658;</a>
                 </li>
@@ -192,7 +212,7 @@
                         <strong class="heading">Folder Menu</strong>
                     </div>
                     <div class="description">
-                        <p>Folder Menu Vertical is a WordPress Flash menu module for your website, designed to meet your needs and preferences. </p>		 
+                        <p>Folder Menu Vertical is a WordPress Flash menu module for your website, designed to meet your needs and preferences. </p>
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-menu-vertical.html" class="download">Download plugin &#9658;</a>
                 </li>
@@ -202,7 +222,7 @@
                         <strong class="heading">Random post</strong>
                     </div>
                     <div class="description">
-                        <p>Spider Random Post is a small but very smart solution for your WordPress web site. </p>		 
+                        <p>Spider Random Post is a small but very smart solution for your WordPress web site. </p>
                     </div>
                     <a target="_blank" href="https://web-dorado.com/products/wordpress-random-post.html" class="download">Download plugin &#9658;</a>
                 </li>

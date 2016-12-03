@@ -350,20 +350,20 @@
                 $currentWeek = $this->rangeWeek($this->year . '-' . $this->month . '-' . $this->day);
                 $date        = $currentWeek['start'];
                 while (strtotime($date) <= strtotime($currentWeek['end'])) {
-                    $html .= '<li>' . $this->calendar_cell(date('d', strtotime($date)), 'day-with-date', date('Y-n-j', strtotime($date))) . '</li>';
+                    $html .= '<li itemscope itemtype="http://schema.org/Event">' . $this->calendar_cell(date('d', strtotime($date)), 'day-with-date', date('Y-n-j', strtotime($date))) . '</li>';
                     $date = date("Y-m-d", strtotime("+1 day", strtotime($date)));
                 }
                 $html .= '</ul>';
             } elseif ($this->displaytype == 'day') {
                 $html .= '<ul class="day-event-list">';
-                $html .= '<li>' . $this->calendar_cell(date('d', strtotime($this->year . '-' . $this->month . '-' . $this->day)), 'day-with-date', date('Y-n-j', strtotime($this->year . '-' . $this->month . '-' . $this->day))) . '</li>';
+                $html .= '<li itemscope itemtype="http://schema.org/Event">' . $this->calendar_cell(date('d', strtotime($this->year . '-' . $this->month . '-' . $this->day)), 'day-with-date', date('Y-n-j', strtotime($this->year . '-' . $this->month . '-' . $this->day))) . '</li>';
                 $html .= '</ul>';
             } elseif ($this->displaytype == '4day') {
                 $html .= '<ul class="day4-event-list">';
                 $days = $this->range4Days($this->year . '-' . $this->month . '-' . $this->day);
                 $date = $days['start'];
                 while (strtotime($date) <= strtotime($days['end'])) {
-                    $html .= '<li>' . $this->calendar_cell(date('d', strtotime($date)), 'day-with-date', date('Y-n-j', strtotime($date))) . '</li>';
+                    $html .= '<li itemscope itemtype="http://schema.org/Event">' . $this->calendar_cell(date('d', strtotime($date)), 'day-with-date', date('Y-n-j', strtotime($date))) . '</li>';
                     //$this->
                     $date = date("Y-m-d", strtotime("+1 day", strtotime($date)));
                 }
@@ -408,7 +408,7 @@
                                         $html .= '<li class="' . $image_class . '" itemscope itemtype="http://schema.org/Event">';
                                         if (!$this->widget) {
                                             $html .= '<div class="ecwd-list-date resp" itemprop="startDate" content="' . date('Y-m-d', strtotime($event['from'])) . 'T' . date('H:i', $date_key) . '">' . __(date('d', $date_key), 'ecwd') . '</div>';
-                                            //$html .= '<div class="ecwd-list-img"><div class="ecwd-list-img-container"><div class="ecwd-list-date web">' . date('d', strtotime($event['from'])) . '.' . __(date('F', strtotime($event['from'])), 'ecwd') . '.' . __(date('l', strtotime($event['from'])), 'ecwd') . '</div>';
+                                            $html .='<span class="ecwd_hidden" itemprop="endDate" content="' . date('Y-m-d', strtotime($event['to'])) . 'T' . date('H:i', $date_key) . '"></span>';
                                             $event_date = (($this->list_date_format !== 'd.F.l') ? date($this->list_date_format, $date_key) : (date('d', $date_key) . '.' . __(date('F', $date_key), 'ecwd') . '.' . __(date('l', $date_key), 'ecwd')));
                                             if ($this->list_date_format !== 'd.F.l') {
                                                 $month_name = date('F', strtotime($event['from']));
@@ -416,19 +416,21 @@
                                             }
                                             $html .= '<div class="ecwd-list-img"><div class="ecwd-list-img-container"><div class="ecwd-list-date web">' . $event_date . '</div>';
                                             $html .= '<div class="ecwd-img">';
-                                            if (get_the_post_thumbnail($event['id']) || $event['image']) {
-                                                if (get_the_post_thumbnail($event['id'])) {
-                                                    $html .= get_the_post_thumbnail($event['id']);
+                                            $ecwd_has_thumb = has_post_thumbnail($event['id']);
+                                            if ($ecwd_has_thumb || $event['image']) {
+                                                if ($ecwd_has_thumb) {
+                                                    $html .= get_the_post_thumbnail($event['id'],"thumbnail",array("itemprop"=>"image"));
                                                 } else {
-                                                    $html .= '<img src="' . $event['image'] . '" />';
+                                                    $html .= '<img itemprop="image" src="' . $event['image'] . '" />';
                                                 }
                                             } elseif ($image['image'] != null) {
-                                                $html .= '<img src="' . $image['image'] . '" />';
+                                                $html .= '<img itemprop="image" src="' . $image['image'] . '" />';
                                                 $event['details'] = $image['content'];
                                             }
                                             $html .= '</div></div></div>';
                                         } else {
                                             $html .= '<div class="ecwd-list-date"  itemprop="startDate" content="' . date('Y-m-d', strtotime($event['from'])) . 'T' . date('H:i', strtotime($event['starttime'])) . '">' . __(date('d', strtotime($event['from'])), 'ecwd') . '</div>';
+                                            $html .= '<span class="ecwd_hidden"  itemprop="endDate" content="' . date('Y-m-d', strtotime($event['to'])) . 'T' . date('H:i', strtotime($event['endtime'])) . '"></span>';
                                         }
                                         $html .= '<div class="event-main-content">';
                                         if ($this->event_popup == "yes" && get_post_meta($event['id'], '', true)) {
@@ -438,6 +440,19 @@
                                         } else {
                                             $html .= '<h3 class="event-title" style="color:' . $event['color'] . ';" itemprop="name">' . $event['title'] . '</h3>';
                                         }
+
+                                        if(isset($event['link']) && $event['link'] !== ""){
+                                            $link = $event['link'];
+                                        }else if(isset($event['metas']['ecwd_event_url'][0]) && $event['metas']['ecwd_event_url'][0] !== ""){
+                                            $link =  $event['metas']['ecwd_event_url'][0];
+                                        }else{
+                                            $link = get_post_permalink($event['id']);
+                                        }
+
+                                        if($link) {
+                                            $html .= '<span class="hidden" itemprop="url">' . $link . '</span>';
+                                        }
+
                                         $html .= '<div class="ecwd-list-date-cont">';
                                         if (isset($event['all_day_event']) && $event['all_day_event'] == 1) {
                                             $eventtime = '<div class="ecwd-time"><span class="metainfo"> ' . __('All day', 'ecwd');
@@ -594,10 +609,8 @@
                 'week'
             ))
             ) { // mini and full cal
-                $html .= '
-<table class="ecwd_calendar_container ' . $this->displaytype . ' cal_' . $this->color . '" cellpadding="0" cellspacing="0" border="0">
-
-<tr>';
+                $html .= '<table class="ecwd_calendar_container ' . $this->displaytype . ' cal_' . $this->color . '" cellpadding="0" cellspacing="0" border="0">
+                <tr>';
                 // render week number on left
                 if ($this->weeknumbers == 'left') {
                     $html .= '<td rowspan="2" class="week-number">&nbsp;</td>';
@@ -862,7 +875,7 @@
                         //echo $event['from'].'------'.$event['title'].'<br />';
                         $color         = $event['color'];
                         $title         = $event['title'];
-                        $link          = $event['link'];
+                        $link = ($event['link'] == "" && isset($event['metas']['ecwd_event_url'][0])) ? $event['metas']['ecwd_event_url'][0] :  $event['link'];
                         $eventdate     = $event['date'];
                         $from          = strtotime($event['from']);
                         $to            = strtotime($event['to']);
@@ -956,8 +969,6 @@
                 $content .= '<ul class="events">';
                 $eventcontent = '';
                 foreach ($cellevents as $i => $cellevent) {
-                    //echo $cellevent['date'].'-------'.$cellevent['title'].'<br />';
-                    //if (!array_key_exists($cellevent['id'], $this->seted_days)) {
                     $li_class = '';
                     if ($i > 2 && $this->displaytype !== 'mini') {
                         $li_class = 'inmore';
@@ -977,7 +988,7 @@
                     if ($this->displaytype != 'mini') {
                         if (isset($cellevent['terms']['ecwd_taxonomy_image']) && $this->displaytype != 'mini') {
                             if ($cellevent['terms']['ecwd_taxonomy_image'] != '') {
-                                $eventcontent .= '<img  class="ecwd-event-cat-icon" src="' . $cellevent['terms']['ecwd_taxonomy_image'] . '" />';
+                                $eventcontent .= '<img  itemprop="image" class="ecwd-event-cat-icon" src="' . $cellevent['terms']['ecwd_taxonomy_image'] . '" />';
                             }/* elseif (isset($cellevent['color'])){
                           $eventcontent .= ' <span class="event-metalabel" style="background:' . $cellevent['color'] . '"></span>';
                           } */
@@ -1053,6 +1064,7 @@
                             $eventdate .= "-" . date($this->dateformat, $cellevent['to']);
                         }
                         $eventdate .= '</span>';
+                        $eventdate .= '<span class="ecwd_hidden"  itemprop="endDate" content="' . date('Y-m-d', $cellevent['to']) . 'T' . date('H:i', strtotime($cellevent['endtime'])) . '">'.'</span>';
                         $eventdate .= '</div>';
                         $eventcontent .= $eventdate;
                     }
@@ -1063,6 +1075,7 @@
                         }
                         $eventcontent .= '</div>';
                     }
+
                     if ($cellevent['location'] !== '') {
                         $eventcontent .= '<div class="event-venue" itemprop="location" itemscope itemtype="http://schema.org/Place">';
                         if (isset($cellevent['venue']['name'])) {
@@ -1078,17 +1091,25 @@
                         $eventcontent .= '<div  class="ecwd-link"> <a href="' . $cellevent['link'] . '"  itemprop="url">' . $cellevent['link'] . '</a></div>';
                     }
                     $cellevent['details'] = $cellevent['details'] == '' ? $this->eventemptytext : $cellevent['details'];
+
+                    if (isset($cellevent['link']) && $cellevent['link'] != '') {
+                        $eventcontent .= '<div  class="ecwd-link" itemprop="url"> <a href="' . $cellevent['link'] . '"  itemprop="url">' . $cellevent['link'] . '</a></div>';
+                    }else{
+                        $eventcontent .= '<span class="hidden" itemprop="url">' . get_post_permalink($cellevent['id']) . '</span>';
+                    }
+
                     $image                = $this->getAndReplaceFirstImage($cellevent['details']);
-                    if ($cellevent['details'] != '' || has_post_thumbnail($cellevent['id']) || $cellevent['image']) {
+                    $ecwd_has_thumb = has_post_thumbnail($cellevent['id']);
+                    if ($cellevent['details'] != '' || $ecwd_has_thumb || $cellevent['image']) {
                         $eventcontent .= '<div  class="ecwd-detalis" itemprop="description">';
-                        if (get_the_post_thumbnail($cellevent['id']) || $cellevent['image']) {
-                            if (get_the_post_thumbnail($cellevent['id'])) {
-                                $eventcontent .= get_the_post_thumbnail($cellevent['id'], 'thumbnail');
+                        if ($ecwd_has_thumb || $cellevent['image']) {
+                            if ($ecwd_has_thumb) {
+                                $eventcontent .= get_the_post_thumbnail($cellevent['id'], 'thumbnail',array("itemprop"=>"image"));
                             } else {
-                                $eventcontent .= '<img src="' . $cellevent['image'] . '" />';
+                                $eventcontent .= '<img itemprop="image" src="' . $cellevent['image'] . '" />';
                             }
                         } elseif ($image['image'] != null) {
-                            $eventcontent .= '<img src="' . $image['image'] . '" />';
+                            $eventcontent .= '<img itemprop="image" src="' . $image['image'] . '" />';
                             $cellevent['details'] = $image['content'];
                         }
                         $desc = $cellevent['details'] ? $cellevent['details'] : $this->eventemptytext;
@@ -1132,21 +1153,23 @@
                             $image_class          = '';
                             $cellevent['details'] = $cellevent['details'] == '' ? $this->eventemptytext : $cellevent['details'];
                             $image                = $this->getAndReplaceFirstImage($cellevent['details']);
-                            if (!has_post_thumbnail($cellevent['id']) && $cellevent['image'] == "") {
+                            $ecwd_has_thumb = has_post_thumbnail($cellevent['id']);
+                            if (!$ecwd_has_thumb && $cellevent['image'] == "") {
                                 $image_class = "ecwd-no-image";
                             }
-                            $html .= '<div class="event-container ' . $image_class . '" itemprop="event">';
+                            $html .= '<div class="event-container ' . $image_class . '">';
                             if (!$this->widget) {
                                 $html .= '<div class="ecwd-list-img"><div class="ecwd-list-img-container">';
                                 $html .= '<div class="ecwd-img">';
-                                if (get_the_post_thumbnail($cellevent['id']) || $cellevent['image']) {
-                                    if (get_the_post_thumbnail($cellevent['id'])) {
-                                        $html .= get_the_post_thumbnail($cellevent['id']);
+                                $post_thumbnail_id = get_post_thumbnail_id( $cellevent['id'] );
+                                if ($ecwd_has_thumb || $cellevent['image']) {
+                                    if ($ecwd_has_thumb) {
+                                        $html .= get_the_post_thumbnail($cellevent['id'],'thumb',array("itemprop"=>"image"));
                                     } else {
-                                        $html .= '<img src="' . $cellevent['image'] . '" />';
+                                        $html .= '<img itemprop="image" src="' . $cellevent['image'] . '" />';
                                     }
                                 } elseif ($image['image'] != null) {
-                                    $html .= '<img src="' . $image['image'] . '" />';
+                                    $html .= '<img itemprop="image" src="' . $image['image'] . '" />';
                                     $cellevent['details'] = $image['content'];
                                 }
                                 $html .= '</div></div></div>';
@@ -1172,8 +1195,9 @@
                             }
                             $html .= '<div class="ecwd-list-date-cont">';
                             if (isset($cellevent['all_day_event']) && $cellevent['all_day_event'] == 1) {
-                                $eventtime = '<div class="ecwd-time"><span class="metainfo event-time" itemprop="startDate" content="' . date('Y-m-d', $cellevent['from']) . 'T' . date('H:i', strtotime($cellevent['starttime'])) . '"> ' . __('All day', 'ecwd');
-                                $eventtime .= '</span>';
+                                $eventtime = '<div class="ecwd-time">'.
+                                  '<span class="metainfo event-time" itemprop="startDate" content="' . date('Y-m-d', $cellevent['from']) . 'T' . date('H:i', strtotime($cellevent['starttime'])) . '"> ' . __('All day', 'ecwd'). '</span>'.
+                                  '<span class="ecwd_hidden" itemprop="endDate" content="' . date('Y-m-d', $cellevent['to']) . 'T' . date('H:i', strtotime($cellevent['endtime'])) . '"></span>';
                                 $eventtime .= '</div>';
                                 $html .= $eventtime;
                             } else {
@@ -1193,6 +1217,7 @@
                                     $eventdate .= "-" . date($this->dateformat, $cellevent['to']);
                                 }
                                 $eventdate .= '</span>';
+                                $eventdate .= '<span class="ecwd_hidden" itemprop="endDate" content="' . date('Y-m-d', $cellevent['to']) . 'T' . date('H:i', strtotime($cellevent['endtime'])) . '"></span>';
                                 $eventdate .= '</div>';
                                 $html .= $eventdate;
                             }
@@ -1204,17 +1229,22 @@
                                 }
                                 $html .= '</div>';
                             }
-                            if ($cellevent['location'] != '') {
-                                $html .= '<div class="event-venue" itemprop="location" itemscope itemtype="http://schema.org/Place">
-                                        <span itemprop="name">';
+                            if ($cellevent['location'] !== '') {
+                                $html .= '<div class="event-venue" itemprop="location" itemscope itemtype="http://schema.org/Place">';
                                 if (isset($cellevent['venue']['name'])) {
-                                    $html .= '<a href="' . $cellevent['venue']['permalink'] . '">' . $cellevent['venue']['name'] . '</a>';
+                                    $html .= '<div class="ecwd-venue" ><span itemprop="name"><a href="' . $cellevent['venue']['permalink'] . '">' . $cellevent['venue']['name'] . '</a></span></div>';
                                 }
-                                $html .= '</span>
-                                        <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                                          <span itemprop="streetAddress">' . $cellevent['location'] . '</span>
-                                        </div>
-                                      </div>';
+                                if (isset($cellevent['location']) && $cellevent['location'] != '') {
+                                    $html .= '<span class="ecwd_hidden" itemprop="name">' . $cellevent['location'] . '</span>';
+                                    $html .= '<div class="ecwd-location" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span>' . $cellevent['location'] . '</span></div>';
+                                }
+                                $html .= '</div>';
+                            }
+
+                            if (isset($cellevent['link']) && $cellevent['link'] != '') {
+                                $html .= '<div  class="ecwd-link" itemprop="url"> <a href="' . $cellevent['link'] . '"  itemprop="url">' . $cellevent['link'] . '</a></div>';
+                            }else{
+                                $html .= '<span class="hidden" itemprop="url">' . get_post_permalink($cellevent['id']) . '</span>';
                             }
                             $desc = $cellevent['details'] ? $cellevent['details'] : $this->eventemptytext;
                             $desc = apply_filters('format_content', $desc);

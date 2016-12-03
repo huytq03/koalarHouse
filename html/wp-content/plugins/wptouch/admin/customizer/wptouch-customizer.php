@@ -2,6 +2,9 @@
 global $wptouch_pro;
 $current_theme = $wptouch_pro->get_current_theme_info();
 
+global $wptouch_queued_items;
+$wptouch_queued_items = 0;
+
 if ( $current_theme && wptouch_admin_use_customizer() ) {
 
 	add_action( 'admin_init', 'wptouch_initialize_customizer' );
@@ -26,6 +29,8 @@ if ( $current_theme && wptouch_admin_use_customizer() ) {
 
 	// If we're in the customizer and we're editing the mobile theme...
 	if ( wptouch_is_customizing_mobile() ) {
+
+		wptouch_customizer_begin_theme_override();
 
 		add_filter( 'customize_previewable_devices', '__return_empty_array' );
 
@@ -162,16 +167,17 @@ $merging_setting = false;
 function wptouch_customizer_merge_setting( $domain, $setting, $value ) {
 	require_once( WPTOUCH_DIR . '/core/admin-load.php' );
 
-	global $merging_setting;
+	global $merging_setting;	
 	global $wptouch_pro;
 	global $options_domains;
+
+	wptouch_customizer_begin_theme_override();
 
 	if ( !$merging_setting ) {
 		$merging_setting = true;
 		$customizable_settings = wptouch_get_customizable_settings();
 		$current_theme = $wptouch_pro->get_current_theme_info();
 
-		wptouch_customizer_begin_theme_override();
 		if ( isset( $customizable_settings[ $domain ] ) || $domain == $current_theme->base ) {
 			if ( in_array( $domain, $options_domains ) ) {
 				$option_array = get_option( 'wptouch_customizer_options_' . $domain );
@@ -185,10 +191,11 @@ function wptouch_customizer_merge_setting( $domain, $setting, $value ) {
 					set_theme_mod( 'wptouch_' . $setting, $value );
 				}
 			}
-		}
-		wptouch_customizer_end_theme_override();
+		} 
 		$merging_setting = false;
 	}
+
+	wptouch_customizer_end_theme_override();
 }
 
 function wptouch_customizer_load_theme_js() {
@@ -450,7 +457,11 @@ function wptouch_customizer_setup( $wp_customize ) {
 							$setting_use_name = 'wptouch_customizer_options_' . $setting->domain . '[' . str_replace( '[', '-----', str_replace( ']', '_____', $setting->name ) ) . ']';
 							$wp_customize->add_setting( $setting_use_name, array_merge( array( 'type' => 'option' ), $setting_args ) );
 						} else {
+
 							$setting_use_name = 'wptouch_' . $setting->name;
+
+
+							$value = get_theme_mod( $setting_use_name );
 							$wp_customize->add_setting( $setting_use_name, array_merge( array( 'type' => 'theme_mod' ), $setting_args ) );
 						}
 
@@ -772,11 +783,23 @@ function wptouch_get_current_theme_name( $value=false ) {
 }
 
 function wptouch_customizer_begin_theme_override() {
-	add_filter( 'pre_option_stylesheet', 'wptouch_get_current_theme_name', 50 );
+	global $wptouch_queued_items;
+
+	if ( $wptouch_queued_items == 0 ) {
+		add_filter( 'pre_option_stylesheet', 'wptouch_get_current_theme_name', 50 );	
+	}
+
+	$wptouch_queued_items++;
 }
 
 function wptouch_customizer_end_theme_override() {
-	remove_filter( 'pre_option_stylesheet', 'wptouch_get_current_theme_name', 50 );
+	global $wptouch_queued_items;
+
+	$wptouch_queued_items--;
+
+	if ( $wptouch_queued_items == 0 ) {
+		remove_filter( 'pre_option_stylesheet', 'wptouch_get_current_theme_name', 50 );	
+	}
 }
 
 function wptouch_customizer_port_image( $customizer_setting, $source_setting, $settings_domain = 'foundation' ) {

@@ -31,14 +31,7 @@ jQuery(function(){
             				slideout.close();
             			}
             		}
-            	});
-
-                if ( deviceHasTouchSupport() ) {
-                    jQuery( '.page-wrapper' ).one('touchend', function( e ) {
-                        e.preventDefault();
-                        e.stopImmediatePropagation();
-                    });
-                }
+				});
             });
 
             // special handling of left and right menus

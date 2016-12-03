@@ -4,7 +4,7 @@ Donate link: https://web-dorado.com/products/wordpress-event-calendar-wd.html
 Tags: calendar, date, event, event calendar, events, events calendar, meeting, organizer, recurring, reservation, responsive, schedule 
 Requires at least: 3.9
 Tested up to: 4.6
-Stable tag: 1.0.68
+Stable tag: 1.0.78
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -154,6 +154,42 @@ After downloading the ZIP file of the Event Calendar WD plugin,
 6. If the installation does not succeed, please [click here to contact us](https://web-dorado.com/support/contact-us.html).
 
 == Changelog ==
+
+= 1.0.78 =
+* Added: Event description max length option   
+
+= 1.0.77 =
+* Added: Google maps style option    
+* Added: Latitude,Longitude inputs in event-meta,venue-meta pages    
+
+= 1.0.76 =
+* Fixed: Data structures    
+* Fixed: Bug on Repeating events      
+
+= 1.0.75 =
+* Changed: Backend menu    
+
+= 1.0.74 =
+* Changed: Organizers, venues cache   
+* Fixed: Venue edit in event    
+* Fixed: Gmap js issue    
+
+= 1.0.73 =
+* Changed: Settings structure   
+* Fixed: Minor bug   
+
+= 1.0.72 =
+* Fixed: Minor bug  
+
+= 1.0.71 =
+* Added: Enable sidebar in event page option   
+
+= 1.0.70 =
+* Fixed: Bug on Google Maps      
+
+= 1.0.69 =
+* Fixed: Bug on Views add-on   
+* Changed: Featured themes, plugins pages     
 
 = 1.0.68 =
 *  Fixed: List view pagination   

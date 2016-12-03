@@ -32,8 +32,9 @@
 	</div><!-- .entry-content -->
 	<div class="related-post">
 		<h4>
-<?php $is_vi = strpos($_SERVER["REQUEST_URI"], "/vi/");
-if($is_vi) echo "Các tin khác:"; else echo "Another news:"; ?></h4>
+<?php
+
+if(pll_current_language() != 'en' ) echo "Các tin khác:"; else echo "Other news:"; ?></h4>
 
 		 <ul> 
 		<?php

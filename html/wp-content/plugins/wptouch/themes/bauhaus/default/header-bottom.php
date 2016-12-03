@@ -55,10 +55,6 @@
 
 		<?php do_action( 'wptouch_advertising_top' ); ?>
 
-		<?php if ( function_exists( 'foundation_featured_slider' ) ) { ?>
-			<?php foundation_featured_slider(); ?>
-		<?php } ?>
-
 	<?php if ( is_archive() ) { ?>
 		<div class="post-page-head-area bauhaus">
 			<?php wptouch_fdn_archive_title_text(); ?>

@@ -62,9 +62,9 @@ class WPtouchProFour {
 	var $cache_smash;
 
 	// Shortcodes that must process before AJAX shortcode request
-	var $preprocess_shortcodes = array( 'gallery', 'new_royalslider', 'contact-form-7', 'metaslider' );
+	var $preprocess_shortcodes = array( 'gallery', 'new_royalslider', 'contact-form-7', 'metaslider', 'wdi_feed' );
 
-	function WPtouchProFour() {
+	function __construct() {
 		$this->is_mobile_device = false;
 		$this->showing_mobile_theme = false;
 
@@ -335,10 +335,14 @@ class WPtouchProFour {
 			if ( $this->should_do_desktop_shortcode_magic( $settings ) && ( $this->is_mobile_device && $this->showing_mobile_theme ) ) {
 				remove_filter( 'the_content', 'wptexturize' );
 
+				// allow custom preprocess_shortcodes
+				$custom_preprocess_shortcodes = array();
+				$custom_preprocess_shortcodes = apply_filters( 'wptouch_preprocess_shortcodes', $custom_preprocess_shortcodes );
+
 				// Need finer-grain control over what gets processed or not.
 				global $shortcode_tags;
 				foreach ( $shortcode_tags as $shortcode => $object ) {
-					if ( !in_array( $shortcode, $this->preprocess_shortcodes ) ) {
+					if ( !in_array( $shortcode, $this->preprocess_shortcodes ) && !in_array( $shortcode, $custom_preprocess_shortcodes ) ) {
 						unset ( $shortcode_tags[ $shortcode ] );
 					}
 				}
@@ -756,7 +760,7 @@ class WPtouchProFour {
 	}
 
 	function set_cache_cookie() {
-		if ( !is_admin() && function_exists( 'wptouch_cache_admin_bar' ) ) {
+		if ( !is_admin() && ( function_exists( 'wptouch_cache_admin_bar' ) || function_exists( 'wptouch_power_pack_admin_bar') ) ) {
 			global $wptouch_pro;
 
 			$cookie_value = 'desktop';
@@ -771,6 +775,8 @@ class WPtouchProFour {
 
 			if ( function_exists( 'wptouch_addon_should_cache_desktop' ) ) {
 				$cache_desktop = wptouch_addon_should_cache_desktop();
+			} else if ( function_exists( 'wptouch_power_pack_should_cache_desktop' ) ) {
+				$cache_desktop = wptouch_power_pack_should_cache_desktop();
 			} else {
 				$cache_desktop = false;
 			}
@@ -1909,7 +1915,7 @@ class WPtouchProFour {
 			}
 		}
 
-			uksort( $addons, 'strnatcasecmp' );
+		uksort( $addons, 'strnatcasecmp' );
 
 		return $addons;
 	}
@@ -3278,7 +3284,7 @@ class WPtouchProFour {
 		$new_settings = wptouch_get_settings();
 
 		if ( function_exists( 'wptouch_pro_update_site_info' ) && $update_info ) {
-			wptouch_pro_update_site_info();
+			//wptouch_pro_update_site_info();
 		}
 	}
 

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
 
 #main_featured_plugins_page{
     font-family: Oswald;
@@ -59,21 +59,23 @@
 #main_featured_plugins_page #featured-plugins-list  li.ecommerce-wd  .product {background:url(../images/featured/ecommerce.png) left center no-repeat;}
 #main_featured_plugins_page #featured-plugins-list  li.slider_wd  .product {background:url(../images/featured/slider.png) left center no-repeat;}
 #main_featured_plugins_page #featured-plugins-list  li.folder_menu  .product {background:url(../images/featured/folder.menu.png) left center no-repeat;}
+#main_featured_plugins_page #featured-plugins-list  li.google-analytics  .product {background:url(../images/featured/google-analytics.png) left center no-repeat;}
+#main_featured_plugins_page #featured-plugins-list  li.fb-feed  .product {background:url(../images/featured/facebook-feed.png) left center no-repeat;}
 
 #main_featured_plugins_page #featured-plugins-list  li.zoom .product {background:url(../images/featured/zoom.png) left center no-repeat;}
 #main_featured_plugins_page #featured-plugins-list  li.photo-gallery  .product {background:url(../images/featured/photo-gallery.png) left center no-repeat #CACACA;
-                                                                                border-top-left-radius: 5px;
-                                                                                border-bottom-left-radius: 5px;
-                                                                                background-position-x: 7px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-position-x: 7px;
 }
 #main_featured_plugins_page #featured-plugins-list  li .product {
     background-size: 115px !important;
 }
 #main_featured_plugins_page #featured-plugins-list  li.twitter-widget  .product {background:url(../images/featured/twittertools.png) left center no-repeat #CACACA;
-                                                                                 background-size: 85px;
-                                                                                 background-position-x: 12px;
-                                                                                 border-top-left-radius: 5px;
-                                                                                 border-bottom-left-radius: 5px;}
+    background-size: 85px;
+    background-position-x: 12px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;}
 
 #main_featured_plugins_page #featured-plugins-list li  .title  .heading {
     display: block;
@@ -147,7 +149,7 @@
 
 .featured_header h1.get_plugins{
     color: #FFFFFF;
-    background:url(../images/featured/featured_plugins_bg.png) no-repeat;    
+    background:url(../images/featured/featured_plugins_bg.png) no-repeat;
     height: 85px;
     margin: 0;
     background-size: 85% 100%;
@@ -187,7 +189,7 @@
     }
 }
 
-@media screen and (max-width: 435px) {	
+@media screen and (max-width: 435px) {
     .featured_header h1 {
         font-size: 20px;
         line-height: 25px;

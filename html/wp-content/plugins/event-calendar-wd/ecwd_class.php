@@ -6,7 +6,7 @@
  */
 class ECWD {
 
-    protected $version = '1.0.68';
+    protected $version = '1.0.78';
     protected $plugin_name = 'event-calendar-wd';
     protected $prefix = 'ecwd';
     protected static $instance = null;
@@ -172,7 +172,8 @@ class ECWD {
             'loadingText' => __('Loading...', 'ecwd'),
             'event_popup_title_text' => __('Event Details','ecwd'),
             'plugin_url' => ECWD_URL,
-            'gmap_key'   => $gmap_key
+            'gmap_key'   => $gmap_key,
+            'gmap_style' => (isset($ecwd_options['gmap_style'])) ? $ecwd_options['gmap_style'] : ""
         ));
         
     }

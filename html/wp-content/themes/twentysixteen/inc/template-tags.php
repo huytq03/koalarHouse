@@ -183,6 +183,13 @@ function twentysixteen_excerpt_more() {
 		/* translators: %s: Name of current post */
 		sprintf( __( '</br> </br>  Xem tiếp >> <span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ), get_the_title( get_the_ID() ) )
 	);
+	if(pll_current_language() == 'en' ) {
+		$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		/* translators: %s: Name of current post */
+		sprintf( __( '</br> </br>  Continue >> <span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ), get_the_title( get_the_ID() ) )
+	);
+	}
 	return ' &hellip; ' . $link;
 }
 add_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );

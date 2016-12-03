@@ -127,7 +127,8 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: normal;
+        font-family: 'roboto-bold';
+	font-weight: bold;
 }
 
 small {
@@ -313,7 +314,7 @@ select,
 textarea {
 	color: #1a1a1a;
 	font-family: 'roboto';
-	font-size: 12px;
+	font-size: 13px;
 	line-height: normal;
 }
 
@@ -829,7 +830,7 @@ a:active {
 	/*color: #007acc;*/
 }
 .current-menu-item, .current-menu-parent {
-	height: 70px !important;
+	height: 60px !important;
 	margin-bottom: -9px !important;
 }
 .sub-menu .current_page_item {
@@ -1277,7 +1278,16 @@ a:active {
 	opacity: 0.7;
 	padding: 0 0.538461538em;
 }
-
+.kola-contact > div {
+	height: 75px !important;
+    	width: 200px !important;
+	}
+.kola-contact .rc-anchor {
+	width :190px;
+}
+.kola-contact #recaptcha-anchor-label {
+	font-size: 13px !important;
+	}
 
 /**
  * 7.0 - Accessibility
@@ -1740,7 +1750,7 @@ a.post-thumbnail:focus {
 
 .entry-content {
 	font-family: 'roboto';
-	color: #ca6400;
+	color: #000000;
 }
 .entry-content h1,
 .entry-summary h1,
@@ -2065,9 +2075,10 @@ body:not(.search-results) .entry-summary > :last-child,
 .child-menu-title {
 	text-align: left;
     margin-top: 30px;
-    font-size: 16.5px;
+    font-size: 18px;
     font-family:  vnf-lobster;
     color: white;
+    font-weight: 100;
 }
 /**
  * IE8 and earlier will drop any block with CSS3 selectors.
@@ -2805,7 +2816,7 @@ p > video {
 }
 .gioi-thieu > div > h2 {
 	color: #ca6400;
-    font-size: 16.5px;
+    font-size: 18px;
     font-family: 'vnf-lobster';
     min-width: 270px;
     text-decoration: none;
@@ -2828,12 +2839,12 @@ p > video {
 .tay-nho-header >h2 {
     margin: auto;
     color: #ca6400;
-    font-size: 16.5px;
+    font-size: 18px;
     font-family: 'vnf-lobster';
     text-decoration: none;
     border-bottom: 2.5px solid #ca6400;
     width: 100%;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 .tay-nho-menu {
 	padding: 5% 0 5% 5%;
@@ -2847,7 +2858,10 @@ p > video {
 }
 .tay-nho-menu > li > a {
 	color: #ca6400;
-	 font-size: 10px;
+	 font-size: 12px;
+}
+.tay-nho-menu > li > a:hover {
+	color: blue;
 }
 .vuon-rau {
 	height: 260px;
@@ -2856,7 +2870,7 @@ p > video {
 }
 .vuon-rau >div > h2 {
 	color: #ca6400;
-    font-size: 16.5px;
+    font-size: 18px;
     font-family: 'vnf-lobster';
     text-decoration: none;
     border-bottom: 2.5px solid #ca6400;
@@ -2987,7 +3001,7 @@ p > video {
 
 	.custom-logo {
 		max-width: 210px;
-		width: 156px;
+		width: 200px;
 	}
 
 	.site-title {
@@ -3245,7 +3259,7 @@ p > video {
 	.green-post-home-page > span{
 		color: #ca6400;
 		margin-top: 10px;	
-		width: 50%;
+		width: 45%;
 	}
 	.green-post-home-page > span >a {
 		color: #ca6400;
@@ -3254,9 +3268,9 @@ p > video {
 		color: #007acc;
 	}
 	.green-post-home-page > img{
-		border-radius: 20px;
 		width: 50%;
 		height: 100%;
+		margin-left: 20px;
 	}
 	.site-header-main {
 		-webkit-align-items: flex-start;
@@ -3712,30 +3726,36 @@ p > video {
 		box-shadow: none;
 	    float: left;
 	    color: #ca6400;
-	    width: 80%;
+	    width: 70%;
     	text-align: left;
     	font-size: 20px;
 	}
+        .my-grid-layout-inbox >li>a>img {
+            witdh: 100px;
+        } 
 	.my-grid-layout .image{
 		float: left;
-  		margin: 0 30px 0 0;
+  		margin: 0 10px 0 0;
 	}
 	.my-grid-layout .excerpt {
-		font:  12px roboto;
-		float: left;
-	    width: 80%;
+	    font:  14px roboto;
+	    float: left;
+	    width: 70%;
 	    text-align: left;
-	    margin-top: 30px;
+            margin-top: 10px;
+	}
+        .my-grid-layout .excerpt-dash {
+	    display: none;
 	}
 	.my-grid-layout .excerpt > a{
 		color: #ca6400;
 	}
 	.my-grid-layout > li {
-		padding: 30px;
+		padding-top: 30px;
   		overflow: auto;
 	}
 	.primary-menu {
-		height: 70px;
+		height: 50px;
     	display: flex;
 	}
 	.primary-menu > li {
@@ -3848,7 +3868,7 @@ p > video {
 		text-decoration: none; 
     	font-family: vnf-lobster;
     	/*font-weight: 400 !important; */
-    	font-size: 13px; 
+    	font-size: 14px; 
     	line-height: 41px; 
     	color: #fff; 
 		text-shadow:none; 
@@ -3892,12 +3912,17 @@ p > video {
 	.footer-address >tbody>tr>td{
 		border: none;
 	}
+        .footer-address >tbody>tr>td>a{
+		font-size: 11px;
+	        font-family: 'roboto';
+		color: #0d3911;
+	}
 	.social_wrapper {
 		background-image: url('../../uploads/2016/07/social-icon-bg-cloud.png');
     	background-repeat: round;
     	margin: auto 0 auto auto;
-    	width: 190px;
-    	height: 80px;
+    	width: 200px;
+    	height: 90px;
     	position: relative;
     	display: block;
 	}
@@ -3915,10 +3940,11 @@ p > video {
     margin-left: 20px;
 	}
 	.site-menu-child {
-		display: block;
+	    display: block;
 	    background-color: #e1af2a;
-        width: 390px;
-	    max-width: 370px;
+            width: 390px;
+	    min-width: 250px;
+            max-width: 370px;
 	    margin: 0 5% 5% 0;
 	    border-radius: 30px;
 	    height: 100%;
@@ -4250,6 +4276,7 @@ p > video {
 		width: 50.00000001%;*/
 		margin: auto;
 		max-width: 100%;
+                width: 100%;
 	}
 
 	body.no-sidebar:not(.search-results) article:not(.type-page) .entry-footer {

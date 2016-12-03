@@ -62,7 +62,7 @@ if (count($events) > 0) {
                                          }
                                          ?>
                                 </div>
-                                <div class="upcoming_events_item-content"><?php echo( $ecwd_event['post']->post_content ? $ecwd_event['post']->post_content : 'No additional details for this event.' ); ?> </div>
+                                <div class="upcoming_events_item-content"><?php echo( $ecwd_event['post']->post_content ? wpautop(strip_shortcodes($ecwd_event['post']->post_content)) : 'No additional details for this event.' ); ?> </div>
                             </div>
                         </li>
                         <?php

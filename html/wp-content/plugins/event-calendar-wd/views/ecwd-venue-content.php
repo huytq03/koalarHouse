@@ -91,7 +91,7 @@ $events = $d->get_event_days($events, 1, date('Y-m-d'), $max_date);
 $events = $d->events_unique($events);
 ?>
 <?php
-echo $content;
+echo wpautop($content);
 ?>
 
 <div class="ecwd-venue">
